@@ -4,19 +4,13 @@ import { IconType } from "react-icons/lib";
 type NavbarLinkProps = {
   link: string;
   content: string;
-  className?: string;
   Icon: IconType;
 };
 
-export default function NavbarLink({
-  link,
-  content,
-  className,
-  Icon,
-}: NavbarLinkProps) {
+export default function NavbarLink({ link, content, Icon }: NavbarLinkProps) {
   return (
     <Link
-      className={`py-3 px-4 hover:text-neutral-50 flex gap-2 items-center ${className}`}
+      className={`py-4 sm:py-3 px-4 text-lg hover:text-neutral-50 flex gap-2 items-center justify-center`}
       href={link}
       passHref
     >
