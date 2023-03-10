@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Quicksand } from "@next/font/google";
+import { Quicksand } from "next/font/google";
 import { Layout } from "./components/Layout/Layout";
 
 const quickSand = Quicksand({
