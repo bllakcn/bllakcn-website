@@ -1,10 +1,15 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import {
+  OrbitControls,
+  Preload,
+  useGLTF,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import CanvasLoader from "../CanvasLoader";
 
 function Cube() {
-  const cube = useGLTF("/cube/scene.gltf");
+  const cube = useGLTF("/planet/scene.gltf");
   return (
     <mesh>
       <ambientLight intensity={2} />
@@ -19,7 +24,7 @@ const CubeCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [0, 0, 0], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
