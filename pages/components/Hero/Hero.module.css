@@ -1,0 +1,7 @@
+.hero {
+  background-image: radial-gradient(
+    rgba(169, 173, 255, 0.5) 1.75px,
+    rgba(38, 38, 38, 1) 1.75px
+  );
+  background-size: 35px 35px;
+}

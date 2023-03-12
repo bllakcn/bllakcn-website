@@ -11,7 +11,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <div className={className}>
       <Navbar />
-      <main className="pt-28 max-w-7xl mx-auto px-2 lg:px-4">{children}</main>
+      <main className="pt-24">{children}</main>
       {/* <Footer /> */}
     </div>
   );

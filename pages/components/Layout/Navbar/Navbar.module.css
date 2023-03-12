@@ -10,7 +10,15 @@
   backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(6.4px);
 }
-
+.logo::before {
+  --box-size: 23px;
+  content: "";
+  width: var(--box-size);
+  height: var(--box-size);
+  background-color: #e5e5e5;
+  border-radius: 3px;
+  margin-right: 2px;
+}
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -38,14 +46,12 @@
 .hamburger.isActive .hamburgerInner::after {
   background-color: var(--hamburger-color);
 }
-
 .hamburgerBox {
   width: 40px;
   height: 24px;
   display: flex;
   position: relative;
 }
-
 .hamburgerInner {
   display: block;
   top: 50%;
@@ -74,10 +80,6 @@
 .hamburgerInner::after {
   bottom: -10px;
 }
-
-/*
-   Squeeze
-   */
 .hamburgerSqueeze .hamburgerInner {
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
