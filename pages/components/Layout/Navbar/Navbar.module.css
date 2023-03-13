@@ -15,10 +15,15 @@
   content: "";
   width: var(--box-size);
   height: var(--box-size);
-  background-color: #e5e5e5;
   border-radius: 3px;
   margin-right: 2px;
+  transition: opacity 0.2s ease;
+  opacity: 0;
 }
+.logo:hover::before {
+  opacity: 1;
+}
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers

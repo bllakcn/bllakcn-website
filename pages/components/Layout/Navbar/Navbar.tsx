@@ -16,8 +16,12 @@ export default function Navbar() {
     >
       <ul className="flex w-full justify-between items-center flex-row max-w-7xl px-6 md:px-8 lg:px-10">
         <li className="flex-1">
-          <Link href="/" className="font-extrabold text-3xl inline-block p-2">
-            <h1 className={`${styles.logo} flex items-baseline`}>bllakcn</h1>
+          <Link href="/" className="font-bold text-3xl inline-block p-2">
+            <h1
+              className={`${styles.logo} relative flex items-baseline before:bg-neutral-200`}
+            >
+              bllakcn
+            </h1>
           </Link>
         </li>
         <ul className="hidden sm:flex gap-6">
