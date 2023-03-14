@@ -9,19 +9,23 @@ export default function Hamburger() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="block sm:hidden">
-      <li className="items-center" onClick={() => setIsActive(!isActive)}>
-        <button
-          className={`${styles.hamburger} ${styles.hamburgerSqueeze} ${
-            isActive ? styles.isActive : ""
-          } p-2`}
-          type="button"
-        >
-          <span className={styles.hamburgerBox}>
-            <span className={styles.hamburgerInner}></span>
-          </span>
-        </button>
-      </li>
+    <li className="block sm:hidden">
+      <ul>
+        <li className="items-center" onClick={() => setIsActive(!isActive)}>
+          <button
+            className={`${styles.hamburger} ${styles.hamburgerSqueeze} ${
+              isActive ? styles.isActive : ""
+            } p-2`}
+            type="button"
+            title="hamburger"
+            aria-label="menu"
+          >
+            <span className={styles.hamburgerBox}>
+              <span className={styles.hamburgerInner}></span>
+            </span>
+          </button>
+        </li>
+      </ul>
       <div
         className={`${isActive ? "block" : "hidden"} ${
           styles.navbarMobile
@@ -38,6 +42,6 @@ export default function Hamburger() {
           ))}
         </ul>
       </div>
-    </div>
+    </li>
   );
 }

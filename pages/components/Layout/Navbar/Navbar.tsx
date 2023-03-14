@@ -18,19 +18,21 @@ export default function Navbar() {
         <li className="flex-1">
           <Link href="/" className="font-bold text-3xl inline-block p-2">
             <h1
-              className={`${styles.logo} relative flex items-baseline before:bg-neutral-200`}
+              className={`${styles.logo} relative flex items-baseline before:bg-primary before:outline-1 before:outline`}
             >
               bllakcn
             </h1>
           </Link>
         </li>
-        <ul className="hidden sm:flex gap-6">
-          {navigation.map(({ link, content, icon, id }) => (
-            <li key={id}>
-              <NavbarLink link={link} content={content} Icon={icon} />
-            </li>
-          ))}
-        </ul>
+        <li>
+          <ul className="hidden sm:flex gap-6">
+            {navigation.map(({ link, content, icon, id }) => (
+              <li key={id}>
+                <NavbarLink link={link} content={content} Icon={icon} />
+              </li>
+            ))}
+          </ul>
+        </li>
         <Hamburger />
       </ul>
     </nav>

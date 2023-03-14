@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+root {
+  --primary-color: rgb(71, 95, 230);
+}
+
 body {
   scrollbar-width: none;
   scroll-behavior: smooth;

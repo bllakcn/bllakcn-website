@@ -1,14 +1,14 @@
 .navbar {
   background: rgba(82, 82, 82, 0.35);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(6.4px);
+  backdrop-filter: blur(6.4px);
 }
 .navbarMobile {
   background: rgba(38, 38, 38, 0.9);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.4px);
   -webkit-backdrop-filter: blur(6.4px);
+  backdrop-filter: blur(6.4px);
 }
 .logo::before {
   --box-size: 23px;
@@ -16,7 +16,7 @@
   width: var(--box-size);
   height: var(--box-size);
   border-radius: 3px;
-  margin-right: 2px;
+  margin-right: 4px;
   transition: opacity 0.2s ease;
   opacity: 0;
 }
@@ -44,12 +44,13 @@
   border: 0;
   margin: 0;
   overflow: visible;
-  --hamburger-color: #e5e5e5;
+  --hamburger-color: rgb(229, 229, 229);
+  --hamburgerActive-color: rgb(60, 80, 200);
 }
 .hamburger.isActive .hamburgerInner,
 .hamburger.isActive .hamburgerInner::before,
 .hamburger.isActive .hamburgerInner::after {
-  background-color: var(--hamburger-color);
+  background-color: var(--hamburgerActive-color);
 }
 .hamburgerBox {
   width: 40px;

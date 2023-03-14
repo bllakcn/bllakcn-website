@@ -10,11 +10,11 @@ type NavbarLinkProps = {
 export default function NavbarLink({ link, content, Icon }: NavbarLinkProps) {
   return (
     <Link
-      className={`py-4 sm:py-3 px-4 text-lg hover:text-neutral-50 flex gap-2 items-center justify-center`}
+      className={`py-4 sm:py-3 px-4 text-lg font-bold flex gap-2 items-center justify-center hover:text-primary`}
       href={link}
       passHref
     >
-      <Icon />
+      <Icon className="stroke-2" />
       {content}
     </Link>
   );
