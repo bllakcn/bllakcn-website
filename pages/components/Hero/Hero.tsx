@@ -15,18 +15,18 @@ export default function Hero() {
         <Card>
           <div className="flex flex-col sm:flex-row justify-start gap-8 items-center">
             <Image
-              className="rounded-full h-auto w-36 max-w-xs border border-primary"
+              className="rounded-full h-auto w-36 max-w-xs"
               src={"/avatar.jpg"}
               alt="avatar"
               width={150}
               height={150}
             />
-            <div className="text-5xl font-normal">
+            <div className="text-5xl sm:text-6xl font-normal">
               <h2>
                 Hi, I&apos;m{" "}
                 <span className="font-bold text-primary">Bilal</span>
               </h2>
-              <p className="text-xl whitespace-nowrap font-normal italic text-neutral-500 px-1">
+              <p className="text-xl sm:text-2xl whitespace-nowrap font-normal italic text-neutral-500 px-1">
                 &#47;&#47; I develop user interfaces
               </p>
             </div>

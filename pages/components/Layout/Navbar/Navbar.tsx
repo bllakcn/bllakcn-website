@@ -12,7 +12,7 @@ export const navigation = [
 export default function Navbar() {
   return (
     <nav
-      className={`fixed w-full h-24 z-20 flex items-center justify-center ${styles.navbar}`}
+      className={`fixed w-full shadow-lg h-14 sm:h-24 z-20 flex items-center justify-center ${styles.navbar}`}
     >
       <ul className="flex w-full justify-between items-center flex-row max-w-7xl px-6 md:px-8 lg:px-10">
         <li className="flex-1">
