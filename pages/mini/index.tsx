@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { dmSans } from "../_app";
 import styles from "./index.module.css";
 import SocialMedia from "./SocialMedia";
@@ -25,11 +26,16 @@ export default function Mini() {
         </h2>
         <p className="font-mono text-xl">{"// I develop user interfaces"}</p>
       </div>
-      <div className="py-5">
-        <h3 className="px-6 font-bold text-xl">Quick info</h3>
+      <div className="border-l pb-24 border-neutral-400 ml-3">
+        <h3 className="px-3 pb-4 pt-2 font-bold text-xl">Quick info</h3>
         <Technologies />
         <SocialMedia />
       </div>
+      <Link className="ml-3 -mt-3" href={"/"}>
+        <h5 className="font-bold text-lg p-3 border text-primary border-neutral-400 shadow-black rounded-lg">
+          Go to main website
+        </h5>
+      </Link>
     </main>
   );
 }

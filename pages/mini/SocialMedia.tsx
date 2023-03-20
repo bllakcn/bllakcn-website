@@ -9,12 +9,12 @@ import {
 
 export default function SocialMedia() {
   return (
-    <div className="px-2 w-full">
-      <div className="flex gap-2 justify-start items-baseline p-4">
+    <div className="pl-3 w-full">
+      <div className="flex gap-2 justify-start items-baseline p-2">
         <SlPaperPlane className="" />
         <h3 className="tracking-widest">contact me</h3>
       </div>
-      <ul className="flex p-2 gap-4">
+      <ul className="flex gap-2 opacity-90 px-4 py-2">
         <li>
           <Link href="https://www.instagram.com/bllakcn/" target="_blank">
             <SlSocialInstagram className="w-5 h-5" />

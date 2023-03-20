@@ -24,17 +24,17 @@ const technologies = {
 
 export default function Technologies() {
   return (
-    <div className="px-2 w-full">
-      <div className="py-1">
-        <div className="flex gap-2 justify-start items-baseline p-4">
+    <div className="pl-3 w-full">
+      <div className="pb-2">
+        <div className="flex gap-2 justify-start items-baseline p-2">
           <SlLike className="" />
           <h3 className="tracking-widest">developing with</h3>
         </div>
-        <ul className="flex flex-wrap gap-2 opacity-90 p-2">
+        <ul className="flex gap-2 opacity-90 px-4 py-2">
           {technologies.development.map((tech) => (
             <li key={tech.name}>
               <Image
-                className=""
+                className="saturate-50"
                 src={tech.icon}
                 alt={tech.name}
                 width={30}
@@ -44,8 +44,8 @@ export default function Technologies() {
           ))}
         </ul>
       </div>
-      <div className="py-1">
-        <div className="flex gap-2 justify-start items-baseline p-4">
+      <div className="pb-2">
+        <div className="flex gap-2 opacity-90 p-2">
           <SlLike className="" />
           <h3 className="tracking-widest">creating content with</h3>
         </div>
@@ -53,7 +53,7 @@ export default function Technologies() {
           {technologies.content.map((tech) => (
             <li key={tech.name}>
               <Image
-                className=""
+                className="saturate-50"
                 src={tech.icon}
                 alt={tech.name}
                 width={30}
