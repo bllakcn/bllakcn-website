@@ -19,7 +19,7 @@ export default function Mini() {
       >
         bllakcn
       </h1>
-      <div className="text-center px-2 pt-6 pb-12">
+      <div className="px-1 pt-6 pb-12">
         <h2 className="text-6xl">
           Hi, I&apos;m{" "}
           <span className="font-bold text-primary text-7xl">Bilal</span>

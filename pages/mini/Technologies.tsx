@@ -30,11 +30,11 @@ export default function Technologies() {
           <SlLike className="" />
           <h3 className="tracking-widest">developing with</h3>
         </div>
-        <ul className="flex gap-2 opacity-90 px-4 py-2">
+        <ul className="flex gap-2 px-4 py-2">
           {technologies.development.map((tech) => (
             <li key={tech.name}>
               <Image
-                className="saturate-50"
+                className=""
                 src={tech.icon}
                 alt={tech.name}
                 width={30}
@@ -45,11 +45,11 @@ export default function Technologies() {
         </ul>
       </div>
       <div className="pb-2">
-        <div className="flex gap-2 opacity-90 p-2">
+        <div className="flex gap-2 p-2">
           <SlLike className="" />
           <h3 className="tracking-widest">creating content with</h3>
         </div>
-        <ul className="flex gap-2 opacity-90 p-2">
+        <ul className="flex gap-2 p-2">
           {technologies.content.map((tech) => (
             <li key={tech.name}>
               <Image
