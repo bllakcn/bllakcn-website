@@ -17,7 +17,7 @@ export default function ThemeSwitcher() {
 
   return (
     <Switch
-      size="lg"
+      size="md"
       color="default"
       defaultSelected={theme === "dark"}
       startContent={<SunMedium />}
