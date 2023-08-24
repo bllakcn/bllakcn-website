@@ -1,8 +1,0 @@
-.main {
-  background-image: radial-gradient(
-    rgba(160, 160, 160, 0.5) 1.75px,
-    rgb(66, 66, 66) 1.75px
-  );
-  background-size: 35px 35px;
-  background-attachment: fixed;
-}

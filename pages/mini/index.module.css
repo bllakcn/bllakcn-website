@@ -1,9 +1,0 @@
-.logo::before {
-  --box-size: 15px;
-  content: "";
-  width: var(--box-size);
-  height: var(--box-size);
-  border-radius: 3px;
-  margin-right: 4px;
-  transition: opacity 0.2s ease;
-}
