@@ -1,0 +1,11 @@
+.dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: full;
+  height: 420px;
+  background: radial-gradient(#9e9eaad2 1px, transparent 1px);
+  -webkit-mask: radial-gradient(#000000, transparent);
+  mask: radial-gradient(#000000, transparent);
+  background-size: 30px 30px;
+}

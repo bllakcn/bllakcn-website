@@ -22,8 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Providers>
           <NavbarComponent />
-          {/* <ThemeSwitcher /> */}
-          <main>{children}</main>
+          <main className="max-w-7xl mx-auto">{children}</main>
         </Providers>
       </body>
     </html>
