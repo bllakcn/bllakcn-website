@@ -18,7 +18,7 @@ export default function ThemeSwitcher() {
       {mounted ? (
         <Switch
           size="md"
-          color="default"
+          color="primary"
           defaultSelected={theme === "dark"}
           startContent={<SunMedium />}
           endContent={<Moon />}
