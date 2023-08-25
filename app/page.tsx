@@ -2,13 +2,17 @@ import { allPosts } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import CVSection from "@/components/CVSection/CVSection";
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
   return (
-    <HeroSection />
+    <>
+      <HeroSection />
+      <CVSection />
+    </>
     // <div className="prose dark:prose-invert">
     //   {allPosts.map((post) => (
     //     <article key={post._id}>

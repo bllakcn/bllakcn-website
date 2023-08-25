@@ -13,16 +13,18 @@ export default function ThemeSwitcher() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
-
   return (
-    <Switch
-      size="md"
-      color="default"
-      defaultSelected={theme === "dark"}
-      startContent={<SunMedium />}
-      endContent={<Moon />}
-      onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-    />
+    <>
+      {mounted ? (
+        <Switch
+          size="md"
+          color="default"
+          defaultSelected={theme === "dark"}
+          startContent={<SunMedium />}
+          endContent={<Moon />}
+          onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
+        />
+      ) : null}
+    </>
   );
 }
