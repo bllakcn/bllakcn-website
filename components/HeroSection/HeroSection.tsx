@@ -14,8 +14,8 @@ export default function HeroSection() {
       className={`px-4 py-36 relative ${styles.dot}`}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: -20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex mx-auto justify-stretch items-center py-12 max-w-3xl"
       >
