@@ -70,6 +70,9 @@ dependencies:
     version: 5.0.4
 
 devDependencies:
+  prettier:
+    specifier: ^3.0.2
+    version: 3.0.2
   prettier-plugin-tailwindcss:
     specifier: ^0.5.3
     version: 0.5.3(prettier@3.0.2)

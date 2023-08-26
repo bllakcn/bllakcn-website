@@ -2,6 +2,7 @@ import "./globals.css";
 import { Outfit } from "next/font/google";
 import { Providers } from "./providers";
 import NavbarComponent from "@/components/Navbar/Navbar";
+import FooterComponent from "@/components/Footer/Footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -18,11 +19,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen text-foreground bg-background ${outfit.className}`}
+        className={`min-h-screen bg-background text-foreground antialiased ${outfit.className}`}
       >
         <Providers>
           <NavbarComponent />
-          <main className="max-w-7xl mx-auto">{children}</main>
+          <main className="mx-auto max-w-7xl">{children}</main>
+          <FooterComponent />
         </Providers>
       </body>
     </html>

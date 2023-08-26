@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Switch } from "@nextui-org/react";
-import { SunMedium, Moon } from "lucide-react";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -20,8 +20,8 @@ export default function ThemeSwitcher() {
           size="md"
           color="primary"
           defaultSelected={theme === "dark"}
-          startContent={<SunMedium />}
-          endContent={<Moon />}
+          startContent={<IoSunnyOutline />}
+          endContent={<IoMoonOutline />}
           onChange={() => setTheme(theme === "dark" ? "light" : "dark")}
         />
       ) : null}
