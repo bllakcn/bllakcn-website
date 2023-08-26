@@ -11,20 +11,21 @@ export default function BlogPage() {
   const blogs = allBlogs.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
+
   return (
     <section className="px-4 py-36">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="py-12 max-w-3xl"
+        className="py-6 max-w-3xl"
       >
         <h2 className="text-5xl font-medium pb-6">Blog Posts</h2>
         <ul className="flex flex-col gap-5">
           {blogs.map((post, index) => (
             <li key={post._id}>
               <Link
-                className="flex items-baseline gap-2"
+                className="flex justify-between items-baseline gap-2"
                 href={post.slug}
                 color="foreground"
                 as={NextLink}
