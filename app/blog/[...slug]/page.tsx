@@ -26,14 +26,12 @@ export async function generateMetadata({
 }: BlogProps): Promise<Metadata> {
   const blog = await getPostFromParams(params);
 
-  if (!blog) {
-    return {};
-  }
-
-  return {
-    title: blog.title,
-    description: blog.description,
-  };
+  return blog
+    ? {
+        title: blog.title,
+        description: blog.description,
+      }
+    : {};
 }
 
 export async function generateStaticParams(): Promise<BlogProps["params"][]> {

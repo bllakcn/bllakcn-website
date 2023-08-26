@@ -1,11 +1,11 @@
 import HeroSection from "@/components/HeroSection/HeroSection";
-import CVSection from "@/components/CVSection/CVSection";
+import QuickBio from "@/components/QuickBio/QuickBio";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <CVSection />
+      <QuickBio />
     </>
   );
 }
