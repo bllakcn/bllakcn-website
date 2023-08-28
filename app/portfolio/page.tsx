@@ -1,31 +1,34 @@
 "use client";
-import react from "@/public/tech/react.svg";
-import next from "@/public/tech/next.svg";
-import html from "@/public/tech/html.svg";
-import css from "@/public/tech/css.svg";
-import js from "@/public/tech/js.svg";
-import ts from "@/public/tech/ts.svg";
-import fast from "@/public/tech/fast.svg";
-import python from "@/public/tech/python.svg";
-import tailwind from "@/public/tech/tailwind.svg";
-import sass from "@/public/tech/sass.svg";
-import Image from "next/image";
+
 import line from "@/public/line.svg";
+import CssSvg from "@/components/TechStack/Css";
+import FastSvg from "@/components/TechStack/Fast";
+import HtmlSvg from "@/components/TechStack/Html";
+import JsSvg from "@/components/TechStack/Js";
+import NextSvg from "@/components/TechStack/Next";
+import PythonSvg from "@/components/TechStack/Python";
+import ReactSvg from "@/components/TechStack/React";
+import SassSvg from "@/components/TechStack/Sass";
+import TailwindSvg from "@/components/TechStack/Tailwind";
+import TsSvg from "@/components/TechStack/Ts";
+import { useTheme } from "next-themes";
+import { cloneElement } from "react";
 
 const tools = [
-  { name: "HTML", icon: html },
-  { name: "CSS", icon: css },
-  { name: "Javascript", icon: js },
-  { name: "Sass", icon: sass },
-  { name: "React", icon: react },
-  { name: "Tailwind", icon: tailwind },
-  { name: "Typescript", icon: ts },
-  { name: "Nextjs", icon: next },
-  { name: "Python", icon: python },
-  { name: "FastAPI", icon: fast },
+  { name: "HTML", icon: <HtmlSvg /> },
+  { name: "CSS", icon: <CssSvg /> },
+  { name: "Javascript", icon: <JsSvg /> },
+  { name: "Sass", icon: <SassSvg /> },
+  { name: "React", icon: <ReactSvg /> },
+  { name: "Tailwindcss", icon: <TailwindSvg /> },
+  { name: "Typescript", icon: <TsSvg /> },
+  { name: "Next.js", icon: <NextSvg /> },
+  { name: "Python", icon: <PythonSvg /> },
+  { name: "FastAPI", icon: <FastSvg /> },
 ];
 
 export default function Portfolio() {
+  const { theme } = useTheme();
   return (
     <section className="px-4 py-9 sm:py-36">
       <div className="max-w-5xl py-6">
@@ -40,12 +43,15 @@ export default function Portfolio() {
             className={`relative mx-auto my-5 flex max-w-xs flex-col overflow-hidden bg-no-repeat px-7`}
           >
             {tools.map((tool, index) => (
-              <li className=" flex w-full even:justify-end" key={index}>
-                <Image
-                  className="h-24 w-24 saturate-0 transition-all hover:saturate-100"
-                  src={tool.icon}
-                  alt={tool.name}
-                />
+              <li className=" flex w-full flex-col even:items-end" key={index}>
+                {cloneElement(tool.icon, {
+                  stroke: theme === "dark" ? "#fff" : "",
+                  className:
+                    "h-24 w-24 peer transition-all hover:saturate-100 saturate-0",
+                })}
+                <span className="-mt-4 w-24 text-center font-medium peer-hover:opacity-100 sm:opacity-0 sm:transition-opacity">
+                  {tool.name}
+                </span>
               </li>
             ))}
           </ul>
