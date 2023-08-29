@@ -1,6 +1,7 @@
 "use client";
 
 import line from "@/public/line.svg";
+import Line from "./Line";
 import CssSvg from "./TechStack/Css";
 import FastSvg from "./TechStack/Fast";
 import HtmlSvg from "./TechStack/Html";
@@ -31,23 +32,25 @@ export default function TechJourney() {
   const { theme } = useTheme();
 
   return (
-    <div className="py-2">
-      <h3 className="text-center text-2xl">My Tech Journey</h3>
+    <div className="relative">
+      <h3 className="text-center text-2xl sm:text-left">My Tech Journey</h3>
       <ul
-        style={{
-          backgroundImage: `url(${line.src})`,
-          backgroundSize: "100% 100%",
-        }}
-        className={`relative mx-auto my-5 flex max-w-xs flex-col overflow-hidden bg-no-repeat px-7`}
+        className={`relative mx-auto my-5 flex flex-col px-7 sm:flex-row sm:flex-wrap`}
       >
+        <li>
+          <Line className="absolute left-1/3 top-0 h-full sm:hidden" />
+        </li>
         {tools.map((tool, index) => (
-          <li className=" flex w-full flex-col even:items-end" key={index}>
+          <li
+            className="relative flex flex-1 items-center justify-start odd:flex-row-reverse sm:flex-col sm:items-center sm:justify-center sm:odd:flex-col"
+            key={index}
+          >
             {cloneElement(tool.icon, {
               stroke: theme === "dark" ? "#fff" : "",
               className:
-                "h-24 w-24 peer transition-all hover:saturate-100 saturate-0",
+                "h-24 w-24 sm:w-auto sm:h-auto peer transition-all hover:saturate-100 saturate-0",
             })}
-            <span className="-mt-4 w-24 text-center font-medium peer-hover:opacity-100 sm:opacity-0 sm:transition-opacity">
+            <span className="text-center font-medium peer-hover:opacity-100 sm:opacity-0 sm:transition-opacity">
               {tool.name}
             </span>
           </li>
