@@ -1,6 +1,5 @@
 "use client";
 
-import line from "@/public/line.svg";
 import Line from "./Line";
 import CssSvg from "./TechStack/Css";
 import FastSvg from "./TechStack/Fast";
@@ -13,6 +12,7 @@ import SassSvg from "./TechStack/Sass";
 import TailwindSvg from "./TechStack/Tailwind";
 import TsSvg from "./TechStack/Ts";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 import { cloneElement } from "react";
 
 const tools = [
@@ -32,7 +32,11 @@ export default function TechJourney() {
   const { theme } = useTheme();
 
   return (
-    <div className="relative">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h3 className="text-center text-2xl sm:text-left">My Tech Journey</h3>
       <ul
         className={`relative mx-auto my-5 flex flex-col px-7 sm:flex-row sm:flex-wrap`}
@@ -56,6 +60,6 @@ export default function TechJourney() {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }
