@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "@nextui-org/link";
 import { IoArrowForward } from "react-icons/io5";
 import ReactSvg from "../Portfolio/TechStack/React";
@@ -8,6 +10,7 @@ import TailwindSvg from "../Portfolio/TechStack/Tailwind";
 import NextLink from "next/link";
 import { Fragment, cloneElement } from "react";
 import { randomInt } from "crypto";
+import { useTheme } from "next-themes";
 
 const tools = [
   { name: "Tailwindcss", icon: <TailwindSvg /> },
@@ -17,6 +20,8 @@ const tools = [
 ];
 
 export default function QuickBio() {
+  const { theme } = useTheme();
+
   return (
     <section className="flex items-center px-4 py-36 pt-0 sm:pt-36">
       <div className="max-w-3xl py-12">
@@ -43,7 +48,8 @@ export default function QuickBio() {
         {tools.map((tool, index) => (
           <Fragment key={index}>
             {cloneElement(tool.icon, {
-              className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all`,
+              stroke: theme === "dark" ? "#fff" : "",
+              className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all rounded-full`,
             })}
           </Fragment>
         ))}
