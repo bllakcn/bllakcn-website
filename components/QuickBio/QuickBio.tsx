@@ -56,7 +56,7 @@ export default function QuickBio() {
           {tools.map((tool, index) => (
             <Fragment key={index}>
               {cloneElement(tool.icon, {
-                stroke: theme === "dark" ? "#fff" : "",
+                stroke: theme === "dark" ? "#fff" : "#000",
                 className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all rounded-full`,
               })}
             </Fragment>

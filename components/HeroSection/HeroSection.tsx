@@ -3,7 +3,7 @@
 import Image from "next/image";
 import profilePic from "@/public/avatar.jpg";
 import styles from "./HeroSection.module.css";
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { RoughNotation } from "react-rough-notation";
 import { useState } from "react";
 
@@ -31,10 +31,10 @@ export default function HeroSection() {
             type="highlight"
             padding={1}
             animationDelay={500}
-            color="yellow"
+            color="gold"
             show={isNotationVisible}
           >
-            <h3 className="my-5 inline-block text-3xl font-bold italic text-[#11181C]">
+            <h3 className="my-5 inline-block bg-clip-text text-3xl font-bold italic text-overlay">
               Web Developer
             </h3>
           </RoughNotation>
