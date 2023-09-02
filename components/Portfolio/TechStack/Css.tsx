@@ -1,7 +1,17 @@
-import { SVGProps } from "react";
+"use client";
 
-const CssSvg = ({ stroke, ...props }: SVGProps<SVGSVGElement>) => {
-  if (!stroke) stroke = "#231f20";
+import { SVGProps, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+const CssSvg = ({ ...props }: SVGProps<SVGSVGElement>) => {
+  const { theme } = useTheme();
+  const [stroke, setStroke] = useState("#fff");
+
+  useEffect(() => {
+    if (theme === "light") {
+      setStroke("#231f20");
+    }
+  }, [theme]);
 
   return (
     <svg

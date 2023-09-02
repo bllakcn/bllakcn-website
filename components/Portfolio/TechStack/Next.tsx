@@ -1,8 +1,19 @@
-import { SVGProps } from "react";
+"use client";
 
-const NextSvg = ({ stroke, fill, ...props }: SVGProps<SVGSVGElement>) => {
-  if (stroke) fill = "#ccc";
-  if (!stroke) stroke = "#231f20";
+import { SVGProps, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+const NextSvg = ({ ...props }: SVGProps<SVGSVGElement>) => {
+  const { theme } = useTheme();
+  const [stroke, setStroke] = useState("#fff");
+  const [fill, setFill] = useState("#fff");
+
+  useEffect(() => {
+    if (theme === "light") {
+      setStroke("#231f20");
+      setFill("#ccc");
+    }
+  }, [theme]);
 
   return (
     <svg
@@ -17,7 +28,7 @@ const NextSvg = ({ stroke, fill, ...props }: SVGProps<SVGSVGElement>) => {
           stroke: stroke,
           strokeMiterlimit: 10,
           strokeWidth: 2,
-          fill: fill ? fill : stroke,
+          fill: fill,
         }}
       />
       <path
@@ -26,7 +37,7 @@ const NextSvg = ({ stroke, fill, ...props }: SVGProps<SVGSVGElement>) => {
           stroke: stroke,
           strokeMiterlimit: 10,
           strokeWidth: 2,
-          fill: fill ? fill : stroke,
+          fill: fill,
         }}
       />
     </svg>

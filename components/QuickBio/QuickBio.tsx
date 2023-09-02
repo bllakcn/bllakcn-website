@@ -56,8 +56,7 @@ export default function QuickBio() {
           {tools.map((tool, index) => (
             <Fragment key={index}>
               {cloneElement(tool.icon, {
-                stroke: theme === "dark" ? "#fff" : "#000",
-                className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all rounded-full`,
+                className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all`,
               })}
             </Fragment>
           ))}
@@ -67,6 +66,7 @@ export default function QuickBio() {
           type="underline"
           show={isNotationVisible}
           animationDelay={500}
+          animationDuration={300}
         >
           <h4 className="text-lg italic">My go-to stack</h4>
         </RoughNotation>

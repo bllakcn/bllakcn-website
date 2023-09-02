@@ -1,7 +1,17 @@
-import { SVGProps } from "react";
+"use client";
 
-const TailwindSvg = ({ stroke, ...props }: SVGProps<SVGSVGElement>) => {
-  if (!stroke) stroke = "#231f20";
+import { useTheme } from "next-themes";
+import { SVGProps, useEffect, useState } from "react";
+
+const TailwindSvg = ({ ...props }: SVGProps<SVGSVGElement>) => {
+  const { theme } = useTheme();
+  const [stroke, setStroke] = useState("#fff");
+
+  useEffect(() => {
+    if (theme === "light") {
+      setStroke("#231f20");
+    }
+  }, [theme]);
 
   return (
     <svg

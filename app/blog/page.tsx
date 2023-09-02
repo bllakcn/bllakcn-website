@@ -13,7 +13,7 @@ export default function BlogPage() {
   );
 
   return (
-    <section className="px-4 py-9 sm:py-36">
+    <section className="min-h-screen px-4 py-9 sm:py-36">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

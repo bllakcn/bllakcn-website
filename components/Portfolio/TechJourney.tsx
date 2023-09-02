@@ -11,7 +11,6 @@ import ReactSvg from "./TechStack/React";
 import SassSvg from "./TechStack/Sass";
 import TailwindSvg from "./TechStack/Tailwind";
 import TsSvg from "./TechStack/Ts";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { cloneElement } from "react";
 
@@ -29,8 +28,6 @@ const tools = [
 ];
 
 export default function TechJourney() {
-  const { theme } = useTheme();
-
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -50,7 +47,6 @@ export default function TechJourney() {
             key={index}
           >
             {cloneElement(tool.icon, {
-              stroke: theme === "dark" ? "#fff" : "",
               className:
                 "h-24 w-24 sm:w-auto sm:h-auto peer transition-all hover:saturate-100 saturate-0",
             })}
