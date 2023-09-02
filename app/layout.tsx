@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`min-h-screen bg-background text-foreground antialiased ${outfit.className}`}
+        className={`min-h-screen bg-background text-foreground antialiased transition-colors ${outfit.className}`}
       >
         <Providers>
           <NavbarComponent />

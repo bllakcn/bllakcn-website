@@ -46,7 +46,7 @@ export default function QuickBio() {
           <br />I enjoy photography, videography and coffee making in spare
           time.
         </p>
-        <Link isBlock href="/portfolio" as={NextLink}>
+        <Link href="/portfolio" as={NextLink}>
           <p>Get to know more</p>
           <IoArrowForward size="16" className="pt-1" strokeWidth="2" />
         </Link>

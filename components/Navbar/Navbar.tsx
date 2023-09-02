@@ -27,7 +27,7 @@ export default function NavbarComponent() {
     <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
       <NavbarBrand>
         <Link
-          className="text-foreground text-4xl font-bold"
+          className="text-4xl font-bold text-foreground"
           href="/"
           as={NextLink}
         >
