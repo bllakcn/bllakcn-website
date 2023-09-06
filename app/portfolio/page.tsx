@@ -1,4 +1,5 @@
 import TechJourney from "@/components/Portfolio/TechJourney";
+import Showcase from "@/components/Portfolio/Showcase";
 
 export default function Portfolio() {
   return (
@@ -6,6 +7,7 @@ export default function Portfolio() {
       <div className="py-6">
         <h2 className="pb-6 text-5xl font-medium">Portfolio</h2>
         <TechJourney />
+        <Showcase />
       </div>
     </section>
   );
