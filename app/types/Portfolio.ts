@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { FC, SVGProps } from "react";
 
 export type Project = {
   id: number;
@@ -6,7 +7,7 @@ export type Project = {
   description: string;
   image: StaticImageData;
   link: string;
-  technologies: string[];
+  technologies: FC<SVGProps<SVGSVGElement>>[];
   github: string;
   date: string;
 };

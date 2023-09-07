@@ -4,6 +4,13 @@ import { Project } from "@/app/types/Portfolio";
 import ProjectShowcase from "./ProjectShowcase";
 import { motion } from "framer-motion";
 import ColPalImage from "@/public/projects/colpal.jpg";
+import PostitImage from "@/public/projects/postit.jpg";
+import ReactSvg from "./TechStack/React";
+import SassSvg from "./TechStack/Sass";
+import TailwindSvg from "./TechStack/Tailwind";
+import TsSvg from "./TechStack/Ts";
+import JsSvg from "./TechStack/Js";
+import NextSvg from "./TechStack/Next";
 
 const projects: Project[] = [
   {
@@ -15,7 +22,17 @@ const projects: Project[] = [
     link: "https://colpal-generatecolors.netlify.app/",
     date: "January 2023",
     github: "https://github.com/bllakcn/color-palette-generator",
-    technologies: ["React", "Javascript", "Sass"],
+    technologies: [ReactSvg, JsSvg, SassSvg],
+  },
+  {
+    id: 2,
+    title: "Postit",
+    description: "Post and comment on posts",
+    image: PostitImage,
+    link: "https://postit-jet.vercel.app/",
+    date: "March 2023",
+    github: "https://github.com/bllakcn/postit",
+    technologies: [NextSvg, TsSvg, TailwindSvg],
   },
 ];
 
@@ -27,9 +44,11 @@ export default function Showcase() {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-center text-2xl sm:text-left">Showcase</h3>
-      {projects.map((project) => (
-        <ProjectShowcase {...project} key={project.id} />
-      ))}
+      <div className="grid grid-cols-1 gap-2 py-1 sm:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectShowcase {...project} key={project.id} />
+        ))}
+      </div>
     </motion.div>
   );
 }
