@@ -10,6 +10,8 @@ const PythonSvg = ({ ...props }: SVGProps<SVGSVGElement>) => {
   useEffect(() => {
     if (theme === "light") {
       setStroke("#231f20");
+    } else {
+      setStroke("#fff");
     }
   }, [theme]);
 

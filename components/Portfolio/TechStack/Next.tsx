@@ -12,6 +12,9 @@ const NextSvg: FC<SVGProps<SVGSVGElement>> = ({ ...props }) => {
     if (theme === "light") {
       setStroke("#231f20");
       setFill("#ccc");
+    } else {
+      setStroke("#fff");
+      setFill("#fff");
     }
   }, [theme]);
 

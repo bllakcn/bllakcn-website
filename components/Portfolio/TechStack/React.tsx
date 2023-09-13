@@ -10,6 +10,8 @@ const ReactSvg: FC<SVGProps<SVGSVGElement>> = ({ ...props }) => {
   useEffect(() => {
     if (theme === "light") {
       setStroke("#231f20");
+    } else {
+      setStroke("#fff");
     }
   }, [theme]);
 

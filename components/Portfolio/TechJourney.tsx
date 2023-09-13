@@ -34,10 +34,12 @@ export default function TechJourney() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h3 className="text-center text-2xl sm:text-left">My Tech Journey</h3>
-      <p className="text-center font-thin italic tracking-wide sm:text-left">
+      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+        My Tech Journey
+      </h3>
+      <blockquote className="font-thin italic tracking-wide">
         Technologies I&apos;ve worked with so far
-      </p>
+      </blockquote>
       <ul
         className={`relative mx-auto my-5 flex flex-col px-7 sm:flex-row sm:flex-wrap`}
       >

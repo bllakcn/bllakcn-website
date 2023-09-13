@@ -43,8 +43,10 @@ export default function Showcase() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h3 className="text-center text-2xl sm:text-left">Showcase</h3>
-      <div className="grid grid-cols-1 gap-2 py-1 sm:grid-cols-3">
+      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+        Showcase
+      </h3>
+      <div className="grid grid-cols-1 gap-2 py-4 sm:grid-cols-3">
         {projects.map((project) => (
           <ProjectShowcase {...project} key={project.id} />
         ))}

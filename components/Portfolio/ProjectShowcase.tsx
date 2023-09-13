@@ -3,7 +3,6 @@ import { Link } from "@nextui-org/react";
 import Image from "next/image";
 import NextLink from "next/link";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Chip } from "@nextui-org/chip";
 import { IoLogoGithub, IoArrowForwardCircleSharp } from "react-icons/io5";
 
 export default function ProjectShowcase({
@@ -33,9 +32,10 @@ export default function ProjectShowcase({
         </Link>
         <div className="flex gap-2">
           {technologies.map((Tech, index) => (
-            <Chip key={index}>
-              <Tech className="h-10 w-10" />
-            </Chip>
+            <Tech
+              className="h-10 w-10 saturate-0 transition-all hover:saturate-100"
+              key={index}
+            />
           ))}
         </div>
         <Link as={NextLink} href={link} isExternal>
