@@ -8,7 +8,6 @@ import NextSvg from "../Portfolio/TechStack/Next";
 import TailwindSvg from "../Portfolio/TechStack/Tailwind";
 import NextLink from "next/link";
 import { Fragment, cloneElement, useState } from "react";
-import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 import { motion } from "framer-motion";
 
@@ -21,7 +20,6 @@ const tools = [
 
 export default function QuickBio() {
   const [isNotationVisible, setIsNotationVisible] = useState(false);
-  const { theme } = useTheme();
 
   return (
     <motion.section
@@ -29,11 +27,11 @@ export default function QuickBio() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       onAnimationComplete={() => setIsNotationVisible(true)}
-      className="flex items-center justify-around px-4 py-36 pt-0 sm:pb-36 sm:pt-16"
+      className="flex flex-col items-center justify-around px-4 pb-8 pt-0 sm:flex-row sm:py-36 sm:pb-36 sm:pt-16"
     >
       <div className="max-w-3xl py-12">
         <h2 className="pb-2 text-5xl font-medium">Quick Bio</h2>
-        <h4 className="py-6 text-lg italic">
+        <h4 className="pb-6 text-lg italic text-foreground-600">
           &quot;Architectural visionary turned self-taught web developer.&quot;
         </h4>
         <p className="pb-2 text-lg">
@@ -51,8 +49,8 @@ export default function QuickBio() {
           <IoArrowForward size="16" className="pt-1" strokeWidth="2" />
         </Link>
       </div>
-      <div className="hidden items-center px-12 sm:flex">
-        <div className="flex flex-col">
+      <div className="flex flex-col items-center px-12 sm:flex-row">
+        <div className="flex sm:flex-col">
           {tools.map((tool, index) => (
             <Fragment key={index}>
               {cloneElement(tool.icon, {

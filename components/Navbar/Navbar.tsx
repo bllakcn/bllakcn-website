@@ -37,7 +37,12 @@ export default function NavbarComponent() {
       <NavbarContent justify="end" className="hidden sm:flex">
         {navLinks.map((item) => (
           <NavbarItem key={item.name}>
-            <Link color="foreground" as={NextLink} href={item.href}>
+            <Link
+              color="foreground"
+              className="font-bold"
+              as={NextLink}
+              href={item.href}
+            >
               {item.name}
             </Link>
           </NavbarItem>

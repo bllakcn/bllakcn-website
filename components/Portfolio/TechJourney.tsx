@@ -37,7 +37,7 @@ export default function TechJourney() {
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
         My Tech Journey
       </h3>
-      <blockquote className="font-thin italic tracking-wide">
+      <blockquote className="font-thin italic tracking-wide text-foreground-600">
         Technologies I&apos;ve worked with so far
       </blockquote>
       <ul
