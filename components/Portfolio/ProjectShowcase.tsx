@@ -19,11 +19,11 @@ export default function ProjectShowcase({
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="italic">{description}</p>
       </CardHeader>
-      <CardBody className="h-full p-1">
+      <CardBody className="h-full justify-end p-1">
         <Image
           src={image}
           alt={title}
-          className="relative h-full justify-between rounded object-cover"
+          className="relative justify-between rounded object-cover"
         />
       </CardBody>
       <CardFooter className="justify-between">

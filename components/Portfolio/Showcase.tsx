@@ -27,7 +27,8 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Postit",
-    description: "Post and comment on posts",
+    description:
+      "A mini social media app where you can post and comment on them.",
     image: PostitImage,
     link: "https://postit-jet.vercel.app/",
     date: "March 2023",

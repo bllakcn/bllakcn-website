@@ -17,32 +17,36 @@ export default function BlogPage() {
       <h2 className="scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl">
         Blog Posts
       </h2>
-      <motion.ul
-        className="flex flex-col gap-5"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        {blogs.map((post, index) => (
-          <li key={post._id}>
-            <Link
-              className="flex items-baseline justify-between gap-2"
-              href={post.slug}
-              color="foreground"
-              as={NextLink}
-            >
-              <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                {post.title}
-              </h3>
-              <time dateTime={post.date} className="text-xs text-primary">
-                {format(parseISO(post.date), "MMMM d, yyyy")}
-              </time>
-            </Link>
-            <p className="p-1">{post.description}</p>
-            {index !== blogs.length - 1 && <Divider />}
-          </li>
-        ))}
-      </motion.ul>
+      {blogs.length ? (
+        <motion.ul
+          className="flex flex-col gap-5"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {blogs.map((post, index) => (
+            <li key={post._id}>
+              <Link
+                className="flex items-baseline justify-between gap-2"
+                href={post.slug}
+                color="foreground"
+                as={NextLink}
+              >
+                <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+                  {post.title}
+                </h3>
+                <time dateTime={post.date} className="text-xs text-primary">
+                  {format(parseISO(post.date), "MMMM d, yyyy")}
+                </time>
+              </Link>
+              <p className="p-1">{post.description}</p>
+              {index !== blogs.length - 1 && <Divider />}
+            </li>
+          ))}
+        </motion.ul>
+      ) : (
+        <p>No blog posts yet!</p>
+      )}
     </section>
   );
 }

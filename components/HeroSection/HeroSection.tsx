@@ -43,6 +43,8 @@ export default function HeroSection() {
           className="w-1/2 rounded-full shadow-xl sm:w-1/4"
           alt="Avatar"
           src={profilePic}
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </motion.div>
     </motion.section>
