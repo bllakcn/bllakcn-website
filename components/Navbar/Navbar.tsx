@@ -12,7 +12,7 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -22,9 +22,30 @@ const navLinks = [
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolldown, setIsScrolldown] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 100) {
+        setIsScrolldown(true);
+      } else {
+        setIsScrolldown(false);
+      }
+    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <Navbar maxWidth="xl" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      maxWidth="xl"
+      onMenuOpenChange={setIsMenuOpen}
+      isBlurred={false}
+      isBordered={isScrolldown}
+    >
       <NavbarBrand>
         <Link
           className="text-4xl font-bold text-foreground"
@@ -64,6 +85,9 @@ export default function NavbarComponent() {
               </Link>
             </NavbarMenuItem>
           ))}
+          <NavbarMenuItem>
+            <ThemeSwitcher />
+          </NavbarMenuItem>
         </NavbarMenu>
       )}
     </Navbar>

@@ -15,7 +15,7 @@ export default function HeroSection() {
       initial={{ backgroundSize: "26px 26px" }}
       animate={{ backgroundSize: "30px 30px" }}
       transition={{ duration: 0.8 }}
-      className={`relative flex h-screen items-center px-4 py-9 sm:pb-36 sm:pt-16 ${styles.dot}`}
+      className={`relative flex h-screen items-center px-4 py-9 sm:px-12 sm:pb-36 sm:pt-16 ${styles.dot}`}
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
