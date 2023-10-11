@@ -1,9 +1,9 @@
 "use client";
 
-import { SVGProps, useEffect, useState } from "react";
+import { FC, SVGProps, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-const CssSvg = ({ ...props }: SVGProps<SVGSVGElement>) => {
+const CssSvg: FC<SVGProps<SVGSVGElement>> = ({ ...props }) => {
   const { theme } = useTheme();
   const [stroke, setStroke] = useState("#fff");
 
