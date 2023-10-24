@@ -25,6 +25,7 @@ const projects: Project[] = [
     date: "March 2023",
     github: "https://github.com/bllakcn/postit",
     technologies: [NextSvg, TsSvg, TailwindSvg],
+    info: "The backend is paused for now.",
   },
   {
     id: 2,

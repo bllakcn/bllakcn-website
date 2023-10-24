@@ -1,5 +1,5 @@
 import { Project } from "@/app/types/Portfolio";
-import { Link } from "@nextui-org/react";
+import { Link, Tooltip, Chip } from "@nextui-org/react";
 import Image from "next/image";
 import NextLink from "next/link";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
@@ -12,11 +12,23 @@ export default function ProjectShowcase({
   github,
   link,
   technologies,
+  info,
 }: Project) {
   return (
     <Card>
       <CardHeader className="flex flex-col items-start">
-        <h3 className="text-2xl font-bold">{title}</h3>
+        <span className="flex w-full items-center justify-between">
+          <h3 className="text-2xl font-bold">{title}</h3>
+          {info ? (
+            <>
+              <Tooltip showArrow content={info} color={"foreground"}>
+                <Chip className="select-none">!</Chip>
+              </Tooltip>
+            </>
+          ) : (
+            <></>
+          )}
+        </span>
         <p className="italic">{description}</p>
       </CardHeader>
       <CardBody className="h-full justify-end p-1">

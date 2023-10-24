@@ -10,4 +10,5 @@ export type Project = {
   technologies: FC<SVGProps<SVGSVGElement>>[];
   github: string;
   date: string;
+  info?: string;
 };

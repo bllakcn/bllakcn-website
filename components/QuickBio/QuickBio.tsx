@@ -27,7 +27,7 @@ export default function QuickBio() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
       onAnimationComplete={() => setIsNotationVisible(true)}
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.6 }}
       className="flex flex-col items-center justify-around px-4 pb-8 pt-0 sm:py-36 sm:pb-36 sm:pt-16 lg:flex-row"
     >
       <div className="max-w-3xl py-12">
