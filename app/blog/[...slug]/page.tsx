@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { allBlogs } from "contentlayer/generated";
 
+import { Divider } from "@nextui-org/divider";
 import { Metadata } from "next";
 import { Mdx } from "@/components/mdx-components";
 
@@ -48,15 +49,19 @@ export default async function PostPage({ params }: BlogProps) {
   }
 
   return (
-    <article className="prose px-2 py-6 dark:prose-invert xl:px-0">
-      <h1 className="mb-2">{blog.title}</h1>
+    <article className="px-4 py-9 sm:py-36">
+      <h2 className="scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl">
+        {blog.title}
+      </h2>
       {blog.description && (
         <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
           {blog.description}
         </p>
       )}
-      <hr className="my-4" />
-      <Mdx code={blog.body.code} />
+      <Divider className="my-4" />
+      <div className="prose dark:prose-invert">
+        <Mdx code={blog.body.code} />
+      </div>
     </article>
   );
 }
