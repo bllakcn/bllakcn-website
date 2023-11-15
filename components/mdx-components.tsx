@@ -1,6 +1,6 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { MDXComponents } from "mdx/types";
-import Image from "next/image";
+import { Image } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 
