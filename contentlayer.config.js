@@ -36,6 +36,13 @@ export const Blog = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    tags: {
+      type: "list",
+      of: {
+        type: "json",
+      },
+      required: true,
+    },
   },
   computedFields,
 }));

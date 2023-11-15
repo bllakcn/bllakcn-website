@@ -4,11 +4,18 @@ import { allBlogs } from "contentlayer/generated";
 import { Divider } from "@nextui-org/divider";
 import { Metadata } from "next";
 import { Mdx } from "@/components/mdx-components";
+import { Link } from "@nextui-org/Link";
+import { Button } from "@nextui-org/Button";
 
 interface BlogProps {
   params: {
     slug: string[];
   };
+}
+
+export interface Tag {
+  title: string;
+  slug: string;
 }
 
 async function getPostFromParams(params: BlogProps["params"]) {
@@ -57,6 +64,20 @@ export default async function PostPage({ params }: BlogProps) {
         <p className="mt-0 text-xl text-slate-700 dark:text-slate-200">
           {blog.description}
         </p>
+      )}
+      {blog.tags && (
+        <div className="mt-4 flex flex-wrap gap-1">
+          {blog.tags.map((tag: Tag) => (
+            <Button
+              as={Link}
+              size="sm"
+              href={`/blog?tag=${tag.slug}`}
+              key={tag.slug}
+            >
+              {tag.title}
+            </Button>
+          ))}
+        </div>
       )}
       <Divider className="my-4" />
       <div className="prose dark:prose-invert">

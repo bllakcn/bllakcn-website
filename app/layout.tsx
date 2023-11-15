@@ -8,7 +8,8 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "bllakcn",
-  description: "Web Dev Portfolio",
+  description:
+    "Explore Ahmet Bilal Akcan's web development portfolio. Discover the work of this self-taught developer with a background in architecture.",
 };
 
 interface RootLayoutProps {
