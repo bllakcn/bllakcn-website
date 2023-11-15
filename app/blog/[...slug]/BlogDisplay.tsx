@@ -1,7 +1,7 @@
 import { Divider } from "@nextui-org/divider";
 import { Mdx } from "@/components/mdx-components";
-import { Link } from "@nextui-org/Link";
-import { Button } from "@nextui-org/Button";
+import { Link } from "@nextui-org/link";
+import { Button } from "@nextui-org/button";
 import { Blog } from "@/.contentlayer/generated";
 import { Tag } from "./page";
 
