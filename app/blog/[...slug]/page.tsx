@@ -9,12 +9,6 @@ interface BlogProps {
   };
 }
 
-export interface Tag {
-  name: string;
-  slug: string;
-  components: string;
-}
-
 async function getPostFromParams(params: BlogProps["params"]) {
   const slug = params?.slug?.join("/");
   const blog = allBlogs.find((blog) => blog.slugAsParams === slug);

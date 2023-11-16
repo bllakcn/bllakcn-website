@@ -1,22 +1,41 @@
-"use client"
+"use client";
 
 import { Blog } from "@/.contentlayer/generated";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
-import { Divider } from "@nextui-org/react";
+import { Divider } from "@nextui-org/divider";
+import { Chip } from "@nextui-org/chip";
 import { format, parseISO } from "date-fns";
+import { IoClose } from "react-icons/io5";
 
 type BlogListDisplayProps = {
   blogs: Blog[];
-}
+  filterTag?: string | string[] | undefined;
+};
 
-export default function BlogListDisplay({blogs}: BlogListDisplayProps){
+export default function BlogListDisplay({
+  blogs,
+  filterTag,
+}: BlogListDisplayProps) {
   return (
     <section className="min-h-screen px-4 py-9 sm:py-36">
-      <h2 className="scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl">
-        Blog Posts
-      </h2>
+      <div className="flex items-baseline gap-14">
+        <h2 className="scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl">
+          Blog Posts
+        </h2>
+        {filterTag ? (
+          <div className="flex items-center gap-2">
+            <span className="text-lg font-semibold">Filter:</span>
+            <Chip>{filterTag}</Chip>
+            <Link as={NextLink} href="/blog" size="sm">
+              <IoClose />
+            </Link>
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
       {blogs.length ? (
         <motion.ul
           className="flex flex-col gap-5"
@@ -48,5 +67,5 @@ export default function BlogListDisplay({blogs}: BlogListDisplayProps){
         <p>No blog posts yet!</p>
       )}
     </section>
-  )
+  );
 }
