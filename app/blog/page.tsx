@@ -1,27 +1,21 @@
-"use client";
-
 import { allBlogs } from "@/.contentlayer/generated";
 import { compareDesc } from "date-fns";
 
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import { Tag } from "./[...slug]/page";
 import BlogListDisplay from "./BlogListDisplay";
 
-export default function BlogPage() {
-  const [blogs, setBlogs] = useState(
-    allBlogs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date))),
-  );
-  const searchParams = useSearchParams();
-  const tag = searchParams.get("tag");
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  let blogs = allBlogs.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
-  useEffect(() => {
-    if (!tag) return;
-    setBlogs(
-      blogs.filter((blog) => blog.tags.some((t: Tag) => t.slug === tag)),
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tag]);
+  const tag = searchParams?.tag;
+  if (tag){
+    // not working
+    blogs = blogs.filter((blog) => blog.tags.some((t: Tag) => t.slug === tag))
+  }
 
   return (
     <BlogListDisplay blogs={blogs}/>

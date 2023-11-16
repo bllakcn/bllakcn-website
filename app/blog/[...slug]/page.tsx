@@ -10,8 +10,9 @@ interface BlogProps {
 }
 
 export interface Tag {
-  title: string;
+  name: string;
   slug: string;
+  components: string;
 }
 
 async function getPostFromParams(params: BlogProps["params"]) {
@@ -51,7 +52,5 @@ export default async function PostPage({ params }: BlogProps) {
     notFound();
   }
 
-  return (
-    <BlogDisplay blog={blog}/>
-  );
+  return <BlogDisplay blog={blog} />;
 }

@@ -1,6 +1,10 @@
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource,
+} from "contentlayer/source-files";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -20,6 +24,24 @@ const options = {
   defaultLang: "plaintext",
 };
 
+const Tag = defineNestedType(() => ({
+  name: "Tag",
+  fields: {
+    name: {
+      type: "string",
+      required: true,
+    },
+    slug: {
+      type: "string",
+      required: true,
+    },
+    icon: {
+      type: "mdx",
+      required: true,
+    },
+  },
+}));
+
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
   filePathPattern: `blog/**/*.mdx`,
@@ -38,10 +60,7 @@ export const Blog = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: {
-        type: "json",
-      },
-      required: true,
+      of: Tag,
     },
   },
   computedFields,

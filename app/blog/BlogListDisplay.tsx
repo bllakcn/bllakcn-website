@@ -1,3 +1,5 @@
+"use client"
+
 import { Blog } from "@/.contentlayer/generated";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";

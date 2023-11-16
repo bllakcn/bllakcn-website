@@ -3,6 +3,8 @@ import type { MDXComponents } from "mdx/types";
 import { Image } from "@nextui-org/image";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
+import FastSvg from "./Portfolio/TechStack/Fast";
+import PythonSvg from "./Portfolio/TechStack/Python";
 
 const components: MDXComponents = {
   Image,
@@ -11,6 +13,8 @@ const components: MDXComponents = {
       {children}
     </Link>
   ),
+  FastSvg,
+  PythonSvg,
 };
 
 interface MdxProps {

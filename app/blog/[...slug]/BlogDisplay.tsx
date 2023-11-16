@@ -3,13 +3,12 @@ import { Mdx } from "@/components/mdx-components";
 import { Link } from "@nextui-org/link";
 import { Button } from "@nextui-org/button";
 import { Blog } from "@/.contentlayer/generated";
-import { Tag } from "./page";
 
-type BlogPageProps ={
-  blog: Blog
-}
+type BlogPageProps = {
+  blog: Blog;
+};
 
-export default function BlogDisplay ({ blog }: BlogPageProps) {
+export default function BlogDisplay({ blog }: BlogPageProps) {
   return (
     <article className="px-4 py-9 sm:py-36">
       <h2 className="scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl">
@@ -22,14 +21,19 @@ export default function BlogDisplay ({ blog }: BlogPageProps) {
       )}
       {blog.tags && (
         <div className="mt-4 flex flex-wrap gap-1">
-          {blog.tags.map((tag: Tag) => (
+          {blog.tags.map((tag) => (
             <Button
               as={Link}
               size="sm"
               href={`/blog?tag=${tag.slug}`}
-              key={tag.slug}
+              endContent={
+                <div className="h-auto w-10">
+                  <Mdx code={tag.icon.code} />
+                </div>
+              }
+              key={tag.name}
             >
-              {tag.title}
+              {tag.name}
             </Button>
           ))}
         </div>
@@ -39,5 +43,5 @@ export default function BlogDisplay ({ blog }: BlogPageProps) {
         <Mdx code={blog.body.code} />
       </div>
     </article>
-  )
+  );
 }
