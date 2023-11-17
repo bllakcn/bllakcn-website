@@ -62,6 +62,9 @@ export const Blog = defineDocumentType(() => ({
       type: "list",
       of: Tag,
     },
+    author: {
+      type: "string",
+    },
   },
   computedFields,
 }));
