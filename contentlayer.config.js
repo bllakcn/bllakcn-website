@@ -1,22 +1,25 @@
 import remarkGfm from "remark-gfm";
 import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import GithubSlugger from "github-slugger";
+
 import {
   defineDocumentType,
   defineNestedType,
   makeSource,
 } from "contentlayer/source-files";
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
-const computedFields = {
-  slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
-  },
-  slugAsParams: {
-    type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-  },
-};
+// /** @type {import('contentlayer/source-files').ComputedFields} */
+// const computedFields = {
+//   slug: {
+//     type: "string",
+//     resolve: (doc) => `/${doc._raw.flattenedPath}`,
+//   },
+//   slugAsParams: {
+//     type: "string",
+//     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+//   },
+// };
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
@@ -65,8 +68,41 @@ export const Blog = defineDocumentType(() => ({
     author: {
       type: "string",
     },
+    toc: {
+      type: "boolean",
+      required: false,
+      default: true,
+    },
   },
-  computedFields,
+  computedFields: {
+    slug: {
+      type: "string",
+      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    },
+    slugAsParams: {
+      type: "string",
+      resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    },
+    headers: {
+      type: "json",
+      resolve: async (doc) => {
+        const regXHeader = /\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+        const slugger = new GithubSlugger();
+        const headings = Array.from(doc.body.raw.matchAll(regXHeader)).map(
+          ({ groups }) => {
+            const flag = groups.flag;
+            const content = groups?.content;
+            return {
+              level: flag.length,
+              text: content,
+              slug: content ? slugger.slug(content) : undefined,
+            };
+          },
+        );
+        return headings;
+      },
+    },
+  },
 }));
 
 export default makeSource({
@@ -74,6 +110,6 @@ export default makeSource({
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [[rehypePrettyCode, options]],
+    rehypePlugins: [[rehypePrettyCode, options], rehypeSlug],
   },
 });
