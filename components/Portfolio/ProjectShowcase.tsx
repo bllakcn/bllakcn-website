@@ -1,6 +1,6 @@
 import { Project } from "@/app/types/Portfolio";
-import { Link, Tooltip, Chip } from "@nextui-org/react";
-import Image from "next/image";
+import { Link, Tooltip, Chip, Image } from "@nextui-org/react";
+import NextImage from "next/image";
 import NextLink from "next/link";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { IoLogoGithub, IoArrowForwardCircleSharp } from "react-icons/io5";
@@ -33,8 +33,11 @@ export default function ProjectShowcase({
       </CardHeader>
       <CardBody className="h-full justify-end p-1">
         <Image
-          src={image}
+          as={NextImage}
+          src={image.src}
           alt={title}
+          width={image.width}
+          height={image.height}
           className="relative justify-between rounded object-cover"
         />
       </CardBody>

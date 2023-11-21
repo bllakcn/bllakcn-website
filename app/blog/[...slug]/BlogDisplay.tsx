@@ -57,7 +57,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
       </div>
       <Divider className="my-4" />
       <div className="grid auto-cols-max grid-flow-col justify-between">
-        <div className="prose dark:prose-invert">
+        <div className="prose dark:prose-invert prose-headings:scroll-mt-20">
           <Mdx code={blog.body.code} />
         </div>
         {blog.toc && <BlogSidebar headers={blog.headers} />}
