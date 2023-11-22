@@ -21,6 +21,17 @@
   }
 }
 
+/* not in use for now */
+html.dark pre[data-theme="light"],
+html.dark code[data-theme="light"] {
+  display: none;
+}
+
+html.light pre[data-theme="dark"],
+html.light code[data-theme="dark"] {
+  display: none;
+}
+
 div[data-rehype-pretty-code-fragment] pre {
   margin: 0;
   border: 1px solid #d3d3fc1a;
@@ -31,9 +42,10 @@ div[data-rehype-pretty-code-fragment] pre {
 
 div[data-rehype-pretty-code-title] {
   color: #ededed;
+  font-size: 0.9rem;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 1rem;
   border: 1px solid #d3d3fc1a;
   border-bottom: 0;
   background-color: #363a42;

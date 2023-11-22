@@ -23,6 +23,7 @@ import {
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
+  // keepBackground: false,
   theme: "one-dark-pro",
   defaultLang: "plaintext",
 };

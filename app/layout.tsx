@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`min-h-screen bg-background text-foreground antialiased transition-colors ${outfit.className}`}
+        className={`min-h-screen bg-background text-foreground antialiased transition-colors selection:bg-secondary dark:selection:text-background ${outfit.className}`}
       >
         <Providers>
           <NavbarComponent />
