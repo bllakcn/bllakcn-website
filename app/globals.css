@@ -35,9 +35,13 @@ html.light code[data-theme="dark"] {
 div[data-rehype-pretty-code-fragment] pre {
   margin: 0;
   border: 1px solid #d3d3fc1a;
-  border-top: 0;
+}
+
+div[data-rehype-pretty-code-fragment]:has(div[data-rehype-pretty-code-title])
+  pre {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  border-top: 0;
 }
 
 div[data-rehype-pretty-code-title] {

@@ -6,11 +6,15 @@ import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 import FastSvg from "./Portfolio/TechStack/Fast";
 import PythonSvg from "./Portfolio/TechStack/Python";
+import { Chip } from "@nextui-org/chip";
+import { IoAlertOutline } from "react-icons/io5";
+import { Badge } from "@nextui-org/badge";
 
 const components: MDXComponents = {
+  WarningComponent,
   ImageComponent,
   a: ({ href, children }) => (
-    <Link as={NextLink} href={href as string}>
+    <Link as={NextLink} href={href as string} target="_blank">
       {children}
     </Link>
   ),
@@ -41,5 +45,20 @@ function ImageComponent({
 }) {
   return (
     <Image as={NextImage} src={src} alt={alt} width={width} height={height} />
+  );
+}
+
+function WarningComponent({ children }: { children: React.ReactNode }) {
+  return (
+    <Badge
+      placement="top-left"
+      variant="faded"
+      className="p-1"
+      content={<IoAlertOutline size={20} />}
+    >
+      <Chip classNames={{ base: "pl-8 pr-5" }} variant="faded">
+        {children}
+      </Chip>
+    </Badge>
   );
 }
