@@ -54,7 +54,7 @@ function WarningComponent({ children }: { children: React.ReactNode }) {
       placement="top-left"
       variant="faded"
       className="p-1"
-      content={<IoAlertOutline size={20} />}
+      content={<IoAlertOutline size={15} />}
     >
       <Chip classNames={{ base: "pl-8 pr-5" }} variant="faded">
         {children}

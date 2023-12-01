@@ -2,23 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 640px) {
-  html.dark body {
-    background: radial-gradient(
-      circle at top right,
-      rgba(3, 70, 214, 0.1),
-      transparent 30%
-    );
-    background-blend-mode: overlay;
-  }
-  html.light body {
-    background: radial-gradient(
-      circle at top left,
-      rgba(214, 98, 3, 0.048),
-      transparent 30%
-    );
-    background-blend-mode: overlay;
-  }
+html.dark body {
+  background: radial-gradient(
+    circle at top right,
+    rgba(3, 70, 214, 0.1),
+    transparent 10%
+  );
+  background-blend-mode: overlay;
+}
+html.light body {
+  background: radial-gradient(
+    circle at top left,
+    rgba(214, 98, 3, 0.048),
+    transparent 10%
+  );
+  background-blend-mode: overlay;
 }
 
 /* not in use for now */

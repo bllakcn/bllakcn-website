@@ -46,7 +46,7 @@ export default function BlogListDisplay({
           {blogs.map((post, index) => (
             <li key={post._id}>
               <Link
-                className="flex items-baseline justify-between gap-2"
+                className="flex flex-col items-baseline justify-between gap-2 sm:flex-row"
                 href={post.slug}
                 color="foreground"
                 as={NextLink}
@@ -58,7 +58,9 @@ export default function BlogListDisplay({
                   {format(parseISO(post.date), "MMMM d, yyyy")}
                 </time>
               </Link>
-              <p className="p-1">{post.description}</p>
+              <p className="text-ellipsis p-1 text-foreground-600">
+                {post.description}
+              </p>
               {index !== blogs.length - 1 && <Divider />}
             </li>
           ))}

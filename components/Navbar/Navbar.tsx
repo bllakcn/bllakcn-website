@@ -43,6 +43,7 @@ export default function NavbarComponent() {
     <Navbar
       maxWidth="xl"
       onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
       isBlurred={false}
       isBordered={isScrolldown}
     >
@@ -80,6 +81,7 @@ export default function NavbarComponent() {
                 className="w-full"
                 href={item.href}
                 size="lg"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </Link>
