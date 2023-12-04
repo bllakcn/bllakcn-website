@@ -7,11 +7,12 @@ import NextLink from "next/link";
 import FastSvg from "./Portfolio/TechStack/Fast";
 import PythonSvg from "./Portfolio/TechStack/Python";
 import { Chip } from "@nextui-org/chip";
-import { IoAlertOutline } from "react-icons/io5";
+import { IoAlertOutline, IoInformationOutline } from "react-icons/io5";
 import { Badge } from "@nextui-org/badge";
 
 const components: MDXComponents = {
   WarningComponent,
+  InformationComponent,
   ImageComponent,
   a: ({ href, children }) => (
     <Link as={NextLink} href={href as string} target="_blank">
@@ -37,27 +38,59 @@ function ImageComponent({
   alt,
   width,
   height,
+  props,
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
+  props: React.ComponentProps<typeof Image>;
 }) {
   return (
-    <Image as={NextImage} src={src} alt={alt} width={width} height={height} />
+    <Image
+      as={NextImage}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      {...props}
+    />
   );
 }
 
-function WarningComponent({ children }: { children: React.ReactNode }) {
+function WarningComponent({ content }: { content: string }) {
   return (
     <Badge
       placement="top-left"
-      variant="faded"
+      variant="solid"
       className="p-1"
       content={<IoAlertOutline size={15} />}
     >
-      <Chip classNames={{ base: "pl-8 pr-5" }} variant="faded">
-        {children}
+      <Chip
+        classNames={{ base: "pl-8 pr-5" }}
+        className="h-auto whitespace-normal"
+        variant="faded"
+      >
+        <p className="my-0 py-1">{content}</p>
+      </Chip>
+    </Badge>
+  );
+}
+
+function InformationComponent({ content }: { content: string }) {
+  return (
+    <Badge
+      placement="top-left"
+      variant="solid"
+      className="p-1"
+      content={<IoInformationOutline size={15} />}
+    >
+      <Chip
+        classNames={{ base: "pl-8 pr-5" }}
+        className="h-auto whitespace-normal"
+        variant="flat"
+      >
+        <p className="my-0 py-1">{content}</p>
       </Chip>
     </Badge>
   );

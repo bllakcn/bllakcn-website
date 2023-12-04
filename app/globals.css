@@ -30,6 +30,11 @@ html.light code[data-theme="dark"] {
   display: none;
 }
 
+span[data-rehype-pretty-code-fragment] > code {
+  padding: 2px;
+  border-radius: 0.25rem;
+}
+
 div[data-rehype-pretty-code-fragment] pre {
   margin: 0;
   border: 1px solid #d3d3fc1a;
