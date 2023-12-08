@@ -15,7 +15,7 @@ type BlogSidebarProps = {
 const headerLevels = ["ml-0", "ml-4", "ml-8", "ml-12", "ml-16", "ml-20"];
 
 export default function BlogSidebar({ headers }: BlogSidebarProps) {
-  const { activeId } = useActiveHeader("h2, h3, h4, h5, h6");
+  const { activeSlug, activeUpperSlug } = useActiveHeader("h2, h3, h4, h5, h6");
 
   return (
     <ScrollShadow
@@ -26,16 +26,16 @@ export default function BlogSidebar({ headers }: BlogSidebarProps) {
       <ul className="space-y-2 px-1">
         {headers.map((header) => (
           <li
-            className={`${headerLevels[header.level - 1]} ${
-              header.slug === activeId
+            className={` ${headerLevels[header.level - 1]} ${
+              header.slug === activeSlug
                 ? "marker:text-primary"
                 : "marker:text-foreground-500"
-            } ${header.level > 3 ? "list-disc" : ""}`}
+            }`}
             key={`#${header.slug}`}
           >
             <Link
               className={`${
-                header.slug === activeId
+                header.slug === activeSlug || header.slug === activeUpperSlug
                   ? "text-foreground"
                   : "text-foreground-500"
               }`}

@@ -14,11 +14,7 @@ const components: MDXComponents = {
   WarningComponent,
   InformationComponent,
   ImageComponent,
-  a: ({ href, children }) => (
-    <Link as={NextLink} href={href as string} target="_blank">
-      {children}
-    </Link>
-  ),
+  a: ({ href, children }) => LinkComponent({ href, children }),
   FastSvg,
   PythonSvg,
 };
@@ -31,6 +27,20 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return <Component components={components} />;
+}
+
+function LinkComponent({
+  href,
+  children,
+}: {
+  href: string | undefined;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link isExternal showAnchorIcon as={NextLink} href={href}>
+      {children}
+    </Link>
+  );
 }
 
 function ImageComponent({

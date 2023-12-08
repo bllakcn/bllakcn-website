@@ -1,45 +1,77 @@
 import { useEffect, useState, useRef } from "react";
 
+type headingElementsRefType = {
+  [headingId: string]: {
+    header: IntersectionObserverEntry;
+    parentHeader: Element;
+  };
+};
+
 export function useActiveHeader(selector: string) {
-  const headingElementsRef = useRef<Record<string, IntersectionObserverEntry>>(
-    {},
-  );
-  const [activeId, setActiveId] = useState("");
+  const headingElementsRef = useRef<headingElementsRefType>({});
+  const [activeSlug, setActiveSlug] = useState("");
+  const [activeUpperSlug, setActiveUpperSlug] = useState("");
 
   useEffect(() => {
     const headingElements = Array.from(document.querySelectorAll(selector));
 
+    const getIndexFromId = (id: string) =>
+      headingElements.findIndex((heading) => heading.id === id);
+
+    const findParentHeader = (
+      headingElements: Element[],
+      childIndex: number,
+    ) => {
+      const childLevel = headingElements[childIndex].tagName.substring(1);
+      for (let i = childIndex - 1; i >= 0; i--) {
+        const currentLevel = headingElements[i].tagName.substring(1);
+        if (+currentLevel < +childLevel) {
+          return headingElements[i];
+        }
+      }
+      return headingElements[childIndex];
+    };
+
     const observer = new IntersectionObserver(
       (headings) => {
         headingElementsRef.current = headings.reduce(
-          (
-            map: { [key: string]: IntersectionObserverEntry },
-            headingElement,
-          ) => {
-            map[headingElement.target.id] = headingElement;
+          (map: headingElementsRefType, headingElement) => {
+            map[headingElement.target.id] = {
+              header: headingElement,
+              parentHeader: findParentHeader(
+                headingElements,
+                headingElements.findIndex(
+                  (heading) => heading.id === headingElement.target.id,
+                ),
+              ),
+            };
             return map;
           },
           headingElementsRef.current,
         );
 
-        const visibleHeadings: IntersectionObserverEntry[] = [];
-        Object.keys(headingElementsRef.current).forEach((key) => {
-          const headingElement: IntersectionObserverEntry =
-            headingElementsRef.current[key];
-          if (headingElement.isIntersecting)
+        const visibleHeadings: {
+          header: IntersectionObserverEntry;
+          parentHeader: Element;
+        }[] = [];
+        Object.keys(headingElementsRef.current).map((key) => {
+          const headingElement = headingElementsRef.current[key];
+          if (headingElement.header.isIntersecting) {
             visibleHeadings.push(headingElement);
+          }
         });
 
-        const getIndexFromId = (id: string) =>
-          headingElements.findIndex((heading) => heading.id === id);
-
         if (visibleHeadings.length === 1) {
-          setActiveId(visibleHeadings[0].target.id);
+          setActiveSlug(visibleHeadings[0].header.target.id);
+          setActiveUpperSlug(visibleHeadings[0].parentHeader.id);
         } else if (visibleHeadings.length > 1) {
           const sortedVisibleHeadings = visibleHeadings.sort(
-            (a, b) => getIndexFromId(a.target.id) - getIndexFromId(b.target.id),
+            (a, b) =>
+              getIndexFromId(a.header.target.id) -
+              getIndexFromId(b.header.target.id),
           );
-          setActiveId(sortedVisibleHeadings[0].target.id);
+          setActiveSlug(sortedVisibleHeadings[0].header.target.id);
+          setActiveUpperSlug(sortedVisibleHeadings[0].parentHeader.id);
         }
       },
       {
@@ -52,5 +84,5 @@ export function useActiveHeader(selector: string) {
     return () => observer.disconnect();
   }, [selector]);
 
-  return { activeId };
+  return { activeSlug, activeUpperSlug };
 }
