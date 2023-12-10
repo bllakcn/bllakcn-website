@@ -63,7 +63,6 @@ export function useActiveHeader(selector: string) {
             visibleHeadings.push(headingElement);
           }
         });
-        console.log({ visibleHeadings });
         if (visibleHeadings.length === 1) {
           setActiveSlug(visibleHeadings[0].header.target.id);
           setActiveUpperSlug(visibleHeadings[0].parentHeader?.id || "");
@@ -76,7 +75,6 @@ export function useActiveHeader(selector: string) {
           setActiveSlug(sortedVisibleHeadings[0].header.target.id);
           setActiveUpperSlug(sortedVisibleHeadings[0].parentHeader?.id || "");
         }
-        // console.log({ activeSlug, activeUpperSlug });
       },
       {
         rootMargin: "-95px 0px -30% 0px",

@@ -26,6 +26,9 @@ const options = {
   // keepBackground: false,
   theme: "one-dark-pro",
   defaultLang: "plaintext",
+  tokensMap: {
+    fn: "entity.name.function",
+  },
 };
 
 const Tag = defineNestedType(() => ({
