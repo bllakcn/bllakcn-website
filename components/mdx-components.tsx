@@ -9,6 +9,7 @@ import PythonSvg from "./Portfolio/TechStack/Python";
 import { Chip } from "@nextui-org/chip";
 import { IoAlertOutline, IoInformationOutline } from "react-icons/io5";
 import { Badge } from "@nextui-org/badge";
+import { cn } from "@/libs/utils";
 
 const components: MDXComponents = {
   WarningComponent,
@@ -48,23 +49,29 @@ function ImageComponent({
   alt,
   width,
   height,
+  description,
   props,
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
+  description: string;
   props: React.ComponentProps<typeof Image>;
 }) {
   return (
-    <Image
-      as={NextImage}
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      {...props}
-    />
+    <>
+      <Image
+        as={NextImage}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={cn(description && "mb-0")}
+        {...props}
+      />
+      <p className="mt-0">{description}</p>
+    </>
   );
 }
 

@@ -53,7 +53,7 @@ export default function NavbarComponent() {
           href="/"
           as={NextLink}
         >
-          <h1>bllakcn</h1>
+          bllakcn
         </Link>
       </NavbarBrand>
       <NavbarContent justify="end" className="hidden sm:flex">

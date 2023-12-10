@@ -21,9 +21,9 @@ export default function BlogSidebar({ headers }: BlogSidebarProps) {
   return (
     <ScrollShadow
       hideScrollBar
-      className="sticky top-32 hidden h-1/6 justify-self-end text-foreground-500 lg:block"
+      className="sticky top-32 hidden h-unit-8xl justify-self-end text-foreground-500 lg:block"
     >
-      <h3 className="mb-4 text-xl">Table of contents</h3>
+      <p className="mb-4 text-xl">Table of contents</p>
       <ul className="space-y-2 px-1">
         {headers.map((header) => (
           <li

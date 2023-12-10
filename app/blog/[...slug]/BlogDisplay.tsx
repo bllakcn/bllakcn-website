@@ -17,9 +17,9 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
     <article className="px-4 py-9 sm:py-36">
       <div className="space-y-3">
         <div className="flex flex-col gap-2 md:flex-row md:justify-between">
-          <h2 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
+          <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
             {blog.title}
-          </h2>
+          </h1>
           {blog.author && (
             <Link as={NextLink} href="/" color="foreground">
               <User

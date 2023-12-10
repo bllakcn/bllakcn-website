@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 type headingElementsRefType = {
   [headingId: string]: {
     header: IntersectionObserverEntry;
-    parentHeader: Element;
+    parentHeader: Element | null;
   };
 };
 
@@ -21,7 +21,9 @@ export function useActiveHeader(selector: string) {
     const findParentHeader = (
       headingElements: Element[],
       childIndex: number,
+      isChildIntersecting: boolean,
     ) => {
+      if (!isChildIntersecting) return null;
       const childLevel = headingElements[childIndex].tagName.substring(1);
       for (let i = childIndex - 1; i >= 0; i--) {
         const currentLevel = headingElements[i].tagName.substring(1);
@@ -43,6 +45,7 @@ export function useActiveHeader(selector: string) {
                 headingElements.findIndex(
                   (heading) => heading.id === headingElement.target.id,
                 ),
+                headingElement.isIntersecting,
               ),
             };
             return map;
@@ -52,7 +55,7 @@ export function useActiveHeader(selector: string) {
 
         const visibleHeadings: {
           header: IntersectionObserverEntry;
-          parentHeader: Element;
+          parentHeader: Element | null;
         }[] = [];
         Object.keys(headingElementsRef.current).map((key) => {
           const headingElement = headingElementsRef.current[key];
@@ -60,10 +63,10 @@ export function useActiveHeader(selector: string) {
             visibleHeadings.push(headingElement);
           }
         });
-
+        console.log({ visibleHeadings });
         if (visibleHeadings.length === 1) {
           setActiveSlug(visibleHeadings[0].header.target.id);
-          setActiveUpperSlug(visibleHeadings[0].parentHeader.id);
+          setActiveUpperSlug(visibleHeadings[0].parentHeader?.id || "");
         } else if (visibleHeadings.length > 1) {
           const sortedVisibleHeadings = visibleHeadings.sort(
             (a, b) =>
@@ -71,18 +74,19 @@ export function useActiveHeader(selector: string) {
               getIndexFromId(b.header.target.id),
           );
           setActiveSlug(sortedVisibleHeadings[0].header.target.id);
-          setActiveUpperSlug(sortedVisibleHeadings[0].parentHeader.id);
+          setActiveUpperSlug(sortedVisibleHeadings[0].parentHeader?.id || "");
         }
+        // console.log({ activeSlug, activeUpperSlug });
       },
       {
-        rootMargin: "-95px 0px -60% 0px",
+        rootMargin: "-95px 0px -30% 0px",
       },
     );
 
     headingElements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [selector]);
+  }, [selector, activeSlug, activeUpperSlug]);
 
   return { activeSlug, activeUpperSlug };
 }
