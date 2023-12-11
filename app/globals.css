@@ -5,8 +5,8 @@
 html.dark body {
   background: radial-gradient(
     circle at top right,
-    rgba(3, 70, 214, 0.1),
-    transparent 10%
+    rgba(3, 70, 214, 0.048),
+    transparent 50rem
   );
   background-blend-mode: overlay;
 }
@@ -14,7 +14,7 @@ html.light body {
   background: radial-gradient(
     circle at top left,
     rgba(214, 98, 3, 0.048),
-    transparent 10%
+    transparent 50rem
   );
   background-blend-mode: overlay;
 }
@@ -41,7 +41,7 @@ span[data-rehype-pretty-code-fragment] > code[data-language=".token"] > span {
   border-radius: 0.25rem;
 }
 
-div[data-rehype-pretty-code-fragment] + div[data-rehype-pretty-code-fragment] {
+div[data-rehype-pretty-code-fragment] + div[data-rehype-pretty-code-title] {
   margin-top: 1rem;
 }
 
@@ -50,8 +50,7 @@ div[data-rehype-pretty-code-fragment] pre {
   border: 1px solid #d3d3fc1a;
 }
 
-div[data-rehype-pretty-code-fragment]:has(div[data-rehype-pretty-code-title])
-  pre {
+div[data-rehype-pretty-code-title] + div[data-rehype-pretty-code-fragment] pre {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-top: 0;
@@ -62,7 +61,7 @@ div[data-rehype-pretty-code-title] {
   font-size: 0.9rem;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0.3rem 1rem;
+  padding: 0.1rem 1rem;
   border: 1px solid #d3d3fc1a;
   border-bottom: 0;
   background-color: #363a42;

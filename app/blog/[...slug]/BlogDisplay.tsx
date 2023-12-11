@@ -7,6 +7,7 @@ import { User } from "@nextui-org/user";
 import NextLink from "next/link";
 import Avatar from "@/public/avatar.jpg";
 import BlogSidebar from "./BlogSidebar";
+import { format, parseISO } from "date-fns";
 
 type BlogPageProps = {
   blog: Blog;
@@ -14,7 +15,7 @@ type BlogPageProps = {
 
 export default function BlogDisplay({ blog }: BlogPageProps) {
   return (
-    <article className="px-4 py-9 sm:py-36">
+    <article className="px-4 pb-3 pt-9 sm:pb-9 sm:pt-36">
       <div className="space-y-3">
         <div className="flex flex-col gap-2 md:flex-row md:justify-between">
           <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
@@ -25,7 +26,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
               <User
                 className="justify-start"
                 name={blog.author}
-                avatarProps={{ src: Avatar.src, isBordered: true }}
+                avatarProps={{ src: Avatar.src, isBordered: true, size: "sm" }}
               />
             </Link>
           )}
@@ -62,6 +63,10 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
         </div>
         {blog.toc && <BlogSidebar headers={blog.headers} />}
       </div>
+      <Divider className="my-4" />
+      <p className="text-foreground-400">
+        {format(parseISO(blog.date), "MMMM d, yyyy")}
+      </p>
     </article>
   );
 }
