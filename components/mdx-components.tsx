@@ -51,29 +51,23 @@ function ImageComponent({
   alt,
   width,
   height,
-  description,
   props,
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
-  description: string;
   props: React.ComponentProps<typeof Image>;
 }) {
   return (
-    <>
-      <Image
-        as={NextImage}
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={cn(description && "mb-0")}
-        {...props}
-      />
-      <p className="mt-0">{description}</p>
-    </>
+    <Image
+      as={NextImage}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      {...props}
+    />
   );
 }
 

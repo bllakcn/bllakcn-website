@@ -30,6 +30,10 @@ html.light code[data-theme="dark"] {
   display: none;
 }
 
+div.prose div.relative > img {
+  margin-bottom: 0;
+}
+
 span[data-rehype-pretty-code-fragment] > code[data-language="plaintext"] {
   padding: 2px;
   border-radius: 0.25rem;
