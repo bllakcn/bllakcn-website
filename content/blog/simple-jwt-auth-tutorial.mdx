@@ -296,9 +296,8 @@ class UserSignup(BaseModel):
   width="718"
   height="404"
   alt="user signs up"
-  description="This is the login flow we are going to take a look at now."
 />
-
+This is the login flow we are going to take a look at now.
 <CodeTitleComponent content="src/auth/router.py" />
 
 ```python showLineNumbers /authenticate_user/ /Depends/ /AuthJWT/
@@ -551,8 +550,9 @@ We start with checking if the refresh token is missing. If it is, we raise a 403
   width="718"
   height="404"
   alt="following requests made with JWT"
-  description="Now we are going to take a look at once the user is logged in and tries to access a protected route."
 />
+Now we are going to take a look at once the user is logged in and tries to access
+a protected route.
 
 <CodeTitleComponent content="src/dashboard/router.py" />
 

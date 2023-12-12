@@ -30,8 +30,12 @@ html.light code[data-theme="dark"] {
   display: none;
 }
 
-div.prose div.relative > img {
+div.prose div.relative:has(+ p) > img {
   margin-bottom: 0;
+}
+
+div.prose div.relative:has(> img) + p {
+  margin-top: 0;
 }
 
 span[data-rehype-pretty-code-fragment] > code[data-language="plaintext"] {
