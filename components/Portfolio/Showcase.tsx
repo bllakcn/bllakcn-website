@@ -1,6 +1,6 @@
 'use client';
 
-import { Project } from '@/app/types/Portfolio';
+import { Project } from '@/types/Portfolio';
 import ProjectShowcase from './ProjectShowcase';
 import { motion } from 'framer-motion';
 import ColPalImage from '@/public/projects/colpal.jpg';

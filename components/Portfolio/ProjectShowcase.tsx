@@ -1,4 +1,4 @@
-import { Project } from '@/app/types/Portfolio';
+import { Project } from '@/types/Portfolio';
 import { Link, Tooltip, Chip, Image } from '@nextui-org/react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
