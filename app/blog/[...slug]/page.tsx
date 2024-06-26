@@ -1,50 +1,48 @@
-import { notFound } from "next/navigation";
-import { allBlogs } from "contentlayer/generated";
-import { Metadata } from "next";
-import BlogDisplay from "../[...slug]/BlogDisplay";
+import { notFound } from 'next/navigation';
+import { allBlogs } from 'contentlayer/generated';
+import { Metadata } from 'next';
+import BlogDisplay from '../[...slug]/BlogDisplay';
 
 interface BlogProps {
-  params: {
-    slug: string[];
-  };
+	params: {
+		slug: string[];
+	};
 }
 
-async function getPostFromParams(params: BlogProps["params"]) {
-  const slug = params?.slug?.join("/");
-  const blog = allBlogs.find((blog) => blog.slugAsParams === slug);
+async function getPostFromParams(params: BlogProps['params']) {
+	const slug = params?.slug?.join('/');
+	const blog = allBlogs.find((blog) => blog.slugAsParams === slug);
 
-  if (!blog) {
-    null;
-  }
+	if (!blog) {
+		null;
+	}
 
-  return blog;
+	return blog;
 }
 
-export async function generateMetadata({
-  params,
-}: BlogProps): Promise<Metadata> {
-  const blog = await getPostFromParams(params);
+export async function generateMetadata({ params }: BlogProps): Promise<Metadata> {
+	const blog = await getPostFromParams(params);
 
-  return blog
-    ? {
-        title: blog.title,
-        description: blog.description,
-      }
-    : {};
+	return blog
+		? {
+				title: blog.title,
+				description: blog.description,
+			}
+		: {};
 }
 
-export async function generateStaticParams(): Promise<BlogProps["params"][]> {
-  return allBlogs.map((blog) => ({
-    slug: blog.slugAsParams.split("/"),
-  }));
+export async function generateStaticParams(): Promise<BlogProps['params'][]> {
+	return allBlogs.map((blog) => ({
+		slug: blog.slugAsParams.split('/'),
+	}));
 }
 
 export default async function PostPage({ params }: BlogProps) {
-  const blog = await getPostFromParams(params);
+	const blog = await getPostFromParams(params);
 
-  if (!blog) {
-    notFound();
-  }
+	if (!blog) {
+		notFound();
+	}
 
-  return <BlogDisplay blog={blog} />;
+	return <BlogDisplay blog={blog} />;
 }

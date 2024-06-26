@@ -1,15 +1,15 @@
 ---
 title: A Simple JWT Authentication Tutorial
 description: Step by step guide to implement JWT Authentication in FastAPI
-date: "2023-12-11"
-author: "Ahmet Bilal Akcan"
+date: '2023-12-11'
+author: 'Ahmet Bilal Akcan'
 tags:
-  - name: Python
-    slug: python
-    icon: <PythonSvg/>
-  - name: FastAPI
-    slug: fastapi
-    icon: <FastSvg/>
+ - name: Python
+   slug: python
+   icon: <PythonSvg/>
+ - name: FastAPI
+   slug: fastapi
+   icon: <FastSvg/>
 ---
 
 Hello everyone,
@@ -17,21 +17,18 @@ Hello everyone,
 In this beginner-friendly tutorial, we will go through the steps of implementing [JWT](https://jwt.io/) Authentication in [FastAPI](https://fastapi.tiangolo.com/) using [fastapi-another-jwt-auth](https://pypi.org/project/fastapi-another-jwt-auth/). We will be using [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation and [Passlib](https://passlib.readthedocs.io/en/stable/) for password hashing.
 
 <WarningComponent
-  content={
-    "This tutorial assumes that you have basic knowledge of Python and FastAPI with SQLAlchemy which is not going to be covered in this tutorial."
-  }
+	content={
+		'This tutorial assumes that you have basic knowledge of Python and FastAPI with SQLAlchemy which is not going to be covered in this tutorial.'
+	}
 />
 
 We are going to write some code, so let's jump right into it.
 
-<ImageComponent
-  src="/blogs/blog-post-1.jpg"
-  width="718"
-  height="404"
-  alt="header"
-/>
-Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
-on [Unsplash](https://unsplash.com/photos/text-6pflEeSzGUo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+<ImageComponent src='/blogs/blog-post-1.jpg' width='718' height='404' alt='header' />
+Photo by [Markus
+Spiske](https://unsplash.com/@markusspiske?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on
+[Unsplash](https://unsplash.com/photos/text-6pflEeSzGUo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
 ## Introduction to JWT
 
@@ -49,8 +46,8 @@ It will contain the algorithm used to generate the signature and the type of the
 
 ```json
 {
-  "alg": "HS256",
-  "typ": "JWT"
+	"alg": "HS256",
+	"typ": "JWT"
 }
 ```
 
@@ -60,12 +57,12 @@ It will contain the data we want to transfer. [Some of the fields are reserved](
 
 ```json
 {
-  "sub": "f1677c52-0f8b-4f31-baaf-cc0b444a5b99", // subject
-  "iat": 1700776495, // issued at
-  "nbf": 1700776495, // not before
-  "jti": "fe71746e-397d-4b81-8732-76f8cd042fa3", // JWT ID
-  "exp": 1700777695, // expiration time
-  "type": "access" // type of the token
+	"sub": "f1677c52-0f8b-4f31-baaf-cc0b444a5b99", // subject
+	"iat": 1700776495, // issued at
+	"nbf": 1700776495, // not before
+	"jti": "fe71746e-397d-4b81-8732-76f8cd042fa3", // JWT ID
+	"exp": 1700777695, // expiration time
+	"type": "access" // type of the token
 }
 ```
 
@@ -107,7 +104,7 @@ We initialize our FastAPI application in `main.py` with some default development
 
 #### main.py
 
-<CodeTitleComponent content="src/main.py" />
+<CodeTitleComponent content='src/main.py' />
 
 ```python
 from fastapi import FastAPI
@@ -140,7 +137,7 @@ app.include_router(dashboard_router, tags=["dashboard"], prefix="/api/dashboard"
 
 Now let's take a look at what we need in our `.env` file.
 
-<CodeTitleComponent content=".env" />
+<CodeTitleComponent content='.env' />
 
 ```env
 ...
@@ -157,11 +154,11 @@ ACCESS_TOKEN_EXPIRE_MINUTES=15
 
 We are going to use the [asymmetric RSA algorithm](https://glitchcorp.github.io/fastapi-another-jwt-auth/advanced-usage/asymmetric/) for our JWTs. That means we need to generate a private and a public key. We can do that using this website: [cryptotool.net](https://cryptotools.net/rsagen)
 
-<InformationComponent content="Ideally, you can use the `openssl` command to generate your keys." />
+<InformationComponent content='Ideally, you can use the `openssl` command to generate your keys.' />
 
 We add our environment variables to `config.py`
 
-<CodeTitleComponent content="src/config.py" />
+<CodeTitleComponent content='src/config.py' />
 
 ```python {12-14, 16,17}
 from pydantic import BaseSettings, PostgresDsn
@@ -198,7 +195,7 @@ settings = Settings()
 
 Now let's take a look at how this JWT package works.
 
-<CodeTitleComponent content="src/oauth.py" />
+<CodeTitleComponent content='src/oauth.py' />
 
 ```python showLineNumbers {24-26}
 import base64
@@ -271,7 +268,7 @@ We define a dependency function to be used in our routes. This function will be 
 
 Right before we start writing our authentication routes, let's create some basic schemas using pydantic to be used in the routes.
 
-<CodeTitleComponent content="src/auth/schemas.py" />
+<CodeTitleComponent content='src/auth/schemas.py' />
 
 ```python
 from pydantic import BaseModel, EmailStr, constr
@@ -291,14 +288,9 @@ class UserSignup(BaseModel):
 
 #### router.py
 
-<ImageComponent
-  src="/blogs/JWT_1.png"
-  width="718"
-  height="404"
-  alt="user signs up"
-/>
+<ImageComponent src='/blogs/JWT_1.png' width='718' height='404' alt='user signs up' />
 This is the login flow we are going to take a look at now.
-<CodeTitleComponent content="src/auth/router.py" />
+<CodeTitleComponent content='src/auth/router.py' />
 
 ```python showLineNumbers /authenticate_user/ /Depends/ /AuthJWT/
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
@@ -324,7 +316,7 @@ async def login(
 
 Let's break down what is going on so far. We are using the `Depends{:.fn}` function to get the database session and the `AuthJWT` instance. We are using the `authenticate_user{:.fn}` function to check if the user exists and the password is correct, which we are going to create now.
 
-<CodeTitleComponent content="src/auth/dependencies.py" />
+<CodeTitleComponent content='src/auth/dependencies.py' />
 
 ```python /get_user_by_email/ /verify_password/
 from src.auth.services import get_user_by_email
@@ -341,7 +333,7 @@ async def authenticate_user(db: Session, email: str, password: str) -> bool | Us
 
 We are using the `get_user_by_email{:.fn}` function to get the user from the database. We verify the password using the `verify_password{:.fn}` function which comes from our `utils.py`.
 
-<CodeTitleComponent content="src/auth/utils.py" />
+<CodeTitleComponent content='src/auth/utils.py' />
 
 ```python /verify_password/
 from passlib.context import CryptContext
@@ -355,7 +347,7 @@ def verify_password(raw_password, hashed_password):
 
 `verify_password{:.fn}` function takes the raw password and the hashed password which we store in our database and returns a boolean value.
 
-<CodeTitleComponent content="src/auth/router.py" />
+<CodeTitleComponent content='src/auth/router.py' />
 
 ```python showLineNumbers{20} /set_cookie/
     access_token = create_access_token(Authorize=Authorize, user=user)
@@ -404,7 +396,7 @@ def set_cookie(
 ) -> None:
 ```
 
-<CodeTitleComponent content="src/auth/utils.py" />
+<CodeTitleComponent content='src/auth/utils.py' />
 
 ```python
 ...
@@ -429,7 +421,7 @@ This is it for the login route. Now let's take a look at the signup route which 
 
 ## Signup route
 
-<CodeTitleComponent content="src/auth/router.py" />
+<CodeTitleComponent content='src/auth/router.py' />
 
 ```python showLineNumbers{59} /check_user/ /create_user/
 @router.post("/register", status_code=status.HTTP_201_CREATED, response_model=User)
@@ -482,7 +474,7 @@ async def signup_user(
 
 We begin with checking if the user already exists using the `check_user{:.fn}` function. It is a simple function that checks if the user exists in the database using SQLAlchemy. If the user exists, we raise a 409 error.
 
-<InformationComponent content="Note that we perform a server-side password confirm check. Though, it may not be necessary depending on your client-side" />
+<InformationComponent content='Note that we perform a server-side password confirm check. Though, it may not be necessary depending on your client-side' />
 
 If the passwords do not match, we raise a 400 error. If everything is fine, we create the user using the `create_user{:.fn}` function.
 
@@ -492,7 +484,7 @@ The rest is the same as the login route; we create the access and the refresh to
 
 Now that the user is logged in, we can take a look at the refresh route. As we talked about earlier, the access token expires earlier than the refresh token. So, we need a router to renew the access token.
 
-<CodeTitleComponent content="src/auth/router.py" />
+<CodeTitleComponent content='src/auth/router.py' />
 
 ```python showLineNumbers{106} {8,9}
 @router.get("/refresh", response_model=User)
@@ -546,15 +538,14 @@ We start with checking if the refresh token is missing. If it is, we raise a 403
 ## Dashboard route
 
 <ImageComponent
-  src="/blogs/JWT_2.png"
-  width="718"
-  height="404"
-  alt="following requests made with JWT"
+	src='/blogs/JWT_2.png'
+	width='718'
+	height='404'
+	alt='following requests made with JWT'
 />
-Now we are going to take a look at once the user is logged in and tries to access
-a protected route.
+Now we are going to take a look at once the user is logged in and tries to access a protected route.
 
-<CodeTitleComponent content="src/dashboard/router.py" />
+<CodeTitleComponent content='src/dashboard/router.py' />
 
 ```python
 router = APIRouter()
@@ -577,7 +568,7 @@ Note how we use the `require_user{:.fn}` function as a dependency to get the use
 
 ## Logout route
 
-<CodeTitleComponent content="src/auth/router.py" />
+<CodeTitleComponent content='src/auth/router.py' />
 
 ```python showLineNumbers{150}
 @router.post("/logout", status_code=status.HTTP_200_OK)
