@@ -1,4 +1,4 @@
-import { allBlogs } from '@/.contentlayer/generated';
+import { allBlogs } from 'content-collections';
 import { compareDesc } from 'date-fns';
 
 import BlogListDisplay from './BlogListDisplay';

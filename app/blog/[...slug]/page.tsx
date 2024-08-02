@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { allBlogs } from 'contentlayer/generated';
+import { allBlogs } from 'content-collections';
 import { Metadata } from 'next';
 import BlogDisplay from '../[...slug]/BlogDisplay';
 
@@ -11,7 +11,7 @@ interface BlogProps {
 
 async function getPostFromParams(params: BlogProps['params']) {
 	const slug = params?.slug?.join('/');
-	const blog = allBlogs.find((blog) => blog.slugAsParams === slug);
+	const blog = allBlogs.find((blog) => blog._meta.path === slug);
 
 	if (!blog) {
 		null;
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: BlogProps): Promise<Metadata>
 
 export async function generateStaticParams(): Promise<BlogProps['params'][]> {
 	return allBlogs.map((blog) => ({
-		slug: blog.slugAsParams.split('/'),
+		slug: blog._meta.filePath.split('/'),
 	}));
 }
 
