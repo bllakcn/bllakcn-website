@@ -31,23 +31,28 @@ export default function ProjectShowcase({
 				</span>
 				<p className='italic'>{description}</p>
 			</CardHeader>
-			<CardBody className='h-full justify-end p-1'>
+			<CardBody className='aspect-square h-full justify-end p-1'>
 				<Image
 					as={NextImage}
 					src={image.src}
 					alt={title}
 					width={image.width}
 					height={image.height}
-					className='relative justify-between rounded object-cover'
+					className=' object-cover object-center'
 				/>
 			</CardBody>
 			<CardFooter className='justify-between'>
 				<Link as={NextLink} href={github} isExternal>
 					<IoLogoGithub size={42} />
 				</Link>
-				<div className='flex gap-2'>
+				<div className='flex gap-3'>
 					{technologies.map((Tech, index) => (
-						<Tech className='h-10 w-10 saturate-0 transition-all hover:saturate-100' key={index} />
+						<Tech
+							height={24}
+							width={24}
+							className='saturate-0 transition-all hover:saturate-100'
+							key={index}
+						/>
 					))}
 				</div>
 				<Link as={NextLink} href={link} isExternal>

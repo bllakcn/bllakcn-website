@@ -17,11 +17,10 @@ const headerLevels = ['ml-0', 'ml-4', 'ml-8', 'ml-12', 'ml-16', 'ml-20'];
 
 export default function BlogSidebar({ headers }: BlogSidebarProps) {
 	const { activeSlug, activeUpperSlug } = useActiveHeader('h2, h3, h4, h5, h6');
-
 	return (
 		<ScrollShadow
 			hideScrollBar
-			className='h-unit-8xl sticky top-32 hidden justify-self-end text-foreground-500 lg:block'
+			className='sticky top-32 hidden h-svh justify-self-end text-foreground-500 lg:block'
 		>
 			<p className='mb-4 text-xl'>Table of contents</p>
 			<ul className='space-y-2 px-1'>

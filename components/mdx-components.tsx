@@ -1,14 +1,12 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { useMDXComponent } from '@content-collections/mdx/react';
 import type { MDXComponents } from 'mdx/types';
 import { Image } from '@nextui-org/image';
 import NextImage from 'next/image';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
-import { Button } from '@nextui-org/button';
 import { Chip } from '@nextui-org/chip';
 import { Badge } from '@nextui-org/badge';
-import { cn } from '@/libs/utils';
-import { IoAlertOutline, IoInformationOutline, IoCopyOutline } from 'react-icons/io5';
+import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
 import FastSvg from './Portfolio/TechStack/Fast';
 import PythonSvg from './Portfolio/TechStack/Python';
 

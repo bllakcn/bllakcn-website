@@ -1,6 +1,6 @@
 'use client';
 
-import { Blog } from '@/.contentlayer/generated';
+import { allBlogs, Blog } from 'content-collections';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
 import { motion } from 'framer-motion';
@@ -19,7 +19,7 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 		<section className='min-h-screen px-4 py-9 sm:py-36'>
 			<div className='flex items-baseline gap-14'>
 				<h2 className='scroll-m-20 pb-4 text-4xl font-bold tracking-tight lg:text-5xl'>Blog Posts</h2>
-				{filterTag ? (
+				{filterTag && (
 					<div className='flex items-center gap-2'>
 						<span className='text-lg font-semibold'>Filter:</span>
 						<Chip>{filterTag}</Chip>
@@ -27,8 +27,6 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 							<IoClose />
 						</Link>
 					</div>
-				) : (
-					<></>
 				)}
 			</div>
 			{blogs.length ? (
@@ -39,10 +37,10 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 					transition={{ duration: 0.5 }}
 				>
 					{blogs.map((post, index) => (
-						<li key={post._id}>
+						<li key={post._meta.path}>
 							<Link
 								className='flex flex-col items-baseline justify-between gap-2 sm:flex-row'
-								href={post.slug}
+								href={`/blog/${post._meta.path}`}
 								color='foreground'
 								as={NextLink}
 							>

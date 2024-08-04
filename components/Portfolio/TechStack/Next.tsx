@@ -1,45 +1,51 @@
-'use client';
-
-import { FC, SVGProps, useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
-
-const NextSvg: FC<SVGProps<SVGSVGElement>> = ({ ...props }) => {
-	const { theme } = useTheme();
-	const [stroke, setStroke] = useState('#fff');
-	const [fill, setFill] = useState('#fff');
-
-	useEffect(() => {
-		if (theme === 'light') {
-			setStroke('#231f20');
-			setFill('#ccc');
-		} else {
-			setStroke('#fff');
-			setFill('#fff');
-		}
-	}, [theme]);
-
-	return (
-		<svg xmlns='http://www.w3.org/2000/svg' data-name='Layer 8' viewBox='0 0 800 800' {...props}>
+import type { SVGProps } from 'react';
+const Nextjs = (props: SVGProps<SVGSVGElement>) => (
+	<svg viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
+		<mask
+			id='mask0_408_139'
+			style={{
+				maskType: 'alpha',
+			}}
+			maskUnits='userSpaceOnUse'
+			x={0}
+			y={0}
+			width={180}
+			height={180}
+		>
+			<circle cx={90} cy={90} r={90} fill='black' />
+		</mask>
+		<g mask='url(#mask0_408_139)'>
+			<circle cx={90} cy={90} r={87} fill='black' stroke='white' strokeWidth={6} />
 			<path
-				d='M277.92 297.49c0 7.82.01 15.63 0 23.45-.1 56.97-.17 113.94-.35 170.92-.04 11.93-.48 23.85-.87 35.77-.23 7.01-4.55 12.56-11.5 13.22-8.32.8-16.79.94-25.14.42-6.8-.42-12-7.73-12.06-15.8-.13-20-.14-40-.12-60 .06-80.84.13-161.67.23-242.51.02-13.22 5.33-18.57 18.56-18.77 6.22-.1 12.44-.02 18.65.1 6.49.12 11.34 2.82 15.05 8.45 57.62 87.38 237.74 360.27 269.98 409.46 8.57 13.07 16.84 26.33 25.19 39.53 2.61 4.12 1.54 6.48-3.36 6.5-9.56.04-19.14-.1-28.67-.83-2.11-.16-4.42-2.77-5.95-4.79-25.44-33.64-222.24-313.76-254.53-361.29-.98-1.45-2.1-2.8-3.16-4.2-.65.13-1.31.25-1.96.38Z'
-				style={{
-					stroke: stroke,
-					strokeMiterlimit: 10,
-					strokeWidth: 2,
-					fill: fill,
-				}}
+				d='M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z'
+				fill='url(#paint0_linear_408_139)'
 			/>
-			<path
-				d='M523.59 484.86c-10.74-16.01-21.49-32.01-32.21-48.04-4.11-6.14-8.41-12.18-12.07-18.58-1.75-3.05-3.1-6.84-3.11-10.3-.2-52.9-.19-105.8-.13-158.7.01-13.09.37-15.07.55-28.16.15-10.53 5.87-16.44 16.51-16.82 4.86-.17 9.74-.1 14.61-.08 13.19.07 18.66 5.33 18.79 18.66.23 23.85.34 36.58.3 60.42-.09 55.42-.26 110.84-.51 166.26-.05 10.74-.61 21.48-.96 32.22-.03.94-.31 1.88-.47 2.81-.43.1-.87.2-1.3.31Z'
-				style={{
-					stroke: stroke,
-					strokeMiterlimit: 10,
-					strokeWidth: 2,
-					fill: fill,
-				}}
-			/>
-		</svg>
-	);
-};
-
-export default NextSvg;
+			<rect x={115} y={54} width={12} height={72} fill='url(#paint1_linear_408_139)' />
+		</g>
+		<defs>
+			<linearGradient
+				id='paint0_linear_408_139'
+				x1={109}
+				y1={116.5}
+				x2={144.5}
+				y2={160.5}
+				gradientUnits='userSpaceOnUse'
+			>
+				<stop stopColor='white' />
+				<stop offset={1} stopColor='white' stopOpacity={0} />
+			</linearGradient>
+			<linearGradient
+				id='paint1_linear_408_139'
+				x1={121}
+				y1={54}
+				x2={120.799}
+				y2={106.875}
+				gradientUnits='userSpaceOnUse'
+			>
+				<stop stopColor='white' />
+				<stop offset={1} stopColor='white' stopOpacity={0} />
+			</linearGradient>
+		</defs>
+	</svg>
+);
+export default Nextjs;
