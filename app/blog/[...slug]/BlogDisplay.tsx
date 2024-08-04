@@ -1,5 +1,4 @@
 import { Divider } from '@nextui-org/divider';
-// import { Mdx } from '@/components/mdx-components';
 import { Link } from '@nextui-org/link';
 import { Button } from '@nextui-org/button';
 import { Blog } from 'content-collections';
@@ -8,6 +7,7 @@ import NextLink from 'next/link';
 import Avatar from '@/public/avatar.jpg';
 import BlogSidebar from './BlogSidebar';
 import { format, parseISO } from 'date-fns';
+import { Mdx } from '@/components/mdx-components';
 
 type BlogPageProps = {
 	blog: Blog;
@@ -39,7 +39,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 								as={Link}
 								size='sm'
 								href={`/blog?tag=${tag.slug}`}
-								endContent={<div className='h-auto w-10'>{/* <Mdx code={tag.icon} /> */}</div>}
+								endContent={<div className='h-auto w-10'></div>}
 								key={tag.name}
 							>
 								{tag.name}
@@ -51,10 +51,9 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 			<Divider className='my-4' />
 			<div className='grid grid-cols-1 lg:grid-cols-2'>
 				<div className='prose dark:prose-invert prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none prose-pre:scrollbar-hide'>
-					{blog.content}
-					{/* <Mdx code={blog.body.code} /> */}
+					<Mdx code={blog.mdx} />
 				</div>
-				{/* {blog.toc && <BlogSidebar headers={blog.headers} />} */}
+				{blog.toc && <BlogSidebar headers={blog.headers} />}
 			</div>
 			<Divider className='my-4' />
 			<p className='text-foreground-400'>{format(parseISO(blog.date), 'MMMM d, yyyy')}</p>

@@ -31,14 +31,14 @@ export default function ProjectShowcase({
 				</span>
 				<p className='italic'>{description}</p>
 			</CardHeader>
-			<CardBody className='h-full justify-end p-1'>
+			<CardBody className='aspect-square h-full justify-end p-1'>
 				<Image
 					as={NextImage}
 					src={image.src}
 					alt={title}
 					width={image.width}
 					height={image.height}
-					className='relative justify-between rounded object-cover'
+					className=' object-cover object-center'
 				/>
 			</CardBody>
 			<CardFooter className='justify-between'>
