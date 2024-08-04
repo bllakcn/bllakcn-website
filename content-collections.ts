@@ -4,6 +4,7 @@ import GithubSlugger from 'github-slugger';
 import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
+import { iconKeys, iconMap } from './components/IconMap';
 
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
@@ -23,7 +24,7 @@ const blogs = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		date: z.string(),
-		tags: z.array(z.object({ name: z.string(), slug: z.string(), icon: z.string() })),
+		tags: z.array(z.object({ name: z.string(), slug: z.string(), icon: z.enum(iconKeys) })),
 		author: z.string(),
 		toc: z.boolean().optional().default(true),
 	}),

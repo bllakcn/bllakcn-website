@@ -8,6 +8,7 @@ import Avatar from '@/public/avatar.jpg';
 import BlogSidebar from './BlogSidebar';
 import { format, parseISO } from 'date-fns';
 import { Mdx } from '@/components/mdx-components';
+import IconComponent from '@/components/IconMap';
 
 type BlogPageProps = {
 	blog: Blog;
@@ -39,7 +40,11 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 								as={Link}
 								size='sm'
 								href={`/blog?tag=${tag.slug}`}
-								endContent={<div className='h-auto w-10'></div>}
+								endContent={
+									<div className='h-auto w-10'>
+										<IconComponent iconName={tag.icon} />
+									</div>
+								}
 								key={tag.name}
 							>
 								{tag.name}
