@@ -12,19 +12,18 @@ import SassSvg from './TechStack/Sass';
 import TailwindSvg from './TechStack/Tailwind';
 import TsSvg from './TechStack/Ts';
 import { motion } from 'framer-motion';
-import { cloneElement } from 'react';
 
 const tools = [
-	{ name: 'HTML', icon: <HtmlSvg /> },
-	{ name: 'CSS', icon: <CssSvg /> },
-	{ name: 'Javascript', icon: <JsSvg /> },
-	{ name: 'Sass', icon: <SassSvg /> },
-	{ name: 'React', icon: <ReactSvg /> },
-	{ name: 'Tailwindcss', icon: <TailwindSvg /> },
-	{ name: 'Typescript', icon: <TsSvg /> },
-	{ name: 'Next.js', icon: <NextSvg /> },
-	{ name: 'Python', icon: <PythonSvg /> },
-	{ name: 'FastAPI', icon: <FastSvg /> },
+	{ name: 'HTML', icon: HtmlSvg },
+	{ name: 'CSS', icon: CssSvg },
+	{ name: 'Javascript', icon: JsSvg },
+	{ name: 'Sass', icon: SassSvg },
+	{ name: 'React', icon: ReactSvg },
+	{ name: 'Tailwindcss', icon: TailwindSvg },
+	{ name: 'Typescript', icon: TsSvg },
+	{ name: 'Next.js', icon: NextSvg },
+	{ name: 'Python', icon: PythonSvg },
+	{ name: 'FastAPI', icon: FastSvg },
 ];
 
 export default function TechJourney() {
@@ -40,16 +39,18 @@ export default function TechJourney() {
 			</blockquote>
 			<ul className={`relative mx-auto my-5 flex flex-col px-7 sm:flex-row sm:flex-wrap`}>
 				<li>
-					<Line className='absolute left-1/3 top-0 h-full sm:hidden' />
+					<Line className='absolute left-1/2 top-0 h-full -translate-x-1/2 sm:hidden' />
 				</li>
 				{tools.map((tool, index) => (
 					<li
-						className='relative flex flex-1 items-center justify-start odd:flex-row-reverse sm:flex-col sm:items-center sm:justify-center sm:odd:flex-col'
+						className='relative flex flex-1 items-center justify-start gap-2 odd:flex-row-reverse sm:flex-col sm:items-center sm:justify-center sm:odd:flex-col'
 						key={index}
 					>
-						{cloneElement(tool.icon, {
-							className: 'h-24 w-24 sm:w-auto sm:h-auto peer transition-all hover:saturate-100 saturate-0',
-						})}
+						<tool.icon
+							height={56}
+							width={56}
+							className='peer saturate-0 transition-all hover:saturate-100'
+						/>
 						<span className='text-center font-medium peer-hover:opacity-100 sm:opacity-0 sm:transition-opacity'>
 							{tool.name}
 						</span>

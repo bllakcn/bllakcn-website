@@ -40,11 +40,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 								as={Link}
 								size='sm'
 								href={`/blog?tag=${tag.slug}`}
-								endContent={
-									<div className='h-auto w-10'>
-										<IconComponent iconName={tag.icon} />
-									</div>
-								}
+								endContent={<IconComponent iconName={tag.icon} />}
 								key={tag.name}
 							>
 								{tag.name}

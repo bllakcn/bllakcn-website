@@ -45,9 +45,14 @@ export default function ProjectShowcase({
 				<Link as={NextLink} href={github} isExternal>
 					<IoLogoGithub size={42} />
 				</Link>
-				<div className='flex gap-2'>
+				<div className='flex gap-3'>
 					{technologies.map((Tech, index) => (
-						<Tech className='h-10 w-10 saturate-0 transition-all hover:saturate-100' key={index} />
+						<Tech
+							height={24}
+							width={24}
+							className='saturate-0 transition-all hover:saturate-100'
+							key={index}
+						/>
 					))}
 				</div>
 				<Link as={NextLink} href={link} isExternal>

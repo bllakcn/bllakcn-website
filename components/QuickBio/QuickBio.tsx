@@ -49,11 +49,11 @@ export default function QuickBio() {
 				</Link>
 			</div>
 			<div className='flex flex-col items-center px-12 lg:flex-row'>
-				<div className='flex lg:flex-col'>
+				<div className='flex gap-3 px-2 lg:flex-col'>
 					{tools.map((tool, index) => (
 						<Fragment key={index}>
 							{cloneElement(tool.icon, {
-								className: `w-16 h-16 saturate-0 hover:saturate-50 transition-all`,
+								className: `w-10 h-auto saturate-0 hover:saturate-50 transition-all`,
 							})}
 						</Fragment>
 					))}
