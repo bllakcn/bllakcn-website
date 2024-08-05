@@ -1,8 +1,9 @@
 import './globals.css';
 import { Outfit } from 'next/font/google';
-import NavbarComponent from '@/components/Navbar/Navbar';
-import FooterComponent from '@/components/Footer/Footer';
+import NavbarComponent from '@/app/_components/Navbar/Navbar';
+import FooterComponent from '@/app/_components/Footer/Footer';
 import Providers from './providers';
+import { cn } from '@/lib/utils';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -19,13 +20,15 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' className='scroll-smooth'>
-			<body
-				className={`min-h-screen bg-background text-foreground antialiased transition-colors selection:bg-secondary selection:text-foreground dark:selection:text-background ${outfit.className}`}
-			>
+			<body className={cn('min-h-screen bg-white text-foreground antialiased', outfit.className)}>
 				<Providers>
-					<NavbarComponent />
-					<main className='mx-auto max-w-7xl'>{children}</main>
-					<FooterComponent />
+					<div className='mx-auto max-w-[120rem]'>
+						<div className='page m-3 min-h-svh rounded-md border bg-background md:mx-9'>
+							<NavbarComponent />
+							<main>{children}</main>
+							<FooterComponent />
+						</div>
+					</div>
 				</Providers>
 			</body>
 		</html>
