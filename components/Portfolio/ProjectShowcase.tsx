@@ -1,9 +1,11 @@
 import { Project } from '@/types/Portfolio';
-import { Link, Tooltip, Chip, Image } from '@nextui-org/react';
-import NextImage from 'next/image';
-import NextLink from 'next/link';
-import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card';
 import { IoLogoGithub, IoArrowForwardCircleSharp } from 'react-icons/io5';
+import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
+import { Tooltip, TooltipTrigger } from '../ui/tooltip';
+import { Badge } from '../ui/badge';
+import { TooltipContent } from '@radix-ui/react-tooltip';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectShowcase({
 	title,
@@ -21,8 +23,11 @@ export default function ProjectShowcase({
 					<h3 className='text-2xl font-bold'>{title}</h3>
 					{info ? (
 						<>
-							<Tooltip showArrow content={info} color={'foreground'}>
-								<Chip className='select-none'>!</Chip>
+							<Tooltip>
+								<TooltipContent>{info}</TooltipContent>
+								<TooltipTrigger>
+									<Badge className='select-none'>!</Badge>
+								</TooltipTrigger>
 							</Tooltip>
 						</>
 					) : (
@@ -31,18 +36,17 @@ export default function ProjectShowcase({
 				</span>
 				<p className='italic'>{description}</p>
 			</CardHeader>
-			<CardBody className='aspect-square h-full justify-end p-1'>
+			<CardContent className='aspect-square h-full justify-end p-1'>
 				<Image
-					as={NextImage}
 					src={image.src}
 					alt={title}
 					width={image.width}
 					height={image.height}
 					className=' object-cover object-center'
 				/>
-			</CardBody>
+			</CardContent>
 			<CardFooter className='justify-between'>
-				<Link as={NextLink} href={github} isExternal>
+				<Link href={github}>
 					<IoLogoGithub size={42} />
 				</Link>
 				<div className='flex gap-3'>
@@ -55,7 +59,7 @@ export default function ProjectShowcase({
 						/>
 					))}
 				</div>
-				<Link as={NextLink} href={link} isExternal>
+				<Link href={link}>
 					<IoArrowForwardCircleSharp size={42} />
 				</Link>
 			</CardFooter>

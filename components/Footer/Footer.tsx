@@ -1,7 +1,7 @@
-import { Link } from '@nextui-org/link';
 import { IoLogoInstagram, IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5';
 import NextLink from 'next/link';
 import styles from './Footer.module.css';
+import Link from 'next/link';
 
 const socialMedia = [
 	{
@@ -33,7 +33,7 @@ export default function FooterComponent() {
 				<ul className='flex gap-3'>
 					{socialMedia.map((item) => (
 						<li className='flex items-center' key={item.name}>
-							<Link className='p-1' title={item.name} as={NextLink} href={item.href} isExternal>
+							<Link className='p-1' title={item.name} href={item.href}>
 								{item.icon}
 							</Link>
 						</li>

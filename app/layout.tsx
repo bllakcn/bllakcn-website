@@ -1,8 +1,8 @@
 import './globals.css';
 import { Outfit } from 'next/font/google';
-import { Providers } from './providers';
 import NavbarComponent from '@/components/Navbar/Navbar';
 import FooterComponent from '@/components/Footer/Footer';
+import Providers from './providers';
 
 const outfit = Outfit({ subsets: ['latin'] });
 

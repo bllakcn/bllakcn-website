@@ -1,13 +1,12 @@
 'use client';
 
-import { allBlogs, Blog } from 'content-collections';
-import { Link } from '@nextui-org/link';
-import NextLink from 'next/link';
+import { Blog } from 'content-collections';
 import { motion } from 'framer-motion';
-import { Divider } from '@nextui-org/divider';
-import { Chip } from '@nextui-org/chip';
 import { format, parseISO } from 'date-fns';
 import { IoClose } from 'react-icons/io5';
+import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
+import { Separator } from '@/components/ui/separator';
 
 type BlogListDisplayProps = {
 	blogs: Blog[];
@@ -22,8 +21,8 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 				{filterTag && (
 					<div className='flex items-center gap-2'>
 						<span className='text-lg font-semibold'>Filter:</span>
-						<Chip>{filterTag}</Chip>
-						<Link as={NextLink} href='/blog' size='sm'>
+						<Badge>{filterTag}</Badge>
+						<Link href='/blog'>
 							<IoClose />
 						</Link>
 					</div>
@@ -42,15 +41,14 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 								className='flex flex-col items-baseline justify-between gap-2 sm:flex-row'
 								href={`/blog/${post._meta.path}`}
 								color='foreground'
-								as={NextLink}
 							>
 								<h3 className='scroll-m-20 text-2xl font-semibold tracking-tight'>{post.title}</h3>
 								<time dateTime={post.date} className='text-xs text-primary'>
 									{format(parseISO(post.date), 'MMMM d, yyyy')}
 								</time>
 							</Link>
-							<p className='text-ellipsis p-1 text-foreground-600'>{post.description}</p>
-							{index !== blogs.length - 1 && <Divider />}
+							<p className='text-foreground-600 text-ellipsis p-1'>{post.description}</p>
+							{index !== blogs.length - 1 && <Separator />}
 						</li>
 					))}
 				</motion.ul>

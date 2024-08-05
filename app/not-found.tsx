@@ -1,5 +1,5 @@
-import { Button } from '@nextui-org/button';
-import NextLink from 'next/link';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 import { IoArrowBack } from 'react-icons/io5';
 
 export default function NotFound() {
@@ -8,8 +8,11 @@ export default function NotFound() {
 			<div className='flex flex-col items-center justify-center gap-3 p-10 '>
 				<h2 className='text-xl font-bold'>Not Found</h2>
 				<p className='mb-2'>Could not find requested resource.</p>
-				<Button endContent={<IoArrowBack />} variant='flat' as={NextLink} href='/'>
-					Return Home
+				<Button asChild variant='outline'>
+					<Link href='/' className='flex items-center gap-2'>
+						<IoArrowBack />
+						Return Home
+					</Link>
 				</Button>
 			</div>
 		</div>

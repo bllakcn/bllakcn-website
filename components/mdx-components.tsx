@@ -1,14 +1,11 @@
 import { useMDXComponent } from '@content-collections/mdx/react';
 import type { MDXComponents } from 'mdx/types';
-import { Image } from '@nextui-org/image';
-import NextImage from 'next/image';
-import { Link } from '@nextui-org/link';
-import NextLink from 'next/link';
-import { Chip } from '@nextui-org/chip';
-import { Badge } from '@nextui-org/badge';
 import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
 import FastSvg from './Portfolio/TechStack/Fast';
 import PythonSvg from './Portfolio/TechStack/Python';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Alert, AlertTitle } from './ui/alert';
 
 const components: MDXComponents = {
 	WarningComponent,
@@ -33,11 +30,7 @@ function LinkComponent({
 	href: string | undefined;
 	children: React.ReactNode;
 }) {
-	return (
-		<Link isExternal showAnchorIcon as={NextLink} href={href}>
-			{children}
-		</Link>
-	);
+	return <Link href={href || ''}>{children}</Link>;
 }
 
 function ImageComponent({
@@ -53,36 +46,26 @@ function ImageComponent({
 	height: number;
 	props: React.ComponentProps<typeof Image>;
 }) {
-	return <Image as={NextImage} src={src} alt={alt} width={width} height={height} {...props} />;
+	return <Image {...props} src={src} alt={alt} width={width} height={height} />;
 }
 
 function WarningComponent({ content }: { content: string }) {
 	return (
-		<Badge
-			placement='top-left'
-			variant='solid'
-			className='p-1'
-			content={<IoAlertOutline size={15} />}
-		>
-			<Chip classNames={{ base: 'pl-8 pr-5' }} className='h-auto whitespace-normal' variant='faded'>
-				<p className='my-0 py-1'>{content}</p>
-			</Chip>
-		</Badge>
+		<Alert>
+			<IoAlertOutline size={15} />
+			<AlertTitle>Warning</AlertTitle>
+			<p>{content}</p>
+		</Alert>
 	);
 }
 
 function InformationComponent({ content }: { content: string }) {
 	return (
-		<Badge
-			placement='top-left'
-			variant='solid'
-			className='p-1'
-			content={<IoInformationOutline size={15} />}
-		>
-			<Chip classNames={{ base: 'pl-8 pr-5' }} className='h-auto whitespace-normal' variant='flat'>
-				<p className='my-0 py-1'>{content}</p>
-			</Chip>
-		</Badge>
+		<Alert>
+			<IoInformationOutline size={15} />
+			<AlertTitle>Information</AlertTitle>
+			<p>{content}</p>
+		</Alert>
 	);
 }
 
@@ -97,7 +80,7 @@ function CodeTitleComponent({ content }: { content: string }) {
 				<span className='h-2 w-2 rounded-full bg-yellow-400'></span>
 				<span className='h-2 w-2 rounded-full bg-green-400'></span>
 			</div>
-			<p className='my-0 text-center text-default-400 dark:text-default-500'>
+			<p className='text-default-400 dark:text-default-500 my-0 text-center'>
 				{directory}
 				<span className='text-background dark:text-foreground'>{file}</span>
 			</p>

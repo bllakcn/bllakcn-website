@@ -1,38 +1,32 @@
 'use client';
 
-import { Link } from '@nextui-org/link';
 import { IoArrowForward } from 'react-icons/io5';
 import ReactSvg from '../Portfolio/TechStack/React';
 import PythonSvg from '../Portfolio/TechStack/Python';
 import NextSvg from '../Portfolio/TechStack/Next';
 import TailwindSvg from '../Portfolio/TechStack/Tailwind';
-import NextLink from 'next/link';
-import { Fragment, cloneElement, useState } from 'react';
-import { RoughNotation } from 'react-rough-notation';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const tools = [
-	{ name: 'Tailwindcss', icon: <TailwindSvg /> },
-	{ name: 'React', icon: <ReactSvg /> },
-	{ name: 'Next.js', icon: <NextSvg /> },
-	{ name: 'Python', icon: <PythonSvg /> },
+	{ name: 'Tailwindcss', icon: TailwindSvg },
+	{ name: 'React', icon: ReactSvg },
+	{ name: 'Next.js', icon: NextSvg },
+	{ name: 'Python', icon: PythonSvg },
 ];
 
 export default function QuickBio() {
-	const [isNotationVisible, setIsNotationVisible] = useState(false);
-
 	return (
 		<motion.section
 			initial={{ opacity: 0, y: -20 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, delay: 0.3 }}
-			onAnimationComplete={() => setIsNotationVisible(true)}
 			viewport={{ once: true, amount: 0.6 }}
 			className='flex flex-col items-center justify-around px-4 pb-8 pt-0 sm:py-36 sm:pb-36 sm:pt-16 lg:flex-row'
 		>
 			<div className='max-w-3xl py-12'>
 				<h2 className='pb-2 text-5xl font-medium'>Quick Bio</h2>
-				<h4 className='pb-6 text-lg italic text-foreground-600'>
+				<h4 className='text-foreground-600 pb-6 text-lg italic'>
 					&quot;Architectural visionary turned self-taught web developer.&quot;
 				</h4>
 				<p className='pb-2 text-lg'>
@@ -43,7 +37,7 @@ export default function QuickBio() {
 					<br />
 					<br />I enjoy photography, videography and coffee making in spare time.
 				</p>
-				<Link href='/portfolio' as={NextLink}>
+				<Link href='/portfolio'>
 					<p>Get to know more</p>
 					<IoArrowForward size='16' className='pt-1' strokeWidth='2' />
 				</Link>
@@ -51,22 +45,10 @@ export default function QuickBio() {
 			<div className='flex flex-col items-center px-12 lg:flex-row'>
 				<div className='flex gap-3 px-2 lg:flex-col'>
 					{tools.map((tool, index) => (
-						<Fragment key={index}>
-							{cloneElement(tool.icon, {
-								className: `w-10 h-auto saturate-0 hover:saturate-50 transition-all`,
-							})}
-						</Fragment>
+						<tool.icon key={index} className='h-auto w-10 saturate-0 transition-all hover:saturate-50' />
 					))}
 				</div>
-				<RoughNotation
-					color='#208BC4'
-					type='underline'
-					show={isNotationVisible}
-					animationDelay={500}
-					animationDuration={300}
-				>
-					<h4 className='text-lg italic'>My go-to stack</h4>
-				</RoughNotation>
+				<h4 className='text-lg italic'>My go-to stack</h4>
 			</div>
 		</motion.section>
 	);
