@@ -1,7 +1,0 @@
-.dot {
-	background: radial-gradient(#85858fad 1px, transparent 1px);
-	-webkit-mask: radial-gradient(ellipse at center, #000, 40%, transparent);
-	mask: radial-gradient(ellipse at center, #000, 40%, transparent);
-	background-size: 30px 30px;
-	background-position: center;
-}

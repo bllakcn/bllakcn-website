@@ -3,11 +3,11 @@ import AvatarJPG from '@/public/avatar.jpg';
 import BlogSidebar from './BlogSidebar';
 import { format, parseISO } from 'date-fns';
 import { Mdx } from '@/components/mdx-components';
-import IconComponent from '@/components/IconMap';
+import TechIcons from '@/components/IconMap';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import { Separator } from '@radix-ui/react-separator';
+import { Badge } from '@/components/ui/badge';
 
 type BlogPageProps = {
 	blog: Blog;
@@ -17,29 +17,28 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 	return (
 		<article className='px-4 pb-3 pt-9 sm:pb-9 sm:pt-36'>
 			<div className='space-y-3'>
-				<div className='flex flex-col gap-2 md:flex-row md:justify-between'>
+				<span className=''>
 					<h1 className='scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl'>{blog.title}</h1>
-					{blog.author && (
-						<Link href='/' color='foreground'>
-							<Avatar>
-								<AvatarImage src={AvatarJPG.src} alt={blog.author} />
-								<AvatarFallback>{blog.author[0]}</AvatarFallback>
-							</Avatar>
-						</Link>
-					)}
-				</div>
-				{blog.description && (
-					<p className='text-xl text-slate-700 dark:text-slate-200'>{blog.description}</p>
+					{blog.description && <p className='text-xl text-muted-foreground'>{blog.description}</p>}
+				</span>
+				{blog.author && (
+					<Link className='flex items-center gap-1' href='/'>
+						<Avatar className='h-8 w-8'>
+							<AvatarImage src={AvatarJPG.src} alt={blog.author} />
+							<AvatarFallback>{blog.author[0]}</AvatarFallback>
+						</Avatar>
+						<p>{blog.author}</p>
+					</Link>
 				)}
 				{blog.tags && (
 					<div className='flex flex-wrap gap-1'>
 						{blog.tags.map((tag) => (
-							<Button size='sm' asChild key={tag.name}>
-								<Link href={`/blog?tag=${tag.slug}`}>
+							<Badge key={tag.name}>
+								<Link className='flex items-center gap-1 py-0.5' href={`/blog?tag=${tag.slug}`}>
 									{tag.name}
-									<IconComponent iconName={tag.icon} />
+									<TechIcons iconName={tag.icon} />
 								</Link>
-							</Button>
+							</Badge>
 						))}
 					</div>
 				)}

@@ -9,7 +9,6 @@ type BlogSidebarProps = {
 	}[];
 };
 import { cn } from '@/lib/utils';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import Link from 'next/link';
 
 const headerLevels = ['ml-0', 'ml-4', 'ml-8', 'ml-12', 'ml-16', 'ml-20'];
@@ -17,13 +16,12 @@ const headerLevels = ['ml-0', 'ml-4', 'ml-8', 'ml-12', 'ml-16', 'ml-20'];
 export default function BlogSidebar({ headers }: BlogSidebarProps) {
 	const { activeSlug, activeUpperSlug } = useActiveHeader('h2, h3, h4, h5, h6');
 	return (
-		<ScrollArea className='text-foreground-500 sticky top-32 hidden h-svh justify-self-end lg:block'>
+		<div className='sticky top-32 hidden h-svh justify-self-end px-10 text-muted-foreground lg:block'>
 			<p className='mb-4 text-xl'>Table of contents</p>
 			<ul className='space-y-2 px-1'>
 				{headers.map((header) => (
 					<li
 						className={cn(
-							header.level > 3 ? "marker:content-['>']" : '',
 							headerLevels[header.level - 1],
 							header.slug === activeSlug ? 'marker:text-primary' : 'marker:text-foreground-200',
 							'px-1'
@@ -32,9 +30,7 @@ export default function BlogSidebar({ headers }: BlogSidebarProps) {
 					>
 						<Link
 							className={cn(
-								header.slug === activeSlug || header.slug === activeUpperSlug
-									? 'text-foreground'
-									: 'text-foreground-500'
+								(header.slug === activeSlug || header.slug === activeUpperSlug) && 'text-foreground'
 							)}
 							href={`#${header.slug}`}
 						>
@@ -43,6 +39,6 @@ export default function BlogSidebar({ headers }: BlogSidebarProps) {
 					</li>
 				))}
 			</ul>
-		</ScrollArea>
+		</div>
 	);
 }

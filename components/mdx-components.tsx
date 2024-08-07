@@ -80,9 +80,9 @@ function CodeTitleComponent({ content }: { content: string }) {
 				<span className='h-2 w-2 rounded-full bg-yellow-400'></span>
 				<span className='h-2 w-2 rounded-full bg-green-400'></span>
 			</div>
-			<p className='text-default-400 dark:text-default-500 my-0 text-center'>
+			<p className='my-0 text-center text-muted-foreground'>
 				{directory}
-				<span className='text-background dark:text-foreground'>{file}</span>
+				<span className='text-background'>{file}</span>
 			</p>
 		</div>
 	);
