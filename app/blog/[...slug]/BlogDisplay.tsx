@@ -6,7 +6,7 @@ import { Mdx } from '@/components/mdx-components';
 import TechIcons from '@/components/IconMap';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Separator } from '@radix-ui/react-separator';
+import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 
 type BlogPageProps = {
@@ -15,7 +15,7 @@ type BlogPageProps = {
 
 export default function BlogDisplay({ blog }: BlogPageProps) {
 	return (
-		<article className='px-4 pb-3 pt-9 sm:pb-9 sm:pt-36'>
+		<article className='space-y-3 px-8 pb-3 pt-9 sm:pb-9 sm:pt-36'>
 			<div className='space-y-3'>
 				<span className=''>
 					<h1 className='scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl'>{blog.title}</h1>
@@ -43,15 +43,15 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 					</div>
 				)}
 			</div>
-			<Separator className='my-4' />
-			<div className='grid grid-cols-1 lg:grid-cols-2'>
+			<Separator />
+			<div className='grid grid-cols-1 py-2 lg:grid-cols-2'>
 				<div className='prose-pre:scrollbar-hide prose dark:prose-invert prose-headings:scroll-mt-20 prose-code:before:content-none prose-code:after:content-none'>
 					<Mdx code={blog.mdx} />
 				</div>
 				{blog.toc && <BlogSidebar headers={blog.headers} />}
 			</div>
 			<Separator className='my-4' />
-			<p className='text-foreground-400'>{format(parseISO(blog.date), 'MMMM d, yyyy')}</p>
+			<p className='text-xs text-muted-foreground'>{format(parseISO(blog.date), 'MMMM d, yyyy')}</p>
 		</article>
 	);
 }

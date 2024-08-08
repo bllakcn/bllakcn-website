@@ -1,11 +1,10 @@
 import { useMDXComponent } from '@content-collections/mdx/react';
 import type { MDXComponents } from 'mdx/types';
 import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
-import FastSvg from './Portfolio/TechStack/Fast';
-import PythonSvg from './Portfolio/TechStack/Python';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Alert, AlertTitle } from './ui/alert';
+import TechIcons from './IconMap';
 
 const components: MDXComponents = {
 	WarningComponent,
@@ -13,8 +12,7 @@ const components: MDXComponents = {
 	CodeTitleComponent,
 	ImageComponent,
 	a: ({ href, children }) => LinkComponent({ href, children }),
-	FastSvg,
-	PythonSvg,
+	TechIcons,
 };
 
 export function Mdx({ code }: { code: string }) {

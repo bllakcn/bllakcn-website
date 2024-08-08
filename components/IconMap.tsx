@@ -1,10 +1,22 @@
 import { forwardRef } from 'react';
-import FastSvg from './Portfolio/TechStack/Fast';
-import PythonSvg from './Portfolio/TechStack/Python';
+import Fast from './Portfolio/TechStack/Fast';
+import Python from './Portfolio/TechStack/Python';
+import Redis from './Portfolio/TechStack/Redis';
+import Supabase from './Portfolio/TechStack/Supabase';
+import TailwindCSS from './Portfolio/TechStack/Tailwind';
+import Nextjs from './Portfolio/TechStack/Next';
+import TypeScript from './Portfolio/TechStack/Ts';
+import Sass from './Portfolio/TechStack/Sass';
 
 export const iconMap = {
-	FastSvg: FastSvg,
-	PythonSvg: PythonSvg,
+	Fast,
+	Python,
+	Redis,
+	Supabase,
+	TailwindCSS,
+	Nextjs,
+	TypeScript,
+	Sass,
 	// Add more mappings as needed
 };
 

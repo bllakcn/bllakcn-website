@@ -20,9 +20,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' className='scroll-smooth'>
-			<body className={cn('min-h-screen bg-white text-foreground antialiased', outfit.className)}>
+			<body className={cn('min-h-svh bg-primary text-foreground antialiased', outfit.className)}>
 				<Providers>
-					<div className='mx-auto max-w-[120rem]'>
+					<div className='mx-auto max-w-7xl'>
 						<div className='page m-3 min-h-svh rounded-md border bg-background md:mx-9'>
 							<NavbarComponent />
 							<main>{children}</main>

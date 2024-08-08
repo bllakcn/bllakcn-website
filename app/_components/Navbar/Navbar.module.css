@@ -1,4 +1,0 @@
-.gradientBlur {
-	mask: linear-gradient(black, black, transparent);
-	backdrop-filter: blur(1px);
-}

@@ -5,7 +5,6 @@ import { MoveRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWindowScroll } from '@uidotdev/usehooks';
 import { cn } from '@/lib/utils';
-import styles from './Navbar.module.css';
 
 const navLinks = [{ name: 'blog', href: '/blog' }];
 
@@ -18,7 +17,7 @@ export default function NavbarComponent() {
 				<header
 					className={cn(
 						'mx-auto flex w-full max-w-5xl items-center justify-between py-4 transition-all duration-300 max-xl:px-3',
-						y && y > 40 && 'max-w-4xl'
+						y && y > 40 && 'max-w-6xl py-2'
 					)}
 				>
 					<Button variant='ghost' asChild>
