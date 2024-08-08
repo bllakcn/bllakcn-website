@@ -10,9 +10,7 @@ import ReactSvg from './TechStack/React';
 import SassSvg from './TechStack/Sass';
 import TailwindSvg from './TechStack/Tailwind';
 import TsSvg from './TechStack/Ts';
-import JsSvg from './TechStack/Js';
 import NextSvg from './TechStack/Next';
-import CssSvg from './TechStack/Css';
 
 const projects: Project[] = [
 	{
@@ -34,7 +32,7 @@ const projects: Project[] = [
 		link: 'https://colpal-generatecolors.netlify.app/',
 		date: 'January 2023',
 		github: 'https://github.com/bllakcn/color-palette-generator',
-		technologies: [ReactSvg, JsSvg, SassSvg],
+		technologies: [ReactSvg, SassSvg],
 	},
 
 	{
@@ -45,7 +43,7 @@ const projects: Project[] = [
 		link: 'https://project-management-dfe87.web.app//',
 		date: 'November 2022',
 		github: 'https://github.com/bllakcn/project-management',
-		technologies: [ReactSvg, JsSvg, CssSvg],
+		technologies: [ReactSvg],
 	},
 ];
 
