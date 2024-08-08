@@ -12,8 +12,9 @@
 		--popover-foreground: 0 0% 3.9%;
 		--primary: 0 0% 11%;
 		--primary-foreground: 0 0% 98%;
-		--secondary: 0 0% 96.1%;
+		--secondary: 227 65% 50%;
 		--secondary-foreground: 0 0% 9%;
+		--third: 160 65% 45%;
 		--muted: 0 0% 96.1%;
 		--muted-foreground: 0 0% 45.1%;
 		--accent: 0 0% 96.1%;
@@ -43,7 +44,7 @@
 		--secondary: 0 0% 14.9%;
 		--secondary-foreground: 0 0% 98%;
 		--muted: 0 0% 14.9%;
-		--muted-foreground: 0 0% 63.9%;
+		--muted-foreground: 0 0% 70%;
 		--accent: 0 0% 14.9%;
 		--accent-foreground: 0 0% 98%;
 		--destructive: 0 62.8% 30.6%;
@@ -75,11 +76,11 @@ html.light code[data-theme='dark'] {
 	display: none;
 }
 
-div.prose div.relative:has(+ p) > img {
+div.prose p + img {
 	margin-bottom: 0;
 }
 
-div.prose div.relative:has(> img) + p {
+div.prose img + p {
 	margin-top: 0;
 }
 
@@ -100,25 +101,13 @@ div[data-rehype-pretty-code-fragment] + div[data-rehype-pretty-code-title] {
 
 div[data-rehype-pretty-code-fragment] pre {
 	margin: 0;
-	border: 1px solid #d3d3fc1a;
+	border: 2px solid hsl(var(--border));
 }
 
 div[data-rehype-pretty-code-title] + div[data-rehype-pretty-code-fragment] pre {
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
 	border-top: 0;
-}
-
-div[data-rehype-pretty-code-title] {
-	font-size: 0.9rem;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0.1rem 1rem;
-	border: 1px solid #d3d3fc1a;
-	border-bottom: 0;
-	background-color: #363a42;
-	border-top-left-radius: 0.5rem;
-	border-top-right-radius: 0.5rem;
 }
 
 code {

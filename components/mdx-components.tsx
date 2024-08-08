@@ -3,7 +3,7 @@ import type { MDXComponents } from 'mdx/types';
 import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Alert, AlertTitle } from './ui/alert';
+import { Alert, AlertDescription } from './ui/alert';
 import TechIcons from './IconMap';
 
 const components: MDXComponents = {
@@ -12,7 +12,6 @@ const components: MDXComponents = {
 	CodeTitleComponent,
 	ImageComponent,
 	a: ({ href, children }) => LinkComponent({ href, children }),
-	TechIcons,
 };
 
 export function Mdx({ code }: { code: string }) {
@@ -49,20 +48,22 @@ function ImageComponent({
 
 function WarningComponent({ content }: { content: string }) {
 	return (
-		<Alert>
-			<IoAlertOutline size={15} />
-			<AlertTitle>Warning</AlertTitle>
-			<p>{content}</p>
+		<Alert
+			className='border-secondary text-secondary'
+			alertIcon={<IoAlertOutline size={23} className='rounded-full border border-secondary p-1' />}
+		>
+			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);
 }
 
 function InformationComponent({ content }: { content: string }) {
 	return (
-		<Alert>
-			<IoInformationOutline size={15} />
-			<AlertTitle>Information</AlertTitle>
-			<p>{content}</p>
+		<Alert
+			className='border-third text-third'
+			alertIcon={<IoInformationOutline size={23} className='border-third rounded-full border p-1' />}
+		>
+			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);
 }
@@ -72,13 +73,17 @@ function CodeTitleComponent({ content }: { content: string }) {
 	const directory = content.substring(0, index + 1);
 	const file = content.substring(index + 1);
 	return (
-		<div data-rehype-pretty-code-title data-theme='default' className='relative'>
+		<div
+			data-rehype-pretty-code-title
+			data-theme='default'
+			className='relative rounded-t-lg border-2 border-b-0 border-border bg-[#24282f] p-3 text-sm'
+		>
 			<div className='absolute left-5 top-1/2 flex -translate-y-1/2 items-center justify-center gap-1'>
 				<span className='h-2 w-2 rounded-full bg-red-400'></span>
 				<span className='h-2 w-2 rounded-full bg-yellow-400'></span>
 				<span className='h-2 w-2 rounded-full bg-green-400'></span>
 			</div>
-			<p className='my-0 text-center text-muted-foreground'>
+			<p className='my-0 text-center text-background/60'>
 				{directory}
 				<span className='text-background'>{file}</span>
 			</p>

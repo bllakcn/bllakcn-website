@@ -17,7 +17,6 @@ export const iconMap = {
 	Nextjs,
 	TypeScript,
 	Sass,
-	// Add more mappings as needed
 };
 
 export const iconKeys = Object.keys(iconMap) as [keyof typeof iconMap, ...(keyof typeof iconMap)[]];

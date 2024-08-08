@@ -20,6 +20,7 @@ const config = {
 		},
 		extend: {
 			colors: {
+				third: 'hsl(var(--third))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -53,6 +54,9 @@ const config = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+			},
+			maxWidth: {
+				'8xl': '90rem',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

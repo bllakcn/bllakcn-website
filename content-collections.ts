@@ -5,9 +5,9 @@ import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import { iconKeys } from './components/IconMap';
+import { type Options } from 'rehype-pretty-code';
 
-/** @type {import('rehype-pretty-code').Options} */
-const options = {
+const options: Options = {
 	// keepBackground: false,
 	theme: 'one-dark-pro',
 	defaultLang: 'plaintext',
