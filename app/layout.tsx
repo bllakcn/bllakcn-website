@@ -4,6 +4,7 @@ import NavbarComponent from '@/app/_components/Navbar/Navbar';
 import FooterComponent from '@/app/_components/Footer/Footer';
 import Providers from './providers';
 import { cn } from '@/lib/utils';
+import { Toaster } from '@/components/ui/sonner';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 							<FooterComponent />
 						</div>
 					</div>
+					<Toaster />
 				</Providers>
 			</body>
 		</html>

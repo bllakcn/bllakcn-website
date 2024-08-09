@@ -60,8 +60,10 @@ function WarningComponent({ content }: { content: string }) {
 function InformationComponent({ content }: { content: string }) {
 	return (
 		<Alert
-			className='border-third text-third'
-			alertIcon={<IoInformationOutline size={23} className='border-third rounded-full border p-1' />}
+			className='border-tertiary text-tertiary'
+			alertIcon={
+				<IoInformationOutline size={23} className='border-tertiary rounded-full border p-1' />
+			}
 		>
 			<AlertDescription>{content}</AlertDescription>
 		</Alert>
