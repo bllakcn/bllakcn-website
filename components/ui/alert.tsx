@@ -3,11 +3,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const alertVariants = cva('relative w-full rounded-lg border p-4', {
+const alertVariants = cva('relative bg-card/70 w-full rounded-lg border border-border p-4', {
 	variants: {
 		variant: {
-			default: 'bg-background text-foreground',
-			destructive: 'border-destructive/50 text-destructive dark:border-destructive',
+			default: 'text-foreground',
+			destructive: 'border-destructive text-destructive dark:border-destructive',
+			secondary: 'border-secondary text-secondary dark:border-secondary',
+			tertiary: 'border-tertiary text-foreground dark:border-tertiary',
 		},
 	},
 	defaultVariants: {
@@ -29,7 +31,9 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 			className={cn('flex items-center gap-5', alertVariants({ variant }), className)}
 			{...props}
 		>
-			{alertIcon && <div className='flex-shrink-0'>{alertIcon}</div>}
+			{alertIcon && (
+				<div className={cn('flex-shrink-0 rounded-full border border-inherit p-1')}>{alertIcon}</div>
+			)}
 			<div className='space-y-2'>{children}</div>
 		</div>
 	)

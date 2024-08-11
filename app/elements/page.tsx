@@ -3,6 +3,7 @@ import ElementsButtons from './_components/El-Buttons';
 import { Separator } from '@/components/ui/separator';
 import ElementBadges from './_components/El-Badges';
 import ElementColors from './_components/El-Colors';
+import ElementAlert from './_components/El-Alert';
 
 export default function Elements() {
 	return (
@@ -32,6 +33,11 @@ export default function Elements() {
 			<div className='space-y-3'>
 				<Heading level='h4'>Badges</Heading>
 				<ElementBadges />
+			</div>
+			<Separator />
+			<div className='space-y-3'>
+				<Heading level='h4'>Alerts</Heading>
+				<ElementAlert />
 			</div>
 			<Separator />
 		</div>

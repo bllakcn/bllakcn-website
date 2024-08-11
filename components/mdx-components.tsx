@@ -48,10 +48,7 @@ function ImageComponent({
 
 function WarningComponent({ content }: { content: string }) {
 	return (
-		<Alert
-			className='border-secondary text-secondary'
-			alertIcon={<IoAlertOutline size={23} className='rounded-full border border-secondary p-1' />}
-		>
+		<Alert variant='secondary' alertIcon={<IoAlertOutline size={15} />}>
 			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);
@@ -59,12 +56,7 @@ function WarningComponent({ content }: { content: string }) {
 
 function InformationComponent({ content }: { content: string }) {
 	return (
-		<Alert
-			className='border-tertiary text-tertiary'
-			alertIcon={
-				<IoInformationOutline size={23} className='border-tertiary rounded-full border p-1' />
-			}
-		>
+		<Alert variant='tertiary' alertIcon={<IoInformationOutline size={15} />}>
 			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);
