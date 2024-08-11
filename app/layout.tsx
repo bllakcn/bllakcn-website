@@ -21,12 +21,12 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' className='scroll-smooth'>
-			<body className={cn('min-h-svh bg-primary text-foreground antialiased', outfit.className)}>
+			<body className={cn('bg-primary text-foreground antialiased', outfit.className)}>
 				<Providers>
 					<div className='mx-auto max-w-8xl'>
-						<div className='page m-3 min-h-svh rounded-md border bg-background md:mx-9'>
+						<div className='page m-3 flex min-h-[calc(100svh-24px)] flex-col rounded-md border bg-background md:mx-9'>
 							<NavbarComponent />
-							<main>{children}</main>
+							<main className='flex-1'>{children}</main>
 							<FooterComponent />
 						</div>
 					</div>

@@ -5,9 +5,11 @@ import { MoveRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWindowScroll } from '@uidotdev/usehooks';
 import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
 
-const navLinks = [{ name: 'blog', href: '/blog' }];
+const navLinks = [
+	{ name: 'blog', href: '/blog' },
+	{ name: 'elements', href: '/elements' },
+];
 
 export default function NavbarComponent() {
 	const [{ y }] = useWindowScroll();
