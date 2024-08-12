@@ -10,6 +10,7 @@ const alertVariants = cva('relative bg-card/70 w-full rounded-lg border border-b
 			destructive: 'border-destructive text-destructive dark:border-destructive',
 			secondary: 'border-secondary text-secondary dark:border-secondary',
 			tertiary: 'border-tertiary text-foreground dark:border-tertiary',
+			ghost: 'border-transparent hover:border-border/10 bg-card/30',
 		},
 	},
 	defaultVariants: {

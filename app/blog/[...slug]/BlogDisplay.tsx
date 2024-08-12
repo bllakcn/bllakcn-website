@@ -7,8 +7,8 @@ import TechIcons from '@/components/IconMap';
 import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
 
 type BlogPageProps = {
 	blog: Blog;
@@ -16,11 +16,11 @@ type BlogPageProps = {
 
 export default function BlogDisplay({ blog }: BlogPageProps) {
 	return (
-		<article className='space-y-3 px-3 pb-3 pt-9 sm:px-10 sm:pb-9 sm:pt-36'>
+		<article className='space-y-3 px-3 pb-3 pt-9 sm:px-10 sm:pb-9 sm:pt-24'>
 			<div className='space-y-3'>
 				<span className=''>
-					<h1 className='scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl'>{blog.title}</h1>
-					{blog.description && <p className='text-xl text-muted-foreground'>{blog.description}</p>}
+					<Heading>{blog.title}</Heading>
+					{blog.description && <p className='text-muted-foreground'>{blog.description}</p>}
 				</span>
 				<div className='flex justify-between lg:pr-16'>
 					{blog.tags && (

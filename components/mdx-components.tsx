@@ -3,12 +3,10 @@ import type { MDXComponents } from 'mdx/types';
 import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Alert, AlertDescription } from './ui/alert';
-import TechIcons from './IconMap';
+import { Alert, AlertDescription, AlertProps } from './ui/alert';
 
 const components: MDXComponents = {
-	WarningComponent,
-	InformationComponent,
+	AlertComponent,
 	CodeTitleComponent,
 	ImageComponent,
 	a: ({ href, children }) => LinkComponent({ href, children }),
@@ -46,17 +44,20 @@ function ImageComponent({
 	return <Image {...props} src={src} alt={alt} width={width} height={height} />;
 }
 
-function WarningComponent({ content }: { content: string }) {
+function AlertComponent({
+	content,
+	variant,
+}: {
+	content: string;
+	variant: 'warning' | 'information';
+}) {
+	const variantMap: Record<typeof variant, AlertProps['variant']> = {
+		warning: 'secondary',
+		information: 'tertiary',
+	};
+	const Icon = variant === 'warning' ? IoAlertOutline : IoInformationOutline;
 	return (
-		<Alert variant='secondary' alertIcon={<IoAlertOutline size={15} />}>
-			<AlertDescription>{content}</AlertDescription>
-		</Alert>
-	);
-}
-
-function InformationComponent({ content }: { content: string }) {
-	return (
-		<Alert variant='tertiary' alertIcon={<IoInformationOutline size={15} />}>
+		<Alert variant={variantMap[variant]} alertIcon={<Icon size={15} />}>
 			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);

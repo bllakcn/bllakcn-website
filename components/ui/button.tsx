@@ -11,6 +11,7 @@ const buttonVariants = cva(
 			variant: {
 				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
 				destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+				destructiveOutline: 'bg-background hover:bg-destructive hover:text-destructive-foreground',
 				outline: 'bg-background hover:bg-accent hover:text-accent-foreground',
 				secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
 				tertiary: 'bg-tertiary text-tertiary-foreground hover:bg-tertiary/80',
@@ -18,7 +19,7 @@ const buttonVariants = cva(
 				link: 'text-primary underline-offset-4 hover:underline border-none',
 				badge:
 					'rounded-full text-xs font-semibold bg-primary border-none text-primary-foreground hover:bg-primary/80',
-				ghost: 'border-none',
+				ghost: 'border-transparent hover:border-border/10',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',

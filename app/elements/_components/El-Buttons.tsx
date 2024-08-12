@@ -1,7 +1,13 @@
 import { Button, ButtonProps } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
-type ButtonType = { name: string; variant: ButtonProps['variant']; size?: ButtonProps['size'] };
-const buttons: ButtonType[] = [
+type Button = {
+	name: string;
+	variant?: ButtonProps['variant'];
+	size?: ButtonProps['size'];
+};
+
+const buttons: Button[] = [
 	{
 		name: 'Default',
 		variant: 'default',
@@ -43,7 +49,7 @@ const buttons: ButtonType[] = [
 export default function ElementsButtons() {
 	return (
 		<ul className='flex flex-wrap items-baseline gap-4'>
-			{buttons.map((button) => (
+			{buttons.map((button, index) => (
 				<li key={button.name}>
 					<Button size={button.size} variant={button.variant}>
 						{button.name}

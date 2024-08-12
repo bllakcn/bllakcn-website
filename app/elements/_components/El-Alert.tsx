@@ -11,7 +11,7 @@ const alerts: AlertType[] = [
 	{
 		name: 'Secondary',
 		variant: 'secondary',
-		icon: IoInformationOutline,
+		icon: IoAlertOutline,
 	},
 	{
 		name: 'Tertiary',
@@ -22,6 +22,11 @@ const alerts: AlertType[] = [
 		name: 'Destructive',
 		variant: 'destructive',
 		icon: IoAlertOutline,
+	},
+	{
+		name: 'Ghost',
+		variant: 'ghost',
+		icon: IoInformationOutline,
 	},
 ];
 export default function ElementAlert() {

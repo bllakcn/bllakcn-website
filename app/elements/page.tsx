@@ -1,9 +1,10 @@
 import { Heading } from '@/components/ui/heading';
-import ElementsButtons from './_components/El-Buttons';
 import { Separator } from '@/components/ui/separator';
+import ElementsButtons from './_components/El-Buttons';
 import ElementBadges from './_components/El-Badges';
 import ElementColors from './_components/El-Colors';
 import ElementAlert from './_components/El-Alert';
+import ElementCard from './_components/El-Card';
 
 export default function Elements() {
 	return (
@@ -40,6 +41,10 @@ export default function Elements() {
 				<ElementAlert />
 			</div>
 			<Separator />
+			<div className='space-y-3'>
+				<Heading level='h4'>Card</Heading>
+				<ElementCard />
+			</div>
 		</div>
 	);
 }

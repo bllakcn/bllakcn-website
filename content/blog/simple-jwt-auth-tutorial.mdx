@@ -16,7 +16,8 @@ Hello everyone,
 
 In this beginner-friendly tutorial, we will go through the steps of implementing [JWT](https://jwt.io/) Authentication in [FastAPI](https://fastapi.tiangolo.com/) using [fastapi-another-jwt-auth](https://pypi.org/project/fastapi-another-jwt-auth/). We will be using [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation and [Passlib](https://passlib.readthedocs.io/en/stable/) for password hashing.
 
-<WarningComponent
+<AlertComponent
+	variant='warning'
 	content={
 		'This tutorial assumes that you have basic knowledge of Python and FastAPI with SQLAlchemy which is not going to be covered in this tutorial.'
 	}
@@ -154,7 +155,10 @@ ACCESS_TOKEN_EXPIRE_MINUTES=15
 
 We are going to use the [asymmetric RSA algorithm](https://glitchcorp.github.io/fastapi-another-jwt-auth/advanced-usage/asymmetric/) for our JWTs. That means we need to generate a private and a public key. We can do that using this website: [cryptotool.net](https://cryptotools.net/rsagen)
 
-<InformationComponent content='Ideally, you can use the `openssl` command to generate your keys.' />
+<AlertComponent
+	variant='information'
+	content='Ideally, you can use the `openssl` command to generate your keys.'
+/>
 
 We add our environment variables to `config.py`
 
@@ -474,7 +478,10 @@ async def signup_user(
 
 We begin with checking if the user already exists using the `check_user{:.fn}` function. It is a simple function that checks if the user exists in the database using SQLAlchemy. If the user exists, we raise a 409 error.
 
-<InformationComponent content='Note that we perform a server-side password confirm check. Though, it may not be necessary depending on your client-side' />
+<AlertComponent
+	variant='information'
+	content='Note that we perform a server-side password confirm check. Though, it may not be necessary depending on your client-side'
+/>
 
 If the passwords do not match, we raise a 400 error. If everything is fine, we create the user using the `create_user{:.fn}` function.
 

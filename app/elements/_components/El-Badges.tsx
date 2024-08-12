@@ -22,6 +22,10 @@ const badges: BadgeType[] = [
 		name: 'Outline',
 		variant: 'outline',
 	},
+	{
+		name: 'Ghost',
+		variant: 'ghost',
+	},
 ];
 export default function ElementBadges() {
 	return (
