@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { allBlogs } from 'content-collections';
 import { Metadata } from 'next';
-import BlogDisplay from '../[...slug]/BlogDisplay';
+import BlogDisplay from './_components/BlogDisplay';
 
 interface BlogProps {
 	params: {

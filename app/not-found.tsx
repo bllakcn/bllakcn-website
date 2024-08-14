@@ -1,12 +1,19 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { IoArrowBack } from 'react-icons/io5';
+import { X } from 'lucide-react';
+import { Heading } from '@/components/ui/heading';
 
 export default function NotFound() {
 	return (
-		<div className='mx-auto flex min-h-screen items-center justify-center'>
+		<section className='mt-20 flex h-full flex-col items-center justify-center'>
 			<div className='flex flex-col items-center justify-center gap-3 p-10 '>
-				<h2 className='text-xl font-bold'>Not Found</h2>
+				<span className=' flex items-center gap-2'>
+					<X size={24} />
+					<Heading className='pb-0' level='h2'>
+						Not Found
+					</Heading>
+				</span>
 				<p className='mb-2'>Could not find requested resource.</p>
 				<Button asChild variant='outline'>
 					<Link href='/' className='flex items-center gap-2'>
@@ -15,6 +22,6 @@ export default function NotFound() {
 					</Link>
 				</Button>
 			</div>
-		</div>
+		</section>
 	);
 }
