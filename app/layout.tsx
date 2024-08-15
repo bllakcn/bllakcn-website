@@ -1,8 +1,10 @@
 import './globals.css';
 import { Outfit } from 'next/font/google';
-import { Providers } from './providers';
-import NavbarComponent from '@/components/Navbar/Navbar';
-import FooterComponent from '@/components/Footer/Footer';
+import NavbarComponent from '@/app/_components/Navbar/Navbar';
+import FooterComponent from '@/app/_components/Footer/Footer';
+import Providers from './providers';
+import { cn } from '@/lib/utils';
+import { Toaster } from '@/components/ui/sonner';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -19,13 +21,16 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' className='scroll-smooth'>
-			<body
-				className={`min-h-screen bg-background text-foreground antialiased transition-colors selection:bg-secondary selection:text-foreground dark:selection:text-background ${outfit.className}`}
-			>
+			<body className={cn('h-full bg-primary text-foreground antialiased', outfit.className)}>
 				<Providers>
-					<NavbarComponent />
-					<main className='mx-auto max-w-7xl'>{children}</main>
-					<FooterComponent />
+					<div className='mx-auto max-w-8xl'>
+						<div className='page m-3 flex min-h-[calc(100svh-24px)] flex-col rounded-md border bg-background md:mx-9'>
+							<NavbarComponent />
+							<main className='flex-1'>{children}</main>
+							<FooterComponent />
+						</div>
+					</div>
+					<Toaster />
 				</Providers>
 			</body>
 		</html>

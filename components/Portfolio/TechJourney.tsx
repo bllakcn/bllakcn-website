@@ -1,10 +1,7 @@
 'use client';
 
 import Line from './Line';
-import CssSvg from './TechStack/Css';
 import FastSvg from './TechStack/Fast';
-import HtmlSvg from './TechStack/Html';
-import JsSvg from './TechStack/Js';
 import NextSvg from './TechStack/Next';
 import PythonSvg from './TechStack/Python';
 import ReactSvg from './TechStack/React';
@@ -14,9 +11,6 @@ import TsSvg from './TechStack/Ts';
 import { motion } from 'framer-motion';
 
 const tools = [
-	{ name: 'HTML', icon: HtmlSvg },
-	{ name: 'CSS', icon: CssSvg },
-	{ name: 'Javascript', icon: JsSvg },
 	{ name: 'Sass', icon: SassSvg },
 	{ name: 'React', icon: ReactSvg },
 	{ name: 'Tailwindcss', icon: TailwindSvg },
@@ -34,7 +28,7 @@ export default function TechJourney() {
 			transition={{ duration: 0.5 }}
 		>
 			<h3 className='scroll-m-20 text-2xl font-semibold tracking-tight'>My Tech Journey</h3>
-			<blockquote className='font-thin italic tracking-wide text-foreground-600'>
+			<blockquote className='text-foreground-600 font-thin italic tracking-wide'>
 				Technologies I&apos;ve worked with so far
 			</blockquote>
 			<ul className={`relative mx-auto my-5 flex flex-col px-7 sm:flex-row sm:flex-wrap`}>
