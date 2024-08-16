@@ -60,11 +60,6 @@ const timelineItems: TimelineItem[] = [
 		description: 'Decided to learn React when I was determined to make a change in my career path.',
 	},
 	{
-		title: 'Moved to the Netherlands',
-		date: new Date('2022-10-01'),
-		description: '',
-	},
-	{
 		title: 'Traineeship at Graphisoft',
 		date: new Date('2022-05-01'),
 		description: 'Did a traineeship at Graphisoft as a technical support engineer.',
