@@ -33,7 +33,7 @@ const TechIcons = forwardRef<SVGSVGElement, TechIconsProps>(({ iconName, ...prop
 		return null;
 	}
 
-	return <Icon ref={ref} {...props} className='aspect-square h-5 w-auto' />;
+	return <Icon ref={ref} {...props} className='aspect-square h-5 w-auto p-0.5' />;
 });
 
 TechIcons.displayName = 'TechIcons';
