@@ -19,7 +19,7 @@ const buttonVariants = cva(
 				link: 'text-primary underline-offset-4 hover:underline border-none',
 				badge:
 					'rounded-full text-xs font-semibold bg-primary border-none text-primary-foreground hover:bg-primary/80',
-				ghost: 'border-transparent hover:border-border/10',
+				ghost: 'border-transparent',
 			},
 			size: {
 				default: 'h-10 px-4 py-2',

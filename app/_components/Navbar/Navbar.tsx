@@ -12,6 +12,7 @@ import {
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Menu } from 'lucide-react';
+import { Heading } from '@/components/ui/heading';
 
 const navLinks = [
 	{ name: 'elements', href: '/elements' },
@@ -25,13 +26,13 @@ export default function NavbarComponent() {
 		<div className={cn('sticky top-0 z-10', y && y > 40 && 'border-b bg-background/95')}>
 			<header
 				className={cn(
-					'mx-auto grid w-full max-w-5xl grid-cols-2 items-center justify-between py-4 transition-all duration-300 max-xl:px-3',
+					'mx-auto grid h-full w-full max-w-5xl grid-cols-2 items-center justify-between py-4 transition-all duration-300 max-xl:px-3',
 					y && y > 40 && 'max-w-6xl py-2'
 				)}
 			>
-				<Button variant='ghost' className='w-fit border-none' asChild>
+				<Button className='h-auto w-fit hover:no-underline' variant='link' asChild>
 					<Link href='/'>
-						<h1 className='text-xl font-bold'>bllakcn.</h1>
+						<Heading className='p-0'>bllakcn.</Heading>
 					</Link>
 				</Button>
 				<nav className='hidden sm:block'>

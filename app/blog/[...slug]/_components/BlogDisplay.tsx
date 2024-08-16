@@ -27,7 +27,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 						<div className='flex flex-wrap gap-1'>
 							{blog.tags.map((tag) => (
 								<Button asChild variant='badge' size='badge' key={tag.name}>
-									<Link className='flex items-center gap-1 py-0.5' href={`/blog?tag=${tag.slug}`}>
+									<Link className='flex items-center gap-1' href={`/blog?tag=${tag.slug}`}>
 										{tag.name}
 										<TechIcons iconName={tag.icon} />
 									</Link>
