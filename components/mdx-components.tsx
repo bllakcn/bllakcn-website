@@ -1,15 +1,30 @@
+'use client';
+
 import { useMDXComponent } from '@content-collections/mdx/react';
 import type { MDXComponents } from 'mdx/types';
 import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Alert, AlertDescription, AlertProps } from './ui/alert';
+import { useState } from 'react';
+import { Copy, Check } from 'lucide-react';
+import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
+import { useCopyToClipboard } from '@uidotdev/usehooks';
 
 const components: MDXComponents = {
 	AlertComponent,
 	CodeTitleComponent,
 	ImageComponent,
 	a: ({ href, children }) => LinkComponent({ href, children }),
+	CopyButton,
+	// @ts-ignore
+	pre: ({ children, raw, ...props }) => (
+		<Pre raw={raw} {...props}>
+			{children}
+		</Pre>
+	),
 };
 
 export function Mdx({ code }: { code: string }) {
@@ -83,5 +98,54 @@ function CodeTitleComponent({ content }: { content: string }) {
 				<span className='text-background'>{file}</span>
 			</p>
 		</div>
+	);
+}
+
+function CopyButton({ text, className }: { text: string; className?: string }) {
+	const [isCopied, setIsCopied] = useState(false);
+	const [copiedText, copyToClipboard] = useCopyToClipboard();
+
+	const copy = async () => {
+		await copyToClipboard(text);
+		setIsCopied(true);
+		toast(`Copied to clipboard.`);
+
+		setTimeout(() => {
+			setIsCopied(false);
+		}, 2500);
+	};
+
+	const Icon = isCopied ? Check : Copy;
+
+	return (
+		<Button
+			className={cn('absolute right-3 top-3', className)}
+			variant='light'
+			onClick={() => {
+				if (!isCopied) {
+					copy();
+				}
+			}}
+			size='icon'
+		>
+			<Icon size={12} />
+		</Button>
+	);
+}
+
+interface PreProps extends React.HTMLAttributes<HTMLPreElement> {
+	children: React.ReactNode;
+	raw: string;
+	className?: string;
+	'data-language'?: string;
+}
+
+function Pre({ children, raw, className, ...props }: PreProps) {
+	const lang = props['data-language'];
+	return (
+		<pre {...props} className={cn('', className)}>
+			<CopyButton text={raw} />
+			{children}
+		</pre>
 	);
 }

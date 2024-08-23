@@ -19,7 +19,6 @@ const colors: colorType[] = [
 
 export default function ElementColors() {
 	const [copiedText, copyToClipboard] = useCopyToClipboard();
-	// TODO: show toast on copy
 	return (
 		<ul className='flex flex-wrap items-center gap-2'>
 			{colors.map((color) => (
@@ -28,8 +27,8 @@ export default function ElementColors() {
 						<TooltipTrigger asChild>
 							<Button
 								variant='default'
-								onClick={() => {
-									copyToClipboard(color.hex);
+								onClick={async () => {
+									await copyToClipboard(color.hex);
 									toast(`Copied ${color.hex} to clipboard.`);
 								}}
 								className={cn(

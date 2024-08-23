@@ -6,6 +6,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import { iconKeys } from './components/IconMap';
 import { type Options } from 'rehype-pretty-code';
+import { preProcess, postProcess } from './lib/rehype-pre-raw';
 
 const options: Options = {
 	// keepBackground: false,
@@ -33,7 +34,7 @@ const blogs = defineCollection({
 			// @ts-ignore
 			remarkPlugins: [remarkGfm],
 			// @ts-ignore
-			rehypePlugins: [rehypeSlug, [rehypePrettyCode, options]],
+			rehypePlugins: [preProcess, rehypeSlug, [rehypePrettyCode, options], postProcess],
 		});
 		const regXHeader = /^(#{1,6})\s+(.*)$/gm;
 
