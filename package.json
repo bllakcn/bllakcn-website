@@ -8,6 +8,7 @@
 		"preview": "next build && next start",
 		"start": "next start",
 		"lint": "next lint",
+		"type-check": "tsc --noEmit",
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore ."
 	},
