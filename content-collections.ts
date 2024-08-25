@@ -64,7 +64,7 @@ const blogs = defineCollection({
 			// @ts-ignore
 			remarkPlugins: [remarkGfm],
 			// @ts-ignore
-			rehypePlugins: [preProcess, rehypeSlug, [rehypePrettyCode, options], postProcess],
+			rehypePlugins: [rehypeSlug, [rehypePrettyCode, options]],
 		});
 		const regXHeader = /^(#{1,6})\s+(.*)$/gm;
 
