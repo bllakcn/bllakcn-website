@@ -59,6 +59,9 @@ importers:
       lucide-react:
         specifier: ^0.424.0
         version: 0.424.0(react@18.2.0)
+      mdx-bundler:
+        specifier: ^10.0.3
+        version: 10.0.3(esbuild@0.19.12)
       next:
         specifier: 14.2.5
         version: 14.2.5(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -2206,8 +2209,8 @@ packages:
   mdast-util-to-string@4.0.0:
     resolution: {integrity: sha512-0H44vDimn51F0YwvxSJSm0eCDOJTRlmN0R1yBh4HLj9wiV1Dn0QoXGbvFAWj2hSItVTlCmBF1hqKlIyUBVFLPg==}
 
-  mdx-bundler@10.0.2:
-    resolution: {integrity: sha512-0wF0zoCv+Ms4G+eSlk/jaKYoJHc0oXBaOma3kYlFJiKq9H8h41Dd66ioDBGF4noy80Pf7KTBQlyHfEpTqVml7A==}
+  mdx-bundler@10.0.3:
+    resolution: {integrity: sha512-vRtVZ5t+nUP0QtoRVgjDFO10YDjRgKe/19ie0IR8FqE8SugNn5RP4sCWBPzKoEwoGbqfQOrgHy+PHCVyfaCDQQ==}
     engines: {node: '>=18', npm: '>=6'}
     peerDependencies:
       esbuild: 0.*
@@ -3224,7 +3227,7 @@ snapshots:
     dependencies:
       '@content-collections/core': 0.6.4(typescript@5.0.4)
       esbuild: 0.19.12
-      mdx-bundler: 10.0.2(esbuild@0.19.12)
+      mdx-bundler: 10.0.3(esbuild@0.19.12)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       unified: 11.0.5
@@ -5521,7 +5524,7 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
 
-  mdx-bundler@10.0.2(esbuild@0.19.12):
+  mdx-bundler@10.0.3(esbuild@0.19.12):
     dependencies:
       '@babel/runtime': 7.25.0
       '@esbuild-plugins/node-resolve': 0.2.2(esbuild@0.19.12)

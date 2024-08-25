@@ -1,5 +1,5 @@
 {
-	"name": "next-contentlayer",
+	"name": "bllakcn-website",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -30,6 +30,7 @@
 		"framer-motion": "^10.18.0",
 		"github-slugger": "^2.0.0",
 		"lucide-react": "^0.424.0",
+		"mdx-bundler": "^10.0.3",
 		"next": "14.2.5",
 		"next-themes": "^0.3.0",
 		"react": "18.2.0",
