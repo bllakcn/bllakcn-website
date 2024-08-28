@@ -1,3 +1,6 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 import ElementsButtons from './_components/El-Buttons';
@@ -6,16 +9,44 @@ import ElementColors from './_components/El-Colors';
 import ElementAlert from './_components/El-Alert';
 import ElementCard from './_components/El-Card';
 
+const containerVariants: Variants = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1,
+			duration: 0.3,
+		},
+	},
+};
+
+const sectionVariants: Variants = {
+	hidden: { opacity: 0, y: '20%', filter: 'blur(3px)' },
+	show: {
+		opacity: 1,
+		y: 0,
+		filter: 'blur(0px)',
+	},
+};
+
 export default function Elements() {
 	return (
-		<div className='mx-auto w-full max-w-5xl space-y-5 p-4'>
-			<p>Collection of some UI elements.</p>
-			<div className='space-y-3'>
+		<motion.div
+			className='mx-auto w-full max-w-5xl space-y-5 p-4'
+			initial='hidden'
+			animate='show'
+			variants={containerVariants}
+		>
+			<motion.p variants={sectionVariants}>Collection of some UI elements.</motion.p>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Color Palette</Heading>
 				<ElementColors />
-			</div>
+			</motion.div>
+
 			<Separator />
-			<div className='space-y-3'>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Headings</Heading>
 				<ul className='flex flex-wrap items-baseline gap-4'>
 					<Heading>Heading 1</Heading>
@@ -24,27 +55,35 @@ export default function Elements() {
 					<Heading level='h4'>Heading 4</Heading>
 					<p>Paragraph</p>
 				</ul>
-			</div>
+			</motion.div>
+
 			<Separator />
-			<div className='space-y-3'>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Buttons</Heading>
 				<ElementsButtons />
-			</div>
+			</motion.div>
+
 			<Separator />
-			<div className='space-y-3'>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Badges</Heading>
 				<ElementBadges />
-			</div>
+			</motion.div>
+
 			<Separator />
-			<div className='space-y-3'>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Alerts</Heading>
 				<ElementAlert />
-			</div>
+			</motion.div>
+
 			<Separator />
-			<div className='space-y-3'>
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Card</Heading>
 				<ElementCard />
-			</div>
-		</div>
+			</motion.div>
+		</motion.div>
 	);
 }
