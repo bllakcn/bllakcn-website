@@ -13,10 +13,12 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Menu } from 'lucide-react';
 import { Heading } from '@/components/ui/heading';
+import { CommandMenu } from '@/components/commandMenu';
+import { NavBarItem } from '@/types/navbar';
 
-const navLinks = [
-	{ name: 'elements', href: '/elements' },
-	{ name: 'blog', href: '/blog' },
+const navLinks: NavBarItem[] = [
+	{ title: 'elements', href: '/elements' },
+	{ title: 'blog', href: '/blog' },
 ];
 
 export default function NavbarComponent() {
@@ -36,17 +38,20 @@ export default function NavbarComponent() {
 					</Link>
 				</Button>
 				<nav className='hidden sm:block'>
-					<ul className='flex flex-wrap items-center justify-end sm:gap-4'>
+					<ul className='flex flex-wrap items-baseline justify-end sm:gap-4'>
 						{navLinks.map((item) => (
-							<li key={item.name}>
+							<li key={item.title}>
 								<Button variant='link' className='flex gap-1' asChild>
-									<Link href={item.href}>
-										{item.name}
+									<Link href={item.href ?? ''}>
+										{item.title}
 										<MoveRight size={12} strokeWidth={2} />
 									</Link>
 								</Button>
 							</li>
 						))}
+						<li>
+							<CommandMenu />
+						</li>
 					</ul>
 				</nav>
 				<DropdownMenu>
@@ -57,10 +62,10 @@ export default function NavbarComponent() {
 					</DropdownMenuTrigger>
 					<DropdownMenuContent className='p-2'>
 						{navLinks.map((item) => (
-							<DropdownMenuItem asChild key={item.name}>
+							<DropdownMenuItem asChild key={item.title}>
 								<Button variant='link' className='flex justify-start gap-1' asChild>
-									<Link href={item.href}>
-										{item.name}
+									<Link href={item.href ?? ''}>
+										{item.title}
 										<MoveRight size={12} strokeWidth={2} />
 									</Link>
 								</Button>

@@ -1,12 +1,12 @@
 import { forwardRef } from 'react';
-import Fast from './Portfolio/TechStack/Fast';
-import Python from './Portfolio/TechStack/Python';
-import Redis from './Portfolio/TechStack/Redis';
-import Supabase from './Portfolio/TechStack/Supabase';
-import TailwindCSS from './Portfolio/TechStack/Tailwind';
-import Nextjs from './Portfolio/TechStack/Next';
-import TypeScript from './Portfolio/TechStack/Ts';
-import Sass from './Portfolio/TechStack/Sass';
+import Fast from './TechStack/Fast';
+import Python from './TechStack/Python';
+import Redis from './TechStack/Redis';
+import Supabase from './TechStack/Supabase';
+import TailwindCSS from './TechStack/Tailwind';
+import Nextjs from './TechStack/Next';
+import TypeScript from './TechStack/Ts';
+import Sass from './TechStack/Sass';
 
 export const iconMap = {
 	Fast,
