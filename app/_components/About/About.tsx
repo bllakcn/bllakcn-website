@@ -15,6 +15,12 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Red_Hat_Display } from 'next/font/google';
+
+export const red = Red_Hat_Display({
+	subsets: ['latin'],
+	weight: ['900'],
+});
 
 type TimelineItem = {
 	title: string;
@@ -38,7 +44,10 @@ const timelineItems: TimelineItem[] = [
 		additional: (
 			<Link
 				href='https://www.anonimal.me'
-				className='group flex w-fit items-start gap-1 text-5xl font-black text-[#F3B773] hover:text-[#F3B773]/80'
+				className={cn(
+					'group flex w-fit items-start gap-1 text-5xl font-black text-[#F3B773] hover:text-[#F3B773]/80',
+					red.className
+				)}
 			>
 				Anonimal
 				<ExternalLink
