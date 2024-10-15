@@ -5,6 +5,7 @@ import FooterComponent from '@/app/_components/Footer/Footer';
 import Providers from './providers';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
+import TailwindIndicator from '@/components/TailwindIndicator';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -21,7 +22,12 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang='en' className='scroll-smooth'>
-			<body className={cn('h-full bg-primary text-foreground antialiased', outfit.className)}>
+			<body
+				className={cn(
+					'h-full overflow-y-scroll bg-primary text-foreground antialiased',
+					outfit.className
+				)}
+			>
 				<Providers>
 					<div className='mx-auto max-w-8xl'>
 						<div className='page m-3 flex min-h-[calc(100svh-24px)] flex-col rounded-md border bg-background md:mx-9'>
@@ -31,6 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 						</div>
 					</div>
 					<Toaster />
+					<TailwindIndicator />
 				</Providers>
 			</body>
 		</html>

@@ -1,7 +1,6 @@
 import { allBlogs } from 'content-collections';
 import { compareDesc } from 'date-fns';
-
-import BlogListDisplay from './BlogListDisplay';
+import BlogListDisplay from './_components/BlogListDisplay';
 
 export default function Page({
 	searchParams,

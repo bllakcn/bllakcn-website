@@ -25,8 +25,8 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 CardHeader.displayName = 'CardHeader';
 
 const CardTitle = React.forwardRef<HTMLParagraphElement, HeadingProps>(
-	({ className, children, ...props }, ref) => (
-		<Heading ref={ref} level='h3' className={cn(className)} {...props}>
+	({ className, children, level = 'h3', ...props }, ref) => (
+		<Heading ref={ref} level={level} className={cn(className)} {...props}>
 			{children}
 		</Heading>
 	)

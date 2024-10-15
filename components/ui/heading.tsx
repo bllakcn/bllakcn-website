@@ -9,6 +9,7 @@ const headingVariants = cva('font-bold tracking-tight scroll-m-20 pb-3', {
 			h2: 'text-2xl md:text-3xl',
 			h3: 'text-xl md:text-2xl pb-1 font-semibold',
 			h4: 'text-lg md:text-xl pb-1 font-semibold',
+			h5: 'text-lg font-medium',
 		},
 		color: {
 			default: 'text-foreground',
@@ -23,7 +24,7 @@ const headingVariants = cva('font-bold tracking-tight scroll-m-20 pb-3', {
 	},
 });
 
-type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4';
+type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 
 type VariantPropsWithoutLevelAndColor = Omit<
 	VariantProps<typeof headingVariants>,

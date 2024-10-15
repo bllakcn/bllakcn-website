@@ -14,12 +14,9 @@ import {
 import { Menu } from 'lucide-react';
 import { Heading } from '@/components/ui/heading';
 import { CommandMenu } from '@/components/commandMenu';
-import { NavBarItem } from '@/types/navbar';
+import { docsConfig } from '@/config/docs';
 
-const navLinks: NavBarItem[] = [
-	{ title: 'elements', href: '/elements' },
-	{ title: 'blog', href: '/blog' },
-];
+const navLinks = docsConfig.NavbarLinks.filter((link) => link.title !== 'home');
 
 export default function NavbarComponent() {
 	const [{ y }] = useWindowScroll();
@@ -29,7 +26,7 @@ export default function NavbarComponent() {
 			<header
 				className={cn(
 					'mx-auto grid h-full w-full max-w-5xl grid-cols-2 items-center justify-between py-4 transition-all duration-300 max-xl:px-3',
-					y && y > 40 && 'max-w-6xl py-2'
+					y && y > 35 && 'max-w-6xl py-2'
 				)}
 			>
 				<Button className='h-auto w-fit hover:no-underline' variant='link' asChild>
@@ -38,7 +35,7 @@ export default function NavbarComponent() {
 					</Link>
 				</Button>
 				<nav className='hidden sm:block'>
-					<ul className='flex flex-wrap items-baseline justify-end sm:gap-4'>
+					<ul className='flex items-baseline justify-end sm:gap-4'>
 						{navLinks.map((item) => (
 							<li key={item.title}>
 								<Button variant='link' className='flex gap-1' asChild>
