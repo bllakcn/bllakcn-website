@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ProfilePhoto from '@/public/avatar.jpg';
 import { Heading } from '@/components/ui/heading';
-import { cv } from './cv';
+import cv from './cv.json';
 import { Progress } from '@/components/ui/progress';
 import { Card, CardContent, CardTitle, CardHeader } from '@/components/ui/card';
 export default function Cv() {
@@ -25,8 +25,19 @@ export default function Cv() {
 					</span>
 				</span>
 			</section>
-			<section>
-				<Heading level='h3'>Details</Heading>
+			<section className='space-y-4'>
+				<Card>
+					<CardHeader>
+						<CardTitle level='h4'>Bio</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<p className='text-pretty text-sm font-light'>
+							Architectural visionary turned self-taught web developer. <br />I am motivated by results and
+							a team player who thrives on challenges.
+							<br />I am also passionate about photography, videography, and coffee making.
+						</p>
+					</CardContent>
+				</Card>
 				<Card>
 					<CardHeader>
 						<CardTitle level='h4'>Languages</CardTitle>
@@ -35,9 +46,9 @@ export default function Cv() {
 						<ul className='space-y-2'>
 							{cv.languages.map((language) => (
 								<li className='group space-y-1' key={language.title}>
-									<p>
+									<p className='text-sm'>
 										{language.title}{' '}
-										<span className='text-sm font-light italic opacity-0 transition-opacity group-hover:opacity-100'>
+										<span className='font-light italic opacity-0 transition-opacity group-hover:opacity-100'>
 											({language.description})
 										</span>
 									</p>
@@ -49,10 +60,6 @@ export default function Cv() {
 				</Card>
 			</section>
 			<section className='space-y-4'>
-				<div>
-					<Heading level='h4'>Bio</Heading>
-					<p>{cv.personal.bio}</p>
-				</div>
 				<div>
 					<Heading level='h4'>Work Experience</Heading>
 					<ul className='space-y-2'>
@@ -81,6 +88,24 @@ export default function Cv() {
 									</p>
 									<p className='text-sm font-light'>{school.description}</p>
 									<p className='text-xs font-extralight'>{school.date}</p>
+								</div>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div>
+					<Heading level='h4'>Voluntary Experience</Heading>
+					<ul className='space-y-2'>
+						{cv.VoluntaryExperience.map((experience) => (
+							<li className='group ml-5 list-disc marker:text-secondary' key={experience.id}>
+								<div className='group-hover:text-primary/80'>
+									<p>{experience.position}</p>
+									<p className='pb-1 text-sm'>
+										{experience.company ? `${experience.company}, ` : ``}
+										<span className='text-sm font-light italic'>{experience.city}</span>
+									</p>
+									<p className='text-sm font-light'>{experience.description}</p>
+									<p className='text-xs font-extralight'>{experience.date}</p>
 								</div>
 							</li>
 						))}

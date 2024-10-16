@@ -8,6 +8,7 @@ import ElementBadges from './_components/El-Badges';
 import ElementColors from './_components/El-Colors';
 import ElementAlert from './_components/El-Alert';
 import ElementCard from './_components/El-Card';
+import ElementProgress from './_components/El-Progress';
 
 const containerVariants: Variants = {
 	hidden: { opacity: 0 },
@@ -76,6 +77,13 @@ export default function Elements() {
 			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Alerts</Heading>
 				<ElementAlert />
+			</motion.div>
+
+			<Separator />
+
+			<motion.div variants={sectionVariants} className='space-y-3'>
+				<Heading level='h4'>Progress</Heading>
+				<ElementProgress />
 			</motion.div>
 
 			<Separator />
