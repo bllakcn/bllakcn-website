@@ -3,28 +3,25 @@ import { allBlogs } from 'content-collections';
 import { Metadata } from 'next';
 import BlogDisplay from './_components/BlogDisplay';
 
+type Params = Promise<{ slug: string[] }>;
 interface BlogProps {
-	params: Promise<{
-		slug: string[];
-	}>;
+	params: Params;
 }
 
 async function getPostFromParams(params: { slug: string[] }) {
-	const slug = params?.slug?.join('/');
+	const slug = params?.slug.join('/');
 	const blog = allBlogs.find((blog) => blog._meta.path === slug);
 
 	if (!blog) {
-		null;
+		return null;
 	}
 
 	return blog;
 }
 
-export async function generateMetadata(props: {
-	params: Promise<{ slug: string[] }>;
-}): Promise<Metadata> {
-	const params = await props.params;
-	const blog = await getPostFromParams(params);
+export async function generateMetadata({ params }: BlogProps): Promise<Metadata> {
+	const resolvedParams = await params;
+	const blog = await getPostFromParams(resolvedParams);
 
 	return blog
 		? {
