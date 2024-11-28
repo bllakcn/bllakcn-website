@@ -2,7 +2,7 @@
 
 import { useMDXComponent } from '@content-collections/mdx/react';
 import type { MDXComponents } from 'mdx/types';
-import { IoAlertOutline, IoInformationOutline } from 'react-icons/io5';
+import { CircleAlert, Info } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Alert, AlertDescription, AlertProps } from './ui/alert';
@@ -70,9 +70,9 @@ function AlertComponent({
 		warning: 'secondary',
 		information: 'tertiary',
 	};
-	const Icon = variant === 'warning' ? IoAlertOutline : IoInformationOutline;
+	const Icon = variant === 'warning' ? CircleAlert : Info;
 	return (
-		<Alert variant={variantMap[variant]} alertIcon={<Icon size={15} />}>
+		<Alert variant={variantMap[variant]} alertIcon={<Icon />}>
 			<AlertDescription>{content}</AlertDescription>
 		</Alert>
 	);

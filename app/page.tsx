@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import About from './_components/About/About';

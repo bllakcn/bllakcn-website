@@ -1,26 +1,29 @@
-import { IoLogoInstagram, IoLogoLinkedin, IoLogoGithub, IoMailOutline } from 'react-icons/io5';
+import InstagramLogo from '@/public/brands/Instagram.svg';
+import LinkedinLogo from '@/public/brands/LinkedIn.svg';
+import GithubLogo from '@/public/brands/GitHub.svg';
+import { Mail } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const socialMedia = [
 	{
 		name: 'Linkedin',
-		icon: IoLogoLinkedin,
+		icon: LinkedinLogo,
 		href: 'https://www.linkedin.com/in/bllakcn/',
 	},
 	{
 		name: 'Github',
-		icon: IoLogoGithub,
+		icon: GithubLogo,
 		href: 'https://github.com/bllakcn',
 	},
 	{
 		name: 'Instagram',
-		icon: IoLogoInstagram,
+		icon: InstagramLogo,
 		href: 'https://www.instagram.com/bllakcn',
 	},
 	{
 		name: 'Gmail',
-		icon: IoMailOutline,
+		icon: Mail,
 		href: 'mailto:bllakcn35@gmail.com',
 	},
 ];
@@ -33,8 +36,14 @@ export default function FooterComponent() {
 					{socialMedia.map((item) => (
 						<li className='flex items-center' key={item.name}>
 							<Button asChild size='icon' variant='outline'>
-								<Link className='p-1' title={item.name} href={item.href}>
-									<item.icon size={20} />
+								<Link
+									className='p-1'
+									title={item.name}
+									href={item.href}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									<item.icon className='size-4' />
 								</Link>
 							</Button>
 						</li>

@@ -1,9 +1,9 @@
 'use client';
 
 import { Blog } from 'content-collections';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 import { format, parseISO } from 'date-fns';
-import { IoClose } from 'react-icons/io5';
+import { X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Heading } from '@/components/ui/heading';
@@ -50,7 +50,7 @@ export default function BlogListDisplay({ blogs, filterTag }: BlogListDisplayPro
 							<span className='text-lg font-semibold'>Filter:</span>
 							<Badge>{filterTag}</Badge>
 							<Link href='/blog'>
-								<IoClose />
+								<X />
 							</Link>
 						</div>
 					)}

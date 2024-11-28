@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { IoArrowBack } from 'react-icons/io5';
-import { X } from 'lucide-react';
+import { X, ArrowLeft } from 'lucide-react';
 import { Heading } from '@/components/ui/heading';
 
 export default function NotFound() {
@@ -17,7 +16,7 @@ export default function NotFound() {
 				<p className='mb-2'>Could not find requested resource.</p>
 				<Button asChild variant='outline'>
 					<Link href='/' className='flex items-center gap-2'>
-						<IoArrowBack />
+						<ArrowLeft />
 						Return Home
 					</Link>
 				</Button>

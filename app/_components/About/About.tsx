@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'motion/react';
 import { Separator } from '@/components/ui/separator';
 import TechIcons, { iconMap } from '@/components/IconMap';
 import { Badge } from '@/components/ui/badge';

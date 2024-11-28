@@ -26,7 +26,7 @@ export default function NavbarComponent() {
 			<header
 				className={cn(
 					'mx-auto grid h-full w-full max-w-5xl grid-cols-2 items-center justify-between py-4 transition-all duration-300 max-xl:px-3',
-					y && y > 35 && 'max-w-6xl py-2'
+					y && y > 14 && 'max-w-6xl py-2'
 				)}
 			>
 				<Button className='h-auto w-fit hover:no-underline' variant='link' asChild>
