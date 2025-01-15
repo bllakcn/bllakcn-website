@@ -38,7 +38,7 @@ export default function Elements() {
 			animate='show'
 			variants={containerVariants}
 		>
-			<motion.p variants={sectionVariants}>Collection of some UI elements.</motion.p>
+			<motion.p variants={sectionVariants}>Collection of used UI elements.</motion.p>
 
 			<motion.div variants={sectionVariants} className='space-y-3'>
 				<Heading level='h4'>Color Palette</Heading>

@@ -6,7 +6,7 @@
 	"languages": [
 		{ "title": "Turkish", "description": "Native", "progress": 100 },
 		{ "title": "English", "description": "Professional working proficiency", "progress": 90 },
-		{ "title": "Dutch", "description": "Elementary proficiency", "progress": 45 }
+		{ "title": "Dutch", "description": "Elementary proficiency", "progress": 55 }
 	],
 	"hobbies": [],
 	"workExperience": [
@@ -92,13 +92,22 @@
 	"VoluntaryExperience": [
 		{
 			"id": 1,
-			"position": "Photographer and editor",
-			"city": "Izmir",
-			"date": "2016 - 2017",
-			"description": "Participating in various projects voluntarily."
+			"position": "Barista at a café",
+			"company": "Gist",
+			"city": "Amsterdam",
+			"date": "2023 - 2023",
+			"description": "Serving coffee and hosting."
 		},
 		{
 			"id": 2,
+			"position": "Frontend developer",
+			"company": "Freedom Combination",
+			"city": "Amsterdam",
+			"date": "2022 - 2022",
+			"description": "Assisting developing the frontend applications of the organization."
+		},
+		{
+			"id": 3,
 			"position": "Translator in a refugee camp",
 			"company": "COA",
 			"city": "Biddinghuizen",
@@ -106,12 +115,11 @@
 			"description": "Helping refugees during their requests at the information desks and clinic."
 		},
 		{
-			"id": 3,
-			"position": "Barista at a café",
-			"company": "Gist",
-			"city": "Amsterdam",
-			"date": "2023 - 2023",
-			"description": "Serving coffee and hosting."
+			"id": 4,
+			"position": "Photographer and editor",
+			"city": "Izmir",
+			"date": "2016 - 2017",
+			"description": "Participating in various projects voluntarily."
 		}
 	]
 }
