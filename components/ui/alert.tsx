@@ -32,7 +32,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 			className={cn('flex items-center gap-5', alertVariants({ variant }), className)}
 			{...props}
 		>
-			{alertIcon && <div className={cn('flex-shrink-0 rounded-full')}>{alertIcon}</div>}
+			{alertIcon && <div className={cn('shrink-0 rounded-full')}>{alertIcon}</div>}
 			<div className='space-y-2'>{children}</div>
 		</div>
 	)

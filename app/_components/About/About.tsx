@@ -173,7 +173,7 @@ function TimelineItem({ title, description, date, additional, technologies }: Ti
 			className={cn(
 				'group relative max-w-3xl transition-colors',
 				styles.timelineItem,
-				'before:absolute before:left-3 before:top-9 before:h-[calc(100%-18px)] before:w-0.5 before:rounded-lg before:bg-secondary/70 before:hover:bg-secondary'
+				'before:absolute before:left-3 before:top-9 before:h-[calc(100%-18px)] before:w-0.5 before:rounded-lg before:bg-secondary/70 hover:before:bg-secondary'
 			)}
 		>
 			<div
