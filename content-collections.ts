@@ -40,7 +40,7 @@ export const postProcess = () => (tree: any) => {
 
 const options: Options = {
 	keepBackground: false,
-	theme: 'one-dark-pro',
+	theme: 'vesper',
 	defaultLang: 'plaintext',
 	tokensMap: {
 		fn: 'entity.name.function',

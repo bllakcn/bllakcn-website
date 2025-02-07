@@ -48,7 +48,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 			</div>
 			<Separator />
 			<div className='grid grid-cols-1 py-2 lg:grid-cols-2'>
-				<div className='prose-pre:scrollbar-hide prose prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-lg prose-img:rounded-lg'>
+				<div className='prose-pre:scrollbar-hide prose-figure:m-0 prose prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-lg prose-img:rounded-lg'>
 					<Mdx code={blog.mdx} />
 				</div>
 				{blog.toc && <BlogSidebar headers={blog.headers} />}

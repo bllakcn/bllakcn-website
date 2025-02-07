@@ -170,22 +170,27 @@ div.prose img + p {
 	margin-top: 0;
 }
 
-span[data-rehype-pretty-code-fragment] > code[data-language='plaintext'] {
+span[data-rehype-pretty-code-figure] > code[data-language='plaintext'] {
+	padding: 2px;
+	border-radius: 0.25rem;
+	@apply bg-border text-background;
+}
+
+span[data-rehype-pretty-code-figure] > code[data-language='.token'] > span {
+	@apply bg-border;
 	padding: 2px;
 	border-radius: 0.25rem;
 }
 
-span[data-rehype-pretty-code-fragment] > code[data-language='.token'] > span {
-	background-color: #cfcffd1a;
-	padding: 2px;
-	border-radius: 0.25rem;
-}
-
-div[data-rehype-pretty-code-fragment] + div[data-rehype-pretty-code-title] {
+figure[data-rehype-pretty-code-figure] + div[data-rehype-pretty-code-title] {
 	margin-top: 1rem;
 }
 
-div[data-rehype-pretty-code-fragment] pre {
+figure[data-rehype-pretty-code-figure] {
+	position: relative;
+}
+
+figure[data-rehype-pretty-code-figure] pre {
 	margin: 0;
 	border: 2px solid hsl(var(--border));
 	scrollbar-width: thin;
@@ -196,7 +201,7 @@ div[data-rehype-pretty-code-title] p {
 	margin: 0;
 }
 
-div[data-rehype-pretty-code-title] + div[data-rehype-pretty-code-fragment] pre {
+div[data-rehype-pretty-code-title] + figure[data-rehype-pretty-code-figure] pre {
 	border-top-right-radius: 0;
 	border-top-left-radius: 0;
 	border-top: 0;
@@ -206,7 +211,7 @@ code {
 	counter-reset: line;
 }
 
-code > [data-line] {
+pre code > [data-line] {
 	padding-right: 1rem;
 }
 
@@ -234,8 +239,8 @@ code > span[data-highlighted-line] {
 	border-left: 3px solid #d3d3fc1a;
 }
 
-code > span[data-line] > span[data-highlighted-chars] {
-	background-color: #cfcffd1a;
+code > span[data-line] > mark[data-highlighted-chars] {
+	@apply bg-border/30;
 	padding: 1px;
 	border-radius: 0.25rem;
 }

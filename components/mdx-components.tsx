@@ -86,14 +86,14 @@ function CodeTitleComponent({ content }: { content: string }) {
 		<div
 			data-rehype-pretty-code-title
 			data-theme='default'
-			className='relative rounded-t-lg border-2 border-b-0 border-border bg-[#24282f] p-3 text-sm'
+			className='border-border relative rounded-t-lg border-2 border-b-0 bg-[#24282f] p-3 text-sm'
 		>
-			<div className='absolute left-5 top-1/2 flex -translate-y-1/2 items-center justify-center gap-1'>
+			<div className='absolute top-1/2 left-5 flex -translate-y-1/2 items-center justify-center gap-1'>
 				<span className='h-2 w-2 rounded-full bg-red-400'></span>
 				<span className='h-2 w-2 rounded-full bg-yellow-400'></span>
 				<span className='h-2 w-2 rounded-full bg-green-400'></span>
 			</div>
-			<p className='my-0 text-center text-background/60'>
+			<p className='text-background/60 my-0 text-center'>
 				{directory}
 				<span className='text-background'>{file}</span>
 			</p>
@@ -119,7 +119,7 @@ function CopyButton({ text, className }: { text: string; className?: string }) {
 
 	return (
 		<Button
-			className={cn('absolute right-3 top-3', className)}
+			className={cn('absolute top-3 right-3', className)}
 			variant='light'
 			onClick={() => {
 				if (!isCopied) {
