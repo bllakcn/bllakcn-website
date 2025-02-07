@@ -39,7 +39,7 @@ export const postProcess = () => (tree: any) => {
 };
 
 const options: Options = {
-	// keepBackground: false,
+	keepBackground: false,
 	theme: 'one-dark-pro',
 	defaultLang: 'plaintext',
 	tokensMap: {

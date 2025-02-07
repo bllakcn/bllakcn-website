@@ -16,7 +16,7 @@ type BlogPageProps = {
 
 export default function BlogDisplay({ blog }: BlogPageProps) {
 	return (
-		<article className='space-y-3 px-3 pb-3 pt-9 sm:px-10 sm:pb-9 sm:pt-24'>
+		<article className='space-y-3 px-3 pt-9 pb-3 sm:px-10 sm:pt-24 sm:pb-9'>
 			<div className='space-y-3'>
 				<span className=''>
 					<Heading>{blog.title}</Heading>
@@ -54,7 +54,7 @@ export default function BlogDisplay({ blog }: BlogPageProps) {
 				{blog.toc && <BlogSidebar headers={blog.headers} />}
 			</div>
 			<Separator className='my-4' />
-			<p className='text-xs text-muted-foreground'>{format(parseISO(blog.date), 'MMMM d, yyyy')}</p>
+			<p className='text-muted-foreground text-xs'>{format(parseISO(blog.date), 'MMMM d, yyyy')}</p>
 		</article>
 	);
 }
