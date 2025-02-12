@@ -7,6 +7,7 @@ import TailwindCSS from './TechStack/Tailwind';
 import Nextjs from './TechStack/Next';
 import TypeScript from './TechStack/Ts';
 import Sass from './TechStack/Sass';
+import Aws from './TechStack/Aws';
 
 export const iconMap = {
 	Fast,
@@ -17,6 +18,7 @@ export const iconMap = {
 	Nextjs,
 	TypeScript,
 	Sass,
+	Aws,
 };
 
 export const iconKeys = Object.keys(iconMap) as [keyof typeof iconMap, ...(keyof typeof iconMap)[]];

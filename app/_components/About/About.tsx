@@ -56,7 +56,16 @@ const timelineItems: TimelineItem[] = [
 				/>
 			</Link>
 		),
-		technologies: ['Fast', 'Python', 'Nextjs', 'TypeScript', 'Redis', 'Supabase', 'TailwindCSS'],
+		technologies: [
+			'Fast',
+			'Python',
+			'Nextjs',
+			'TypeScript',
+			'Redis',
+			'Supabase',
+			'TailwindCSS',
+			'Aws',
+		],
 	},
 	{
 		title: 'Became a dad',
@@ -119,8 +128,8 @@ export default function About() {
 				initial='hidden'
 				animate='show'
 				className={cn(
-					'relative flex flex-col gap-2 pb-7 pt-3',
-					'before:absolute before:left-3 before:top-2.5 before:h-[12px] before:w-0.5 before:rounded-lg before:bg-secondary/70'
+					'relative flex flex-col gap-2 pt-3 pb-7',
+					'before:bg-secondary/70 before:absolute before:top-2.5 before:left-3 before:h-[12px] before:w-0.5 before:rounded-lg'
 				)}
 			>
 				{displayedItems.map((item) => (
@@ -173,12 +182,12 @@ function TimelineItem({ title, description, date, additional, technologies }: Ti
 			className={cn(
 				'group relative max-w-3xl transition-colors',
 				styles.timelineItem,
-				'before:absolute before:left-3 before:top-9 before:h-[calc(100%-18px)] before:w-0.5 before:rounded-lg before:bg-secondary/70 hover:before:bg-secondary'
+				'before:bg-secondary/70 hover:before:bg-secondary before:absolute before:top-9 before:left-3 before:h-[calc(100%-18px)] before:w-0.5 before:rounded-lg'
 			)}
 		>
 			<div
 				className={cn(
-					'mb-0.5 ml-[1px] h-2 w-2 rounded-full bg-secondary/70 transition-colors group-hover:bg-secondary',
+					'bg-secondary/70 group-hover:bg-secondary mb-0.5 ml-[1px] h-2 w-2 rounded-full transition-colors',
 					styles.timelineItemIcon
 				)}
 			/>
@@ -205,7 +214,7 @@ function TimelineItem({ title, description, date, additional, technologies }: Ti
 						</AccordionItem>
 					</Accordion>
 				)}
-				<div className='text-xs text-muted-foreground'>
+				<div className='text-muted-foreground text-xs'>
 					{date.toLocaleDateString('eng-UK', {
 						month: 'short',
 						year: 'numeric',
