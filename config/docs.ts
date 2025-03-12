@@ -10,7 +10,7 @@ export interface DocsConfig {
 export const docsConfig: DocsConfig = {
 	NavbarLinks: [
 		{ title: 'home', href: '/' },
-		{ title: 'cv', href: '/cv' },
+		{ title: 'resume', href: '/resume' },
 		{ title: 'elements', href: '/elements' },
 		{ title: 'blog', href: '/blog' },
 	],

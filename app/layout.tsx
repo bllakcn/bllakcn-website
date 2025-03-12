@@ -24,13 +24,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
 		<html lang='en' className='scroll-smooth'>
 			<body
 				className={cn(
-					'h-full overflow-y-scroll bg-primary text-foreground antialiased',
+					'bg-primary text-foreground h-full overflow-y-scroll antialiased',
 					outfit.className
 				)}
 			>
 				<Providers>
-					<div className='mx-auto max-w-8xl'>
-						<div className='page m-3 flex min-h-[calc(100svh-24px)] flex-col rounded-md border bg-background md:mx-9'>
+					<div className='max-w-8xl mx-auto'>
+						<div className='page bg-background m-3 flex min-h-[calc(100svh-24px)] flex-col rounded-md border md:mx-9'>
 							<NavbarComponent />
 							<main className='flex-1'>{children}</main>
 							<FooterComponent />
