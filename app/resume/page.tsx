@@ -13,7 +13,7 @@ export default function Cv() {
 					quality={45}
 					src={ProfilePhoto}
 					alt='Profile Photo'
-					className='aspect-square w-24 rounded-full'
+					className='border-border aspect-square w-24 rounded-full border opacity-90 transition-opacity hover:opacity-100'
 				/>
 				<span className=''>
 					<Heading level='h2' className='pb-0'>
