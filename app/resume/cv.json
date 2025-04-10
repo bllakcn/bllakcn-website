@@ -1,4 +1,5 @@
 {
+	"bio": "I am Ahmet Bilal Akcan, 28 years old, a highly motivated web developer. In my free time I spend time with my 1-year-old-boy, cook for my family and friends. I like traveling, photography and sharing a coffee with friends.\nI am currently following an intensive Dutch language course at the VU, Amsterdam. Previously I studied architectural engineering but I decided later to use my design skills in software development as I realized I have more fun coding and creating something than anything else.\nI constantly push myself out of my comfort zone and as someone who has faced unique challenges as a refugee, I have developed resilience and adaptability. I am person with various interests. I am a life-long learner and a team player who likes to help and bring motivation to the others. I like making meaningful connections with people while brainstorming ideas.",
 	"personal": {
 		"title": "Web Developer",
 		"address": "Oosthuizen, NL"
@@ -62,10 +63,10 @@
 	"education": [
 		{
 			"id": 1,
-			"name": "Vrije University",
+			"name": "Vrije Universiteit Amsterdam",
 			"city": "Amsterdam",
 			"date": "2024 - Present",
-			"description": "Program: Language Prep"
+			"description": "Program: Taal Schakel Traject Amsterdam, Nederlands als Tweede Taal "
 		},
 		{
 			"id": 2,

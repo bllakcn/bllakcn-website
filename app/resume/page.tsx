@@ -84,12 +84,11 @@ export default function Cv() {
 						<CardTitle level='h4'>Bio</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<p className='text-sm font-light text-pretty'>
-							I studied architectural engineering and now I am on my way to becoming a full-stack
-							developer. I am motivated by results and a team player who thrives on challenges.
-							<br />
-							<br />I am also passionate about photography, videography, and coffee making.
-						</p>
+						{cv.bio.split('\n').map((line, index) => (
+							<p key={index} className='text-sm font-light text-pretty'>
+								{line}
+							</p>
+						))}
 					</CardContent>
 				</Card>
 				<Card>
