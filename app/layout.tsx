@@ -6,6 +6,7 @@ import Providers from './providers';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
 import TailwindIndicator from '@/components/TailwindIndicator';
+import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 					<Toaster />
 					<TailwindIndicator />
 				</Providers>
+				<Analytics />
 			</body>
 		</html>
 	);
