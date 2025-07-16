@@ -1,0 +1,141 @@
+{
+	"bio": "Ik ben Ahmet Bilal Akcan, 28 jaar oud, een zeer gemotiveerde webontwikkelaar. In mijn vrije tijd breng ik tijd door met mijn 1-jarige zoontje, kook ik voor mijn familie en vrienden. Ik hou van reizen, fotograferen en een kopje koffie drinken met vrienden.\nHiervoor studeerde ik bouwkunde, maar ik besloot later mijn ontwerpvaardigheden te gebruiken in softwareontwikkeling, omdat ik besefte dat ik meer plezier beleef aan coderen en iets creëren dan aan iets anders.\nIk daag mezelf constant uit en als iemand die als vluchteling unieke uitdagingen heeft meegemaakt, heb ik veerkracht en aanpassingsvermogen ontwikkeld. Ik ben een persoon met verschillende interesses, een levenslange leerling en een teamspeler die graag anderen helpt en motiveert. Ik leg graag betekenisvolle contacten met mensen tijdens het brainstormen over ideeën.",
+	"personal": {
+		"title": "Webontwikkelaar",
+		"address": "Oosthuizen, NL"
+	},
+	"languages": [
+		{ "title": "Turks", "description": "Moedertaal", "progress": 100 },
+		{ "title": "Engels", "description": "Professionele werkvaardigheid", "progress": 90 },
+		{ "title": "Nederlands", "description": "Beperkte werkvaardigheid", "progress": 75 }
+	],
+	"hobbies": [],
+	"workExperience": [
+		{
+			"id": 6,
+			"position": "Technisch Support Engineer Stagiair",
+			"company": "Graphisoft",
+			"city": "Budapest",
+			"date": "2022 - 2022",
+			"description": "Bieden van Tier 3 ondersteuning aan partners bij problemen van klanten."
+		},
+		{
+			"id": 5,
+			"position": "Bar-medewerker",
+			"company": "0,75 Bar&Bistro",
+			"city": "Budapest",
+			"date": "2021 - 2022",
+			"description": "Verantwoordelijk voor het aanvullen van dranken en glazen."
+		},
+		{
+			"id": 4,
+			"position": "Kok",
+			"company": "een fastfood-broodjeszaak",
+			"city": "Budapest",
+			"date": "2020 - 2020",
+			"description": "Eén-op-één communicatie met de klanten terwijl ik voor hen kookte."
+		},
+		{
+			"id": 3,
+			"position": "Grafisch Ontwerper",
+			"company": "een interieurontwerpbureau",
+			"city": "Kayseri",
+			"date": "2018 - 2019",
+			"description": "Ontwierp de mock-ups en posts voor sociale media-accounts van het merk."
+		},
+		{
+			"id": 2,
+			"position": "Cameraman",
+			"company": "Daraba Evenementenproductie",
+			"city": "Kayseri",
+			"date": "2017 -2018",
+			"description": "Verantwoordelijk voor het productieteam (cameramannen/fotografen) tijdens evenementen, bijv. concerten en interviews."
+		},
+		{
+			"id": 1,
+			"position": "Parttime medewerker",
+			"company": "Internationaal Bureau van de Abdullah Gul Universiteit",
+			"city": "Kayseri",
+			"date": "2016 - 2017",
+			"description": "Ontwierp posters voor de evenementen georganiseerd door het Internationaal Bureau. Begeleidde internationale studenten met hun dagelijkse routines op de campus."
+		}
+	],
+	"education": [
+		{
+			"id": 5,
+			"name": "Hogeschool van Amsterdam (HvA)",
+			"city": "Amsterdam",
+			"date": "2025 - heden",
+			"description": "Opleiding: AD Software Development"
+		},
+		{
+			"id": 4,
+			"name": "Vrije Universiteit Amsterdam (VU)",
+			"city": "Amsterdam",
+			"date": "2024 - 2025",
+			"description": "Opleiding: Taal Schakel Traject Amsterdam, Nederlands als Tweede Taal"
+		},
+		{
+			"id": 3,
+			"name": "Technische Universiteit van Boedapest",
+			"city": "Budapest",
+			"date": "2019 - 2022",
+			"description": "Opleiding: MSc Architectural Engineering (geïntegreerd)"
+		},
+		{
+			"id": 2,
+			"name": "Abdullah Gul Universiteit",
+			"city": "Kayseri",
+			"date": "2017 - 2019",
+			"description": "Opleiding: BSc Architectuur"
+		},
+		{
+			"id": 1,
+			"name": "Abdullah Gul Universiteit",
+			"city": "Kayseri",
+			"date": "2016 - 2017",
+			"description": "Opleiding: BSc Bedrijfskunde"
+		}
+	],
+	"VoluntaryExperience": [
+		{
+			"id": 5,
+			"position": "Vrijwilliger bij de wandelclub",
+			"company": "Zorgcirkel",
+			"city": "Volendam",
+			"date": "2025 - 2025",
+			"description": "Ouderen helpen met een wekelijkse wandeling door de stad."
+		},
+		{
+			"id": 4,
+			"position": "Barista in een café",
+			"company": "Gist",
+			"city": "Amsterdam",
+			"date": "2023 - 2023",
+			"description": "Koffie serveren en gasten ontvangen."
+		},
+		{
+			"id": 3,
+			"position": "Frontend-ontwikkelaar",
+			"company": "Freedom Combination",
+			"city": "Amsterdam",
+			"date": "2022 - 2022",
+			"description": "Assisteren bij het ontwikkelen van de frontend-applicaties van de organisatie."
+		},
+		{
+			"id": 2,
+			"position": "Vertaler in een vluchtelingenkamp",
+			"company": "COA",
+			"city": "Biddinghuizen",
+			"date": "2022 - 2022",
+			"description": "Vluchtelingen helpen bij hun verzoeken aan de informatiebalies en kliniek."
+		},
+		{
+			"id": 1,
+			"position": "Fotograaf en redacteur",
+			"city": "Izmir",
+			"date": "2016 - 2017",
+			"description": "Vrijwillig deelnemen aan verschillende projecten."
+		}
+	]
+}

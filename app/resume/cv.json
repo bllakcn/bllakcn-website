@@ -1,5 +1,5 @@
 {
-	"bio": "I am Ahmet Bilal Akcan, 28 years old, a highly motivated web developer. In my free time I spend time with my 1-year-old-boy, cook for my family and friends. I like traveling, photography and sharing a coffee with friends.\nI am currently following an intensive Dutch language course at the VU, Amsterdam. Previously I studied architectural engineering but I decided later to use my design skills in software development as I realized I have more fun coding and creating something than anything else.\nI constantly push myself out of my comfort zone and as someone who has faced unique challenges as a refugee, I have developed resilience and adaptability. I am person with various interests. I am a life-long learner and a team player who likes to help and bring motivation to the others. I like making meaningful connections with people while brainstorming ideas.",
+	"bio": "I am Ahmet Bilal Akcan, 28 years old, a highly motivated web developer. In my free time I spend time with my 1-year-old-boy, cook for my family and friends. I like traveling, photography and sharing a coffee with friends.\nPreviously I studied architectural engineering but I decided later to use my design skills in software development as I realized I have more fun coding and creating something than anything else.\nI constantly push myself out of my comfort zone and as someone who has faced unique challenges as a refugee, I have developed resilience and adaptability. I am a person with various interests, a life-long learner and a team player who likes to help and bring motivation to the others. I like making meaningful connections with people while brainstorming ideas.",
 	"personal": {
 		"title": "Web Developer",
 		"address": "Oosthuizen, NL"
@@ -7,12 +7,12 @@
 	"languages": [
 		{ "title": "Turkish", "description": "Native", "progress": 100 },
 		{ "title": "English", "description": "Professional working proficiency", "progress": 90 },
-		{ "title": "Dutch", "description": "Elementary proficiency", "progress": 65 }
+		{ "title": "Dutch", "description": "Limited working proficiency", "progress": 75 }
 	],
 	"hobbies": [],
 	"workExperience": [
 		{
-			"id": 1,
+			"id": 6,
 			"position": "Technical Support Engineer Trainee",
 			"company": "Graphisoft",
 			"city": "Budapest",
@@ -20,7 +20,7 @@
 			"description": "Providing Tier 3 support to partners with the issues coming from the clients"
 		},
 		{
-			"id": 2,
+			"id": 5,
 			"position": "Barback",
 			"company": "0,75 Bar&Bistro",
 			"city": "Budapest",
@@ -28,7 +28,7 @@
 			"description": "Responsible of restocking of beverages and glasses"
 		},
 		{
-			"id": 3,
+			"id": 4,
 			"position": "Cook",
 			"company": "a fast-food sandwich restaurant",
 			"city": "Budapest",
@@ -36,7 +36,7 @@
 			"description": "One-to-one communication with the customers while cooking in front of them."
 		},
 		{
-			"id": 4,
+			"id": 3,
 			"position": "Graphic Designer",
 			"company": "an interior design office",
 			"city": "Kayseri",
@@ -44,7 +44,7 @@
 			"description": "Designed the mock-ups and posts for social media accounts of the brand."
 		},
 		{
-			"id": 5,
+			"id": 2,
 			"position": "Cameraman",
 			"company": "Daraba Event Production",
 			"city": "Kayseri",
@@ -52,7 +52,7 @@
 			"description": "Responsible of the production team (cameramen/photographers) during the events, e.g. concerts and interviews"
 		},
 		{
-			"id": 6,
+			"id": 1,
 			"position": "Part-time worker",
 			"company": " International Office of Abdullah Gul University",
 			"city": "Kayseri",
@@ -62,28 +62,35 @@
 	],
 	"education": [
 		{
-			"id": 1,
-			"name": "Vrije Universiteit Amsterdam",
+			"id": 5,
+			"name": "Hogeschool van Amsterdam (HvA)",
 			"city": "Amsterdam",
-			"date": "2024 - Present",
-			"description": "Program: Taal Schakel Traject Amsterdam, Nederlands als Tweede Taal "
+			"date": "2025 - Present",
+			"description": "Program: AD Software Development"
 		},
 		{
-			"id": 2,
+			"id": 4,
+			"name": "Vrije Universiteit Amsterdam (VU)",
+			"city": "Amsterdam",
+			"date": "2024 - 2025",
+			"description": "Program: Taal Schakel Traject Amsterdam, Nederlands als Tweede Taal"
+		},
+		{
+			"id": 3,
 			"name": "Budapest University of Technology and Economics",
 			"city": "Budapest",
 			"date": "2019 - 2022",
 			"description": "Program: One-tier MSc Program on Architectural Engineering"
 		},
 		{
-			"id": 3,
+			"id": 2,
 			"name": "Abdullah Gul University",
 			"city": "Kayseri",
 			"date": "2017 - 2019",
 			"description": "Program: BSc Architecture"
 		},
 		{
-			"id": 4,
+			"id": 1,
 			"name": "Abdullah Gul University",
 			"city": "Kayseri",
 			"date": "2016 - 2017",
@@ -92,7 +99,15 @@
 	],
 	"VoluntaryExperience": [
 		{
-			"id": 1,
+			"id": 5,
+			"position": "Volunteer in the walkingclub",
+			"company": "Zorgcirkel",
+			"city": "Volendam",
+			"date": "2025 - 2025",
+			"description": "Assisting eldery people with a weekly stroll in the city."
+		},
+		{
+			"id": 4,
 			"position": "Barista at a café",
 			"company": "Gist",
 			"city": "Amsterdam",
@@ -100,7 +115,7 @@
 			"description": "Serving coffee and hosting."
 		},
 		{
-			"id": 2,
+			"id": 3,
 			"position": "Frontend developer",
 			"company": "Freedom Combination",
 			"city": "Amsterdam",
@@ -108,7 +123,7 @@
 			"description": "Assisting developing the frontend applications of the organization."
 		},
 		{
-			"id": 3,
+			"id": 2,
 			"position": "Translator in a refugee camp",
 			"company": "COA",
 			"city": "Biddinghuizen",
@@ -116,7 +131,7 @@
 			"description": "Helping refugees during their requests at the information desks and clinic."
 		},
 		{
-			"id": 4,
+			"id": 1,
 			"position": "Photographer and editor",
 			"city": "Izmir",
 			"date": "2016 - 2017",
