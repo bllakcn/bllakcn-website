@@ -24,7 +24,6 @@ export default function Cv() {
 			<div className='w-full'>
 				<ToggleGroup
 					className='mx-auto'
-					size='sm'
 					variant='outline'
 					onValueChange={setCvLanguage}
 					value={cvLanguage}
@@ -32,10 +31,10 @@ export default function Cv() {
 					type='single'
 				>
 					<ToggleGroupItem value='english' aria-label='Toggle English'>
-						eng
+						🇬🇧
 					</ToggleGroupItem>
 					<ToggleGroupItem value='dutch' aria-label='Toggle Dutch'>
-						nl
+						🇳🇱
 					</ToggleGroupItem>
 				</ToggleGroup>
 			</div>
