@@ -1,8 +1,6 @@
 import { Heading } from '@/components/ui/heading';
 import { cn } from '@/lib/utils';
 import styles from './About.module.css';
-import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, Variants } from 'motion/react';
@@ -32,30 +30,23 @@ type TimelineItem = {
 
 const timelineItems: TimelineItem[] = [
 	{
-		title: 'Renewed my website',
-		description: 'Deployed a fresh look and feel to my website.',
-		date: new Date('2024-08-01'),
+		title: 'no-code trading algorithm builder',
+		description:
+			'Started working on a no-code trading algorithm builder where you can create your own trading algorithm and run it on your own portfolio.',
+		date: new Date('2025-09-01'),
+		technologies: ['Nextjs', 'TypeScript', 'TailwindCSS', 'Cpp', 'MongoDB'],
+	},
+	{
+		title: 'Dutch language at B2 level',
+		description:
+			'Around the 3rd anniversary of my arrival in the Netherlands, I obtained a B2-level certificate in Dutch.',
+		date: new Date('2025-08-01'),
 	},
 	{
 		title: 'Anonimal',
 		description:
 			'Completed the MVP for the side project, Anonimal. A social media where you get to type what you want to talk about and find a match around that topic. ',
-		date: new Date('2024-06-01'),
-		additional: (
-			<Link
-				href='https://www.anonimal.me'
-				className={cn(
-					'group flex w-fit items-start gap-1 text-5xl font-black text-[#F3B773] hover:text-[#F3B773]/80',
-					red.className
-				)}
-			>
-				Anonimal
-				<ExternalLink
-					size={16}
-					className='inline-block opacity-0 transition-opacity group-hover:opacity-100'
-				/>
-			</Link>
-		),
+		date: new Date('2024-09-01'),
 		technologies: [
 			'Fast',
 			'Python',
@@ -66,6 +57,11 @@ const timelineItems: TimelineItem[] = [
 			'TailwindCSS',
 			'Aws',
 		],
+	},
+	{
+		title: 'Renewed my website',
+		description: 'Deployed a fresh look and feel to my website.',
+		date: new Date('2024-08-01'),
 	},
 	{
 		title: 'Became a dad',
@@ -91,6 +87,11 @@ const timelineItems: TimelineItem[] = [
 		title: 'Built my first website',
 		date: new Date('2017-06-01'),
 		description: 'Built my first website using Vue.js.',
+	},
+	{
+		title: 'First step into programming',
+		description: 'Started learning programming with Java.',
+		date: new Date('2016-09-01'),
 	},
 ];
 
@@ -127,10 +128,7 @@ export default function About() {
 				variants={containerVariants}
 				initial='hidden'
 				animate='show'
-				className={cn(
-					'relative flex flex-col gap-2 pt-3 pb-7',
-					'before:bg-secondary/70 before:absolute before:top-2.5 before:left-3 before:h-[12px] before:w-0.5 before:rounded-lg'
-				)}
+				className='relative flex flex-col pt-3 pb-7'
 			>
 				{displayedItems.map((item) => (
 					<TimelineItem key={item.title} {...item} />
@@ -179,16 +177,29 @@ function TimelineItem({ title, description, date, additional, technologies }: Ti
 	return (
 		<motion.div
 			variants={itemVariants}
-			className={cn(
-				'group relative max-w-3xl transition-colors',
-				styles.timelineItem,
-				'before:bg-secondary/70 hover:before:bg-secondary before:absolute before:top-9 before:left-3 before:h-[calc(100%-18px)] before:w-0.5 before:rounded-lg'
-			)}
+			className={cn('group relative max-w-3xl transition-colors', styles.timelineItem)}
 		>
+			{/* DATE */}
+			<div
+				className={cn('text-muted-foreground self-center text-right text-xs', styles.timelineItemDate)}
+			>
+				{date.toLocaleDateString('eng-UK', {
+					month: 'short',
+					year: 'numeric',
+				})}
+			</div>
+			{/* DOT */}
 			<div
 				className={cn(
-					'bg-secondary/70 group-hover:bg-secondary mb-0.5 ml-[1px] h-2 w-2 rounded-full transition-colors',
+					'bg-secondary/70 group-hover:bg-secondary h-2 w-2 self-center rounded-full transition-colors',
 					styles.timelineItemIcon
+				)}
+			/>
+			{/* LINE */}
+			<div
+				className={cn(
+					'bg-secondary/70 group-hover:bg-secondary -mt-1 -mb-4 w-0.5 rounded-lg transition-colors',
+					styles.timelineItemLine
 				)}
 			/>
 			<Heading className={cn(styles.timelineItemTitle, '')} level='h4'>
@@ -214,12 +225,6 @@ function TimelineItem({ title, description, date, additional, technologies }: Ti
 						</AccordionItem>
 					</Accordion>
 				)}
-				<div className='text-muted-foreground text-xs'>
-					{date.toLocaleDateString('eng-UK', {
-						month: 'short',
-						year: 'numeric',
-					})}
-				</div>
 			</div>
 		</motion.div>
 	);

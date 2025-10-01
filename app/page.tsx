@@ -36,11 +36,8 @@ export default function Home() {
 					<p className='leading-relaxed'>
 						Hi, I&apos;m Bilal. I&apos;m a web developer based in the Netherlands. I love crafting UI that
 						sparks joy. I work comfortably in full-stack environments. <br /> I&apos;m currently working
-						on a next-gen social media app that is aiming to let you find the person you are looking for
-						out in the world. It is called{' '}
-						<Link href='https://www.anonimal.me' className='inline-flex items-center	gap-1 font-semibold'>
-							Anonimal. <ExternalLink size={12} strokeWidth={2} />
-						</Link>
+						on a no-code trading algorithm builder where you can create your own trading algorithm and run
+						it on your own portfolio.
 					</p>
 				</div>
 			</motion.section>

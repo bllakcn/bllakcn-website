@@ -8,6 +8,8 @@ import Nextjs from './TechStack/Next';
 import TypeScript from './TechStack/Ts';
 import Sass from './TechStack/Sass';
 import Aws from './TechStack/Aws';
+import Cpp from './TechStack/cpp';
+import MongoDB from './TechStack/mongo';
 
 export const iconMap = {
 	Fast,
@@ -19,6 +21,8 @@ export const iconMap = {
 	TypeScript,
 	Sass,
 	Aws,
+	Cpp,
+	MongoDB,
 };
 
 export const iconKeys = Object.keys(iconMap) as [keyof typeof iconMap, ...(keyof typeof iconMap)[]];
