@@ -40,9 +40,7 @@ function Home() {
 					<p className="leading-relaxed">
 						Hi, I&apos;m Bilal. I&apos;m a web developer based in the
 						Netherlands. I love crafting UI that sparks joy. I work comfortably
-						in full-stack environments. <br /> I&apos;m currently working on a
-						no-code trading algorithm builder where you can create your own
-						trading algorithm and run it on your own portfolio.
+						in full-stack environments. <br />
 					</p>
 				</div>
 			</motion.section>

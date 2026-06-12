@@ -1,7 +1,12 @@
 import type { SVGProps } from "react";
 
 const Aws = (props: SVGProps<SVGSVGElement>) => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+	<svg
+		aria-label="Amazon Web Services"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		{...props}
+	>
 		<title>{"Amazon Web Services"}</title>
 		<path
 			fill="white"

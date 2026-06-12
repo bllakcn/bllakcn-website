@@ -5,6 +5,7 @@ const MongoDB = (props: SVGProps<SVGSVGElement>) => (
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
 		viewBox="0 0 100 100"
+		aria-label="MongoDB"
 		{...props}
 	>
 		<path

@@ -2,6 +2,7 @@ import type { SVGProps } from "react";
 
 const TailwindCSS = (props: SVGProps<SVGSVGElement>) => (
 	<svg
+		aria-label="TailwindCSS"
 		viewBox="0 0 256 154"
 		xmlns="http://www.w3.org/2000/svg"
 		preserveAspectRatio="xMidYMid"

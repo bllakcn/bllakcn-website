@@ -5,6 +5,7 @@ const FastAPI = (props: SVGProps<SVGSVGElement>) => (
 		xmlns="http://www.w3.org/2000/svg"
 		preserveAspectRatio="xMidYMid"
 		viewBox="0 0 256 256"
+		aria-label="FastAPI"
 		{...props}
 	>
 		<path

@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import Aws from "./TechStack/Aws";
+import Convex from "./TechStack/Convex";
 import Cpp from "./TechStack/cpp";
 import Fast from "./TechStack/Fast";
 import MongoDB from "./TechStack/mongo";
@@ -9,9 +10,12 @@ import Redis from "./TechStack/Redis";
 import Sass from "./TechStack/Sass";
 import Supabase from "./TechStack/Supabase";
 import TailwindCSS from "./TechStack/Tailwind";
+import TanstackStart from "./TechStack/TanstackStart";
 import TypeScript from "./TechStack/Ts";
 
 export const iconMap = {
+	"Tanstack Start": TanstackStart,
+	Convex,
 	Fast,
 	Python,
 	Redis,

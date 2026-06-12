@@ -24,6 +24,18 @@ type TimelineItem = {
 
 const timelineItems: TimelineItem[] = [
 	{
+		title: "nilucakes.nl",
+		description:
+			"A completely custom website for a local bakery, with client-facing features and an admin panel for managing the bakery's products, orders and bookkeeping.",
+		date: new Date("2026-03-01"),
+		additional: (
+			<a href="https://nilucakes.nl" target="_blank" rel="noopener noreferrer">
+				Visit Website
+			</a>
+		),
+		technologies: ["Tanstack Start", "TypeScript", "TailwindCSS", "Convex"],
+	},
+	{
 		title: "no-code trading algorithm builder",
 		description:
 			"Started working on a no-code trading algorithm builder where you can create your own trading algorithm and run it on your own portfolio.",

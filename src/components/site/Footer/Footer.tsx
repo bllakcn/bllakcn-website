@@ -13,11 +13,6 @@ const socialMedia = [
 		href: "https://github.com/bllakcn",
 	},
 	{
-		name: "Instagram",
-		iconSrc: "/brands/Instagram.svg",
-		href: "https://www.instagram.com/bllakcn",
-	},
-	{
 		name: "Gmail",
 		icon: Mail,
 		href: "mailto:bllakcn35@gmail.com",
