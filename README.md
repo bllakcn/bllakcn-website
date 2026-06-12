@@ -1,13 +1,32 @@
 # bllakcn-website
 
-Migrating from Next.js to TanStack Start.
+Personal portfolio site for [Ahmet Bilal Akcan](https://github.com/bllakcn), built with **TanStack Start** and deployed to Cloudflare Workers.
 
-The previous Next.js app lives in [`nextjs-reference/`](./nextjs-reference/) for reference during the migration.
-
-Scaffold the TanStack Start app in this directory:
+## Development
 
 ```bash
-npx @tanstack/cli@latest create .
+pnpm install
+pnpm dev
 ```
 
-The CLI will prompt for framework, template, and package manager. Use `--no-git` since this repo already has git history.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Start the dev server on port 3000 |
+| `pnpm build` | Production build |
+| `pnpm preview` | Preview the production build locally |
+| `pnpm deploy` | Build and deploy to Cloudflare Workers |
+| `pnpm generate-routes` | Regenerate TanStack Router route tree |
+| `pnpm lint` | Run Biome checks |
+
+## Stack
+
+- TanStack Start + Router (file-based routes in `src/routes/`)
+- Cloudflare Workers (`wrangler.jsonc`)
+- Tailwind CSS v4
+- content-collections + MDX (`content/`)
+
+See [`AGENTS.md`](./AGENTS.md) for agent-oriented project context, environment variables, and architecture notes.

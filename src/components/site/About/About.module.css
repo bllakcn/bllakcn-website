@@ -1,0 +1,32 @@
+.timelineItem {
+	display: grid;
+	grid-template-columns: 80px auto 1fr;
+	grid-template-areas:
+		"date timeline-icon title"
+		". timeline-line description";
+	align-items: start;
+	padding: 0.5rem;
+	gap: 0.1rem 0.5rem;
+}
+
+.timelineItemDescription {
+	grid-area: description;
+}
+
+.timelineItemTitle {
+	grid-area: title;
+}
+
+.timelineItemIcon {
+	grid-area: timeline-icon;
+}
+
+.timelineItemDate {
+	grid-area: date;
+}
+
+.timelineItemLine {
+	grid-area: timeline-line;
+	align-self: stretch;
+	justify-self: center;
+}
