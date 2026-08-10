@@ -60,6 +60,7 @@ const blogs = defineCollection({
 		),
 		author: z.string(),
 		toc: z.boolean().optional().default(true),
+		content: z.string(),
 	}),
 	transform: async (document, context) => {
 		const mdx = await compileMDX(context, document, {
@@ -93,5 +94,5 @@ const blogs = defineCollection({
 });
 
 export default defineConfig({
-	collections: [blogs],
+	content: [blogs],
 });

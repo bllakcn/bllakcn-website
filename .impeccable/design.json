@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-10T20:25:26Z",
+  "title": "Design System: bllakcn",
+  "extensions": {
+    "colorMeta": {
+      "studio-charcoal": {
+        "role": "primary",
+        "displayName": "Studio Charcoal",
+        "canonical": "hsl(0 0% 18%)",
+        "tonalRamp": [
+          "#2e2e2e",
+          "#3d3d3d",
+          "#525252",
+          "#6e6e6e",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#e5e5e5",
+          "#fafafa"
+        ]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "hsl(26 33% 96%)",
+        "tonalRamp": [
+          "#3d342c",
+          "#6b5c4f",
+          "#9a8775",
+          "#c4b5a5",
+          "#e0d6cb",
+          "#efe8e1",
+          "#f8f4f1",
+          "#fcfaf8"
+        ]
+      },
+      "signal-blue": {
+        "role": "secondary",
+        "displayName": "Signal Blue",
+        "canonical": "hsl(227 65% 50%)",
+        "tonalRamp": [
+          "#15245c",
+          "#1c3280",
+          "#243fa6",
+          "#2d51d2",
+          "#5a78dc",
+          "#8ba0e8",
+          "#c5cff3",
+          "#e8ecfa"
+        ]
+      },
+      "seafoam-wash": {
+        "role": "tertiary",
+        "displayName": "Seafoam Wash",
+        "canonical": "hsl(167 43% 83%)",
+        "tonalRamp": [
+          "#1f4a42",
+          "#2f6b5f",
+          "#4a9a88",
+          "#7bc4b4",
+          "#c1e6de",
+          "#cde9e2",
+          "#e5f5f1",
+          "#f4fbf9"
+        ]
+      },
+      "quiet-mint": {
+        "role": "tertiary",
+        "displayName": "Quiet Mint",
+        "canonical": "hsl(165 39% 86%)",
+        "tonalRamp": [
+          "#1f4a42",
+          "#2f6b5f",
+          "#4a9a88",
+          "#7bc4b4",
+          "#c1e6de",
+          "#cde9e2",
+          "#e5f5f1",
+          "#f4fbf9"
+        ]
+      },
+      "gallery-card": {
+        "role": "neutral",
+        "displayName": "Gallery Card",
+        "canonical": "hsl(0 0% 98%)",
+        "tonalRamp": [
+          "#2e2e2e",
+          "#525252",
+          "#6e6e6e",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#e5e5e5",
+          "#f5f5f5",
+          "#fafafa"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "hsl(0 0% 38%)",
+        "tonalRamp": [
+          "#2e2e2e",
+          "#3d3d3d",
+          "#525252",
+          "#616161",
+          "#8a8a8a",
+          "#b0b0b0",
+          "#d4d4d4",
+          "#f0f0f0"
+        ]
+      },
+      "rule-gray": {
+        "role": "neutral",
+        "displayName": "Rule Gray",
+        "canonical": "hsl(0 0% 43%)",
+        "tonalRamp": [
+          "#2e2e2e",
+          "#3d3d3d",
+          "#525252",
+          "#6e6e6e",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#e5e5e5",
+          "#f5f5f5"
+        ]
+      },
+      "paper-nearwhite": {
+        "role": "neutral",
+        "displayName": "Paper Nearwhite",
+        "canonical": "hsl(0 0% 98%)",
+        "tonalRamp": [
+          "#2e2e2e",
+          "#525252",
+          "#6e6e6e",
+          "#9a9a9a",
+          "#c4c4c4",
+          "#e5e5e5",
+          "#f5f5f5",
+          "#fafafa"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Danger",
+        "canonical": "hsl(0 84.2% 60.2%)",
+        "tonalRamp": [
+          "#7f1d1d",
+          "#991b1b",
+          "#b91c1c",
+          "#ef4444",
+          "#f87171",
+          "#fca5a5",
+          "#fecaca",
+          "#fef2f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles and the bllakcn. wordmark."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section titles (H2)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Subsection and card titles (H3–H4)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Intro copy, timeline, blog prose."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, nav links, compact UI labels."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-short",
+        "value": "0.2s ease-out",
+        "purpose": "Accordion open/close and short UI transitions."
+      },
+      {
+        "name": "nav-scroll",
+        "value": "300ms",
+        "purpose": "Navbar padding/max-width tighten on scroll."
+      },
+      {
+        "name": "page-enter",
+        "value": "stagger 0.1s, ~0.3s fade/blur-up",
+        "purpose": "Home section entrance via motion/react — keep calm, never flashy."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container-cap", "value": "1400px" },
+      { "name": "8xl", "value": "90rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default charcoal filled control — primary actions.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Download CV</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 2.5rem; padding: 0.5rem 1rem; border: 1px solid #6e6e6e; border-radius: 14px; background: #2e2e2e; color: #fafafa; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; transition: background-color 0.15s ease; cursor: pointer; } .ds-btn-primary:hover { background: rgba(46, 46, 46, 0.9); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #f8f4f1, 0 0 0 4px #666666; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Paper-ground bordered control; mint wash on hover.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Visit Website</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 2.5rem; padding: 0.5rem 1rem; border: 1px solid #6e6e6e; border-radius: 14px; background: #f8f4f1; color: #2e2e2e; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; transition: background-color 0.15s ease, color 0.15s ease; cursor: pointer; } .ds-btn-outline:hover { background: #cde9e2; } .ds-btn-outline:focus-visible { outline: none; box-shadow: 0 0 0 2px #f8f4f1, 0 0 0 4px #666666; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Signal Blue fill for rare emphasis actions.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Contact</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; height: 2.5rem; padding: 0.5rem 1rem; border: 1px solid #6e6e6e; border-radius: 14px; background: #2d51d2; color: #fafafa; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; transition: background-color 0.15s ease; cursor: pointer; } .ds-btn-secondary:hover { background: rgba(45, 81, 210, 0.8); } .ds-btn-secondary:focus-visible { outline: none; box-shadow: 0 0 0 2px #f8f4f1, 0 0 0 4px #666666; }"
+    },
+    {
+      "name": "Link Button",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Borderless nav/text action with underline on hover.",
+      "html": "<button class=\"ds-btn-link\" type=\"button\">blog</button>",
+      "css": ".ds-btn-link { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0; border: none; background: transparent; color: #2e2e2e; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; text-underline-offset: 4px; cursor: pointer; } .ds-btn-link:hover { text-decoration: underline; } .ds-btn-link:focus-visible { outline: none; box-shadow: 0 0 0 2px #f8f4f1, 0 0 0 4px #666666; border-radius: 4px; }"
+    },
+    {
+      "name": "Default Badge",
+      "kind": "chip",
+      "refersTo": "badge-default",
+      "description": "Pill chip for tags and compact status.",
+      "html": "<span class=\"ds-badge\">TypeScript</span>",
+      "css": ".ds-badge { display: inline-flex; align-items: center; padding: 0.125rem 0.625rem; border-radius: 9999px; background: #2e2e2e; color: #fafafa; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; } .ds-badge:hover { background: rgba(46, 46, 46, 0.8); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat bordered paper card — no shadow.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">nilucakes.nl</h3><p class=\"ds-card-body\">A custom bakery site with client and admin surfaces.</p></div>",
+      "css": ".ds-card { border: 1px solid #6e6e6e; border-radius: 16px; background: #fafafa; color: #2e2e2e; padding: 1.5rem; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; box-shadow: none; } .ds-card-title { margin: 0 0 0.5rem; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.025em; } .ds-card-body { margin: 0; font-size: 0.875rem; color: #616161; line-height: 1.5; }"
+    },
+    {
+      "name": "Page Shell",
+      "kind": "custom",
+      "refersTo": "page-shell",
+      "description": "Signature notebook frame: paper page on charcoal desk.",
+      "html": "<div class=\"ds-desk\"><div class=\"ds-page\"><strong class=\"ds-mark\">bllakcn.</strong><p class=\"ds-lede\">Hi, I'm Bilal. I'm a web developer based in the Netherlands.</p></div></div>",
+      "css": ".ds-desk { background: #2e2e2e; padding: 0.75rem; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; } .ds-page { min-height: 12rem; border: 1px solid #6e6e6e; border-radius: 14px; background-color: #f8f4f1; background-image: radial-gradient(#54545454 0.2px, #ffffff00 0.6px); background-size: 10px 10px; color: #2e2e2e; padding: 1.5rem; box-shadow: none; } .ds-mark { display: block; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.75rem; } .ds-lede { margin: 0; line-height: 1.625; max-width: 40rem; }"
+    },
+    {
+      "name": "Nav Link Row",
+      "kind": "nav",
+      "refersTo": "button-link",
+      "description": "Flat sticky nav brand + text links inside the page shell.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"/\">bllakcn.</a><nav class=\"ds-nav-links\"><a href=\"/blog\">blog</a><a href=\"/resume\">resume</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; font-family: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif; border-bottom: 0; background: transparent; box-shadow: none; } .ds-brand { color: #2e2e2e; font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; text-decoration: none; } .ds-nav-links { display: flex; gap: 1rem; } .ds-nav-links a { color: #2e2e2e; font-size: 0.875rem; font-weight: 500; text-decoration: none; text-underline-offset: 4px; } .ds-nav-links a:hover { text-decoration: underline; } .ds-nav-links a:focus-visible { outline: none; box-shadow: 0 0 0 2px #f8f4f1, 0 0 0 4px #666666; border-radius: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Craft Notebook",
+    "overview": "The site reads like a working notebook laid on a desk: a warm paper page, charcoal ink, and a few clear marks of emphasis. It is calm, precise, friendly, and down-to-earth — credibility through craft and real content, not through spectacle. The outer charcoal chrome frames a bordered page with a fine dot-grid texture, so the whole viewport feels like paper sitting on a table rather than a glowing product UI.\n\nSingle-family typography (Outfit Variable) keeps hierarchy through size and weight only. Color is restrained: charcoal for structure and primary actions, signal blue for rare emphasis, seafoam/mint as soft washes. Depth comes from borders, nested surfaces, and the page-on-chrome shell — never from lift or glow.",
+    "keyCharacteristics": [
+      "Warm paper page inside a charcoal frame",
+      "Flat, border-led surfaces (no shadows)",
+      "One variable sans (Outfit) for all roles",
+      "Charcoal + rare blue + soft mint accent vocabulary",
+      "Friendly utilitarian controls — ink on paper"
+    ],
+    "rules": [
+      {
+        "name": "The One Signal Rule",
+        "body": "Signal Blue appears as intentional emphasis only — never as large background washes or decorative gradients.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Ground Rule",
+        "body": "Reading surfaces stay Warm Paper or Gallery Card. Do not introduce cool pure-white or dark glass panels as the default page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Voice Rule",
+        "body": "Do not introduce a second brand typeface for display or body. Hierarchy is size + weight only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Page-on-Desk Rule",
+        "body": "Keep the inset bordered page on charcoal chrome. Do not go full-bleed edge-to-edge content that erases the notebook shell.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Lift Rule",
+        "body": "If a surface needs separation, use a border (border-border) or a tonal step — never shadow-* or glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft Notebook Rule",
+        "body": "Prefer the existing radius scale; avoid sharp zero-radius broadsheet blocks and avoid pill-everything except badges/chips.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep content inside the bordered paper page on charcoal chrome.",
+      "Do separate surfaces with borders and tonal steps (Warm Paper ↔ Gallery Card).",
+      "Do use Outfit Variable exclusively for brand UI type.",
+      "Do treat Signal Blue as a rare signal, charcoal as the workhorse.",
+      "Do keep controls flat, bordered, and approachable — ink on paper."
+    ],
+    "donts": [
+      "Don't use box shadows, soft glows, or floating elevation on resting UI.",
+      "Don't go futuristic (neon, glass, cyber gradients, HUD chrome).",
+      "Don't invent a second display typeface or ornate serif pairing.",
+      "Don't fabricate testimonials, metrics, or proof styling that implies social proof the product does not have.",
+      "Don't replace the page-on-desk shell with a full-bleed app canvas without an explicit redesign."
+    ]
+  }
+}
