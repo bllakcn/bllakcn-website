@@ -182,7 +182,7 @@ Density is comfortable and scannable for recruiters: clear section breaks, accor
 
 **Flat by default — webpage on paper.** Depth is tonal and structural only: Warm Paper vs Gallery Card, border rules, the page shell against charcoal chrome, and the dot grid. **No box shadows** on resting UI (cards, buttons, chips, toggles). Overlays (menus, dialogs, toasts, tooltips) separate with borders and solid fills, not drop shadows.
 
-Incumbent code still carries some Tailwind `shadow-*` utilities; the design system rule is to remove them — borders and tone replace lift.
+Borders and tone replace lift. UI primitives use no `shadow-*` utilities.
 
 ### Named Rules
 **The No-Lift Rule.** If a surface needs separation, use a border (`border-border`) or a tonal step — never `shadow-*` or glow.
