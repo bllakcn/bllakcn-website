@@ -1,15 +1,23 @@
+/** Resume content loaded from `src/routes/resume-assets/cv*.json`. */
 export interface CV {
+	bio: string;
 	personal: Personal;
 	languages: Language[];
-	hobbies: any[];
+	hobbies: unknown[];
 	workExperience: WorkExperience[];
 	education: Education[];
 	VoluntaryExperience: VoluntaryExperience[];
 }
 
+/** Contact and identity block shared by the web resume and PDF export. */
 export interface Personal {
+	name: string;
 	title: string;
 	address: string;
+	email: string;
+	linkedin: string;
+	github: string;
+	portfolio: string;
 }
 
 export interface Language {

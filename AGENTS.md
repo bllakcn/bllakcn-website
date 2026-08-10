@@ -41,6 +41,7 @@ See `.env.example`. Local dev loads `.env.local` via the `dev` script (`dotenv-c
 pnpm install          # use .npmrc ignore-workspace=true if parent pnpm workspace interferes
 pnpm dev              # http://localhost:3000
 pnpm generate-routes  # tsr generate (scoped via tsr.config.json)
+pnpm generate-cv      # rebuild public/cv.pdf + public/cv.nl.pdf from CV data
 pnpm build
 pnpm deploy           # Cloudflare Workers
 ```
