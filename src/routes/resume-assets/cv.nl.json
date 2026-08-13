@@ -25,35 +25,27 @@
 	"hobbies": [],
 	"workExperience": [
 		{
-			"id": 6,
+			"id": 5,
 			"position": "Technisch Support Engineer Stagiair",
 			"company": "Graphisoft",
 			"city": "Budapest",
-			"date": "2022 - 2022",
+			"date": "Mar 2022 - Sep 2022",
 			"description": "Bieden van Tier 3 ondersteuning aan partners bij problemen van klanten."
 		},
 		{
-			"id": 5,
+			"id": 4,
 			"position": "Bar-medewerker",
 			"company": "0,75 Bar&Bistro",
 			"city": "Budapest",
-			"date": "2021 - 2022",
+			"date": "Aug 2021 - Mar 2022",
 			"description": "Verantwoordelijk voor het aanvullen van dranken en glazen."
-		},
-		{
-			"id": 4,
-			"position": "Kok",
-			"company": "een fastfood-broodjeszaak",
-			"city": "Budapest",
-			"date": "2020 - 2020",
-			"description": "Eén-op-één communicatie met de klanten terwijl ik voor hen kookte."
 		},
 		{
 			"id": 3,
 			"position": "Grafisch Ontwerper",
 			"company": "een interieurontwerpbureau",
 			"city": "Kayseri",
-			"date": "2018 - 2019",
+			"date": "Jan 2019 - Jun 2019",
 			"description": "Ontwierp de mock-ups en posts voor sociale media-accounts van het merk."
 		},
 		{
@@ -61,7 +53,7 @@
 			"position": "Cameraman",
 			"company": "Daraba Evenementenproductie",
 			"city": "Kayseri",
-			"date": "2017 -2018",
+			"date": "Dec 2017 - Feb 2019",
 			"description": "Verantwoordelijk voor het productieteam (cameramannen/fotografen) tijdens evenementen, bijv. concerten en interviews."
 		},
 		{
@@ -69,7 +61,7 @@
 			"position": "Parttime medewerker",
 			"company": "Internationaal Bureau van de Abdullah Gul Universiteit",
 			"city": "Kayseri",
-			"date": "2016 - 2017",
+			"date": "Nov 2016 - Aug 2017",
 			"description": "Ontwierp posters voor de evenementen georganiseerd door het Internationaal Bureau. Begeleidde internationale studenten met hun dagelijkse routines op de campus."
 		}
 	],
@@ -78,35 +70,35 @@
 			"id": 5,
 			"name": "Hogeschool van Amsterdam (HvA)",
 			"city": "Amsterdam",
-			"date": "2025 - heden",
+			"date": "Sep 2025 - heden",
 			"description": "Opleiding: AD Software Development"
 		},
 		{
 			"id": 4,
 			"name": "Vrije Universiteit Amsterdam (VU)",
 			"city": "Amsterdam",
-			"date": "2024 - 2025",
+			"date": "Sep 2024 - Aug 2025",
 			"description": "Opleiding: Taal Schakel Traject Amsterdam, Nederlands als Tweede Taal"
 		},
 		{
 			"id": 3,
 			"name": "Technische Universiteit van Boedapest",
 			"city": "Budapest",
-			"date": "2019 - 2022",
+			"date": "Sep 2019 - Aug 2022",
 			"description": "Opleiding: MSc Architectural Engineering (geïntegreerd)"
 		},
 		{
 			"id": 2,
 			"name": "Abdullah Gul Universiteit",
 			"city": "Kayseri",
-			"date": "2017 - 2019",
+			"date": "Sep 2017 - Aug 2019",
 			"description": "Opleiding: BSc Architectuur"
 		},
 		{
 			"id": 1,
 			"name": "Abdullah Gul Universiteit",
 			"city": "Kayseri",
-			"date": "2016 - 2017",
+			"date": "Sep 2016 - Aug 2017",
 			"description": "Opleiding: BSc Bedrijfskunde"
 		}
 	],
@@ -116,7 +108,7 @@
 			"position": "Vrijwilliger bij de wandelclub",
 			"company": "Zorgcirkel",
 			"city": "Volendam",
-			"date": "2025 - 2025",
+			"date": "Feb 2025 - Jun 2025",
 			"description": "Ouderen helpen met een wekelijkse wandeling door de stad."
 		},
 		{
@@ -124,7 +116,7 @@
 			"position": "Barista in een café",
 			"company": "Gist",
 			"city": "Amsterdam",
-			"date": "2023 - 2023",
+			"date": "May 2023 - Nov 2023",
 			"description": "Koffie serveren en gasten ontvangen."
 		},
 		{
@@ -132,7 +124,7 @@
 			"position": "Frontend-ontwikkelaar",
 			"company": "Freedom Combination",
 			"city": "Amsterdam",
-			"date": "2022 - 2022",
+			"date": "Jan 2022 - Apr 2022",
 			"description": "Assisteren bij het ontwikkelen van de frontend-applicaties van de organisatie."
 		},
 		{
@@ -140,7 +132,7 @@
 			"position": "Vertaler in een vluchtelingenkamp",
 			"company": "COA",
 			"city": "Biddinghuizen",
-			"date": "2022 - 2022",
+			"date": "Dec 2022 - Feb 2023",
 			"description": "Vluchtelingen helpen bij hun verzoeken aan de informatiebalies en kliniek."
 		},
 		{
