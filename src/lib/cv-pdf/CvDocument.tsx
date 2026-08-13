@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		fontSize: 10,
-		marginTop: 3,
+		marginTop: 4,
 		marginBottom: 6,
-		color: "#333333",
+		color: "#2d51d2",
 	},
 	contactRow: {
 		flexDirection: "row",
