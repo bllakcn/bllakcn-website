@@ -1,3 +1,4 @@
+import { SquareArrowOutUpRightIcon } from "lucide-react";
 import { motion, type Variants } from "motion/react";
 import { useState } from "react";
 import TechIcons, { type iconMap } from "@/components/IconMap";
@@ -26,14 +27,25 @@ const timelineItems: TimelineItem[] = [
 	{
 		title: "nilucakes.nl",
 		description:
-			"A completely custom website for a local bakery, with client-facing features and an admin panel for managing the bakery's products, orders and bookkeeping.",
+			"A completely custom website for a local bakery, with client-facing features and an admin panel for managing the bakery's products, orders, transactions and invoices.",
 		date: new Date("2026-03-01"),
 		additional: (
-			<a href="https://nilucakes.nl" target="_blank" rel="noopener noreferrer">
-				Visit Website
+			<a
+				href="https://nilucakes.nl"
+				target="_blank"
+				rel="noopener noreferrer"
+				className="flex items-end gap-1"
+			>
+				Visit Website <SquareArrowOutUpRightIcon className="mb-1 size-4" />
 			</a>
 		),
-		technologies: ["Tanstack Start", "TypeScript", "TailwindCSS", "Convex"],
+		technologies: [
+			"Tanstack Start",
+			"TypeScript",
+			"TailwindCSS",
+			"Convex",
+			"Cloudflare",
+		],
 	},
 	{
 		title: "no-code trading algorithm builder",

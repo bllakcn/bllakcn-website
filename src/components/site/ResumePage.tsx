@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import cv from "@/routes/resume-assets/cv.json";
 import cvDutch from "@/routes/resume-assets/cv.nl.json";
+import { Separator } from "../ui/separator";
 
 /** Pre-generated PDF assets; paths must match `scripts/generate-cv.ts` output. */
 const pdfByLanguage = {
@@ -34,7 +35,7 @@ export default function ResumePage() {
 
 	return (
 		<>
-			<div className="flex w-full flex-col items-center gap-3 sm:flex-row sm:justify-center">
+			<div className="flex w-full items-center justify-center gap-3">
 				<ToggleGroup
 					variant="outline"
 					onValueChange={(value: string) => {
@@ -76,8 +77,9 @@ export default function ResumePage() {
 								{personal.address}
 							</address>
 						</span>
-						<ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-light text-xs">
-							<li>
+						<Separator className="my-2 block text-muted-foreground md:hidden" />
+						<ul className="mt-2 grid grid-cols-3 gap-x-5 gap-y-1 font-light text-xs md:flex md:flex-wrap">
+							<li className="col-span-3">
 								<a
 									className="underline-offset-2 hover:underline"
 									href={`mailto:${personal.email}`}

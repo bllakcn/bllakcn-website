@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import Aws from "./TechStack/Aws";
+import Cloudflare from "./TechStack/Cloudflare";
 import Convex from "./TechStack/Convex";
 import Cpp from "./TechStack/cpp";
 import Fast from "./TechStack/Fast";
@@ -27,6 +28,7 @@ export const iconMap = {
 	Aws,
 	Cpp,
 	MongoDB,
+	Cloudflare,
 };
 
 export const iconKeys = Object.keys(iconMap) as [

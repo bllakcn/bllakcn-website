@@ -38,7 +38,7 @@ function Home() {
 			>
 				<div className="w-full space-y-2">
 					<p className="leading-relaxed">
-						Hi, I&apos;m Bilal. I&apos;m a web developer based in the
+						Hi, I&apos;m Bilal. I&apos;m a software developer based in the
 						Netherlands. I love crafting UI that sparks joy. I work comfortably
 						in full-stack environments. <br />
 					</p>
