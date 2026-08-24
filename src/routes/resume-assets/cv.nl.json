@@ -25,6 +25,14 @@
 	"hobbies": [],
 	"workExperience": [
 		{
+			"id": 6,
+			"position": "Mede-oprichter",
+			"company": "Nilu Cakes",
+			"city": "Oosthuizen",
+			"date": "Nov 2025 - heden",
+			"description": "Mede-oprichting van een taartzaak met mijn vrouw."
+		},
+		{
 			"id": 5,
 			"position": "Technisch Support Engineer Stagiair",
 			"company": "Graphisoft",

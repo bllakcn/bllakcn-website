@@ -25,6 +25,14 @@
 	"hobbies": [],
 	"workExperience": [
 		{
+			"id": 6,
+			"position": "Co-founder",
+			"company": "Nilu Cakes",
+			"city": "Oosthuizen",
+			"date": "Nov 2025 - Present",
+			"description": "Co-founding a cake business with my wife."
+		},
+		{
 			"id": 5,
 			"position": "Technical Support Engineer Trainee",
 			"company": "Graphisoft",
