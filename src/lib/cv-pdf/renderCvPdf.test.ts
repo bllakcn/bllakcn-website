@@ -68,4 +68,11 @@ describe("CV data contact fields", () => {
 			expect(iconKeys).toContain(skill);
 		}
 	});
+
+	it("keeps EN and NL skills lists identical", () => {
+		const en = loadCv("src/routes/resume-assets/cv.json");
+		const nl = loadCv("src/routes/resume-assets/cv.nl.json");
+		expect(nl.skills).toEqual(en.skills);
+		expect(nl.personal.phone).toBe(en.personal.phone);
+	});
 });
