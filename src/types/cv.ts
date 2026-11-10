@@ -1,9 +1,12 @@
+import type { IconMapKey } from "@/components/IconMap";
+
 /** Resume content loaded from `src/routes/resume-assets/cv*.json`. */
 export interface CV {
 	bio: string;
 	personal: Personal;
 	languages: Language[];
 	hobbies: unknown[];
+	skills: IconMapKey[];
 	workExperience: WorkExperience[];
 	education: Education[];
 	VoluntaryExperience: VoluntaryExperience[];
@@ -15,6 +18,7 @@ export interface Personal {
 	title: string;
 	address: string;
 	email: string;
+	phone: string;
 	linkedin: string;
 	github: string;
 	portfolio: string;

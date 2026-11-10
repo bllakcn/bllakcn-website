@@ -5,10 +5,30 @@
 		"title": "Software Developer",
 		"address": "Oosthuizen, NL",
 		"email": "bllakcn35@gmail.com",
+		"phone": "+31 6 87812990",
 		"linkedin": "https://www.linkedin.com/in/bllakcn/",
 		"github": "https://github.com/bllakcn",
 		"portfolio": "https://bllakcn.com/"
 	},
+	"skills": [
+		"TypeScript",
+		"Tanstack Start",
+		"Nextjs",
+		"TailwindCSS",
+		"Convex",
+		"Supabase",
+		"Python",
+		"FastAPI",
+		"Java",
+		"Spring Boot",
+		"PostgreSQL",
+		"MySQL",
+		"MongoDB",
+		"Redis",
+		"Docker",
+		"AWS",
+		"Cloudflare"
+	],
 	"languages": [
 		{ "title": "Turkish", "description": "Native", "progress": 100 },
 		{

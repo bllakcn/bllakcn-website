@@ -3,21 +3,25 @@ import Aws from "./TechStack/Aws";
 import Cloudflare from "./TechStack/Cloudflare";
 import Convex from "./TechStack/Convex";
 import Cpp from "./TechStack/cpp";
+import Docker from "./TechStack/Docker";
 import Fast from "./TechStack/Fast";
+import Java from "./TechStack/Java";
+import Mysql from "./TechStack/Mysql";
 import MongoDB from "./TechStack/mongo";
 import Nextjs from "./TechStack/Next";
+import Postgresql from "./TechStack/Postgresql";
 import Python from "./TechStack/Python";
 import Redis from "./TechStack/Redis";
 import Sass from "./TechStack/Sass";
+import Spring from "./TechStack/Spring";
 import Supabase from "./TechStack/Supabase";
 import TailwindCSS from "./TechStack/Tailwind";
 import TanstackStart from "./TechStack/TanstackStart";
 import TypeScript from "./TechStack/Ts";
-
 export const iconMap = {
 	"Tanstack Start": TanstackStart,
 	Convex,
-	Fast,
+	FastAPI: Fast,
 	Python,
 	Redis,
 	Supabase,
@@ -25,19 +29,24 @@ export const iconMap = {
 	Nextjs,
 	TypeScript,
 	Sass,
-	Aws,
+	AWS: Aws,
 	Cpp,
 	MongoDB,
 	Cloudflare,
+	Docker,
+	Java,
+	"Spring Boot": Spring,
+	PostgreSQL: Postgresql,
+	MySQL: Mysql,
 };
 
-export const iconKeys = Object.keys(iconMap) as [
-	keyof typeof iconMap,
-	...(keyof typeof iconMap)[],
-];
+/** Canonical skill / tech keys shared by CV JSON and UI icon rendering. */
+export type IconMapKey = keyof typeof iconMap;
+
+export const iconKeys = Object.keys(iconMap) as [IconMapKey, ...IconMapKey[]];
 
 type TechIconsProps = {
-	iconName: keyof typeof iconMap;
+	iconName: IconMapKey;
 };
 
 const TechIcons = forwardRef<SVGSVGElement, TechIconsProps>(

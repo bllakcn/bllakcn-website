@@ -1,5 +1,7 @@
 import { Download } from "lucide-react";
 import { useMemo, useState } from "react";
+import TechIcons from "@/components/IconMap";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
@@ -7,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import cv from "@/routes/resume-assets/cv.json";
 import cvDutch from "@/routes/resume-assets/cv.nl.json";
+import type { CV } from "@/types/cv";
 import { Separator } from "../ui/separator";
 
 /** Pre-generated PDF assets; paths must match `scripts/generate-cv.ts` output. */
@@ -24,11 +27,11 @@ const pdfByLanguage = {
 export default function ResumePage() {
 	const [cvLanguage, setCvLanguage] =
 		useState<keyof typeof pdfByLanguage>("english");
-	const cvData = useMemo(() => {
+	const cvData = useMemo((): CV => {
 		if (cvLanguage === "dutch") {
-			return cvDutch;
+			return cvDutch as CV;
 		}
-		return cv;
+		return cv as CV;
 	}, [cvLanguage]);
 	const pdf = pdfByLanguage[cvLanguage];
 	const { personal } = cvData;
@@ -203,6 +206,21 @@ export default function ResumePage() {
 									{line}
 								</p>
 							))}
+						</CardContent>
+					</Card>
+					<Card>
+						<CardHeader>
+							<CardTitle level="h4">Technical Skills</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<div className="flex flex-wrap gap-2">
+								{cvData.skills.map((skill) => (
+									<Badge className="gap-1" key={skill}>
+										{skill}
+										<TechIcons iconName={skill} />
+									</Badge>
+								))}
+							</div>
 						</CardContent>
 					</Card>
 					<Card>
