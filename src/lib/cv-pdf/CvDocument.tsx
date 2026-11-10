@@ -46,12 +46,11 @@ const styles = StyleSheet.create({
 		fontSize: 14,
 		fontWeight: 700,
 		letterSpacing: 0.3,
-		marginBottom: 1,
+		marginBottom: 5,
 	},
 	title: {
 		fontSize: 9,
-		marginTop: 1,
-		marginBottom: 3,
+		marginBottom: 7,
 		color: ACCENT,
 	},
 	contactRow: {

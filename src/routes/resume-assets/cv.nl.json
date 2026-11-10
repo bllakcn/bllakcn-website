@@ -13,12 +13,21 @@
 	"skills": [
 		"TypeScript",
 		"Tanstack Start",
-		"TailwindCSS",
-		"Cloudflare",
 		"Nextjs",
+		"TailwindCSS",
 		"Convex",
 		"Supabase",
-		"Python"
+		"Python",
+		"FastAPI",
+		"Java",
+		"Spring Boot",
+		"PostgreSQL",
+		"MySQL",
+		"MongoDB",
+		"Redis",
+		"Docker",
+		"AWS",
+		"Cloudflare"
 	],
 	"languages": [
 		{ "title": "Turks", "description": "Moedertaal", "progress": 100 },
