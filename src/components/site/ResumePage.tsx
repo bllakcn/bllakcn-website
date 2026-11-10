@@ -1,5 +1,7 @@
 import { Download } from "lucide-react";
 import { useMemo, useState } from "react";
+import TechIcons, { type IconMapKey } from "@/components/IconMap";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
@@ -203,6 +205,21 @@ export default function ResumePage() {
 									{line}
 								</p>
 							))}
+						</CardContent>
+					</Card>
+					<Card>
+						<CardHeader>
+							<CardTitle level="h4">Technical Skills</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<div className="flex flex-wrap gap-2">
+								{cvData.skills.map((skill) => (
+									<Badge className="flex items-center gap-1" key={skill}>
+										<p>{skill}</p>
+										<TechIcons iconName={skill as IconMapKey} />
+									</Badge>
+								))}
+							</div>
 						</CardContent>
 					</Card>
 					<Card>

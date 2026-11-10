@@ -4,6 +4,7 @@ export type CvLocale = "en" | "nl";
 /** Localized section headings rendered by {@link CvDocument}. */
 export type CvPdfLabels = {
 	bio: string;
+	skills: string;
 	work: string;
 	education: string;
 	voluntary: string;
@@ -13,6 +14,7 @@ export type CvPdfLabels = {
 const labelsByLocale: Record<CvLocale, CvPdfLabels> = {
 	en: {
 		bio: "Bio",
+		skills: "Technical Skills",
 		work: "Work Experience",
 		education: "Education",
 		voluntary: "Voluntary Experience",
@@ -20,6 +22,7 @@ const labelsByLocale: Record<CvLocale, CvPdfLabels> = {
 	},
 	nl: {
 		bio: "Bio",
+		skills: "Technische Vaardigheden",
 		work: "Werkervaring",
 		education: "Opleiding",
 		voluntary: "Vrijwilligerswerk",

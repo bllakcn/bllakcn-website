@@ -31,13 +31,13 @@ export const iconMap = {
 	Cloudflare,
 };
 
-export const iconKeys = Object.keys(iconMap) as [
-	keyof typeof iconMap,
-	...(keyof typeof iconMap)[],
-];
+/** Canonical skill / tech keys shared by CV JSON and UI icon rendering. */
+export type IconMapKey = keyof typeof iconMap;
+
+export const iconKeys = Object.keys(iconMap) as [IconMapKey, ...IconMapKey[]];
 
 type TechIconsProps = {
-	iconName: keyof typeof iconMap;
+	iconName: IconMapKey;
 };
 
 const TechIcons = forwardRef<SVGSVGElement, TechIconsProps>(

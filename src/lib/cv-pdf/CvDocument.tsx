@@ -3,6 +3,7 @@
  */
 import {
 	Document,
+	Image,
 	Link,
 	Page,
 	StyleSheet,
@@ -16,29 +17,45 @@ const styles = StyleSheet.create({
 	page: {
 		fontFamily: "JetBrains Mono",
 		fontSize: 9,
-		lineHeight: 1.45,
+		lineHeight: 1.4,
 		color: "#111111",
-		paddingTop: 36,
-		paddingBottom: 36,
+		paddingTop: 32,
+		paddingBottom: 32,
 		paddingHorizontal: 40,
 	},
+	header: {
+		flexDirection: "row",
+		gap: 14,
+		marginBottom: 12,
+		alignItems: "flex-start",
+	},
+	photo: {
+		width: 64,
+		height: 64,
+		borderRadius: 32,
+		objectFit: "cover",
+	},
+	headerText: {
+		flexGrow: 1,
+		flexShrink: 1,
+	},
 	name: {
-		fontSize: 16,
+		fontSize: 15,
 		fontWeight: 700,
 		letterSpacing: 0.4,
 		marginBottom: 2,
 	},
 	title: {
 		fontSize: 10,
-		marginTop: 4,
-		marginBottom: 6,
+		marginTop: 2,
+		marginBottom: 4,
 		color: "#2d51d2",
 	},
 	contactRow: {
 		flexDirection: "row",
 		flexWrap: "wrap",
 		gap: 4,
-		marginBottom: 4,
+		marginBottom: 3,
 		fontSize: 8,
 		color: "#333333",
 	},
@@ -49,10 +66,9 @@ const styles = StyleSheet.create({
 	address: {
 		fontSize: 8,
 		color: "#555555",
-		marginBottom: 14,
 	},
 	section: {
-		marginBottom: 12,
+		marginBottom: 10,
 	},
 	sectionTitle: {
 		fontSize: 9,
@@ -67,8 +83,13 @@ const styles = StyleSheet.create({
 		fontSize: 9,
 		color: "#222222",
 	},
+	skillsBody: {
+		fontSize: 8,
+		color: "#222222",
+		lineHeight: 1.5,
+	},
 	entry: {
-		marginBottom: 8,
+		marginBottom: 7,
 	},
 	entryHeader: {
 		flexDirection: "row",
@@ -107,12 +128,15 @@ function displayUrl(url: string): string {
 type CvDocumentProps = {
 	cv: CV;
 	labels: CvPdfLabels;
+	/** Absolute filesystem path to headshot JPEG for Node `renderToBuffer`. */
+	photoPath: string;
 };
 
 /** Maps {@link CV} data and localized section labels into a printable PDF document. */
-export function CvDocument({ cv, labels }: CvDocumentProps) {
+export function CvDocument({ cv, labels, photoPath }: CvDocumentProps) {
 	const { personal } = cv;
 	const name = personal.name;
+	const phoneHref = `tel:${personal.phone.replace(/\s+/g, "")}`;
 
 	return (
 		<Document
@@ -122,27 +146,34 @@ export function CvDocument({ cv, labels }: CvDocumentProps) {
 			creator="bllakcn-website"
 		>
 			<Page size="A4" style={styles.page}>
-				<View>
-					<Text style={styles.name}>{name}</Text>
-					<Text style={styles.title}>{personal.title}</Text>
-					<View style={styles.contactRow}>
-						<Link src={`mailto:${personal.email}`} style={styles.contactLink}>
-							{personal.email}
-						</Link>
-						<Text>·</Text>
-						<Link src={personal.linkedin} style={styles.contactLink}>
-							{displayUrl(personal.linkedin)}
-						</Link>
-						<Text>·</Text>
-						<Link src={personal.github} style={styles.contactLink}>
-							{displayUrl(personal.github)}
-						</Link>
-						<Text>·</Text>
-						<Link src={personal.portfolio} style={styles.contactLink}>
-							{displayUrl(personal.portfolio)}
-						</Link>
+				<View style={styles.header}>
+					<Image src={photoPath} style={styles.photo} />
+					<View style={styles.headerText}>
+						<Text style={styles.name}>{name}</Text>
+						<Text style={styles.title}>{personal.title}</Text>
+						<View style={styles.contactRow}>
+							<Link src={`mailto:${personal.email}`} style={styles.contactLink}>
+								{personal.email}
+							</Link>
+							<Text>·</Text>
+							<Link src={phoneHref} style={styles.contactLink}>
+								{personal.phone}
+							</Link>
+							<Text>·</Text>
+							<Link src={personal.linkedin} style={styles.contactLink}>
+								{displayUrl(personal.linkedin)}
+							</Link>
+							<Text>·</Text>
+							<Link src={personal.github} style={styles.contactLink}>
+								{displayUrl(personal.github)}
+							</Link>
+							<Text>·</Text>
+							<Link src={personal.portfolio} style={styles.contactLink}>
+								{displayUrl(personal.portfolio)}
+							</Link>
+						</View>
+						<Text style={styles.address}>{personal.address}</Text>
 					</View>
-					<Text style={styles.address}>{personal.address}</Text>
 				</View>
 
 				<View style={styles.section}>
@@ -154,6 +185,13 @@ export function CvDocument({ cv, labels }: CvDocumentProps) {
 						</Text>
 					))}
 				</View>
+
+				{cv.skills.length > 0 ? (
+					<View style={styles.section}>
+						<Text style={styles.sectionTitle}>{labels.skills}</Text>
+						<Text style={styles.skillsBody}>{cv.skills.join(" · ")}</Text>
+					</View>
+				) : null}
 
 				<View style={styles.section}>
 					<Text style={styles.sectionTitle}>{labels.work}</Text>
