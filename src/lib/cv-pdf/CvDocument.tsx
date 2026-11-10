@@ -13,6 +13,9 @@ import {
 import type { CV } from "@/types/cv";
 import type { CvPdfLabels } from "./labels";
 
+/** Site accent — job title, section headings, and rule underlines. */
+const ACCENT = "#2d51d2";
+
 const styles = StyleSheet.create({
 	page: {
 		fontFamily: "JetBrains Mono",
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
 		fontSize: 9,
 		marginTop: 1,
 		marginBottom: 3,
-		color: "#2d51d2",
+		color: ACCENT,
 	},
 	contactRow: {
 		flexDirection: "row",
@@ -62,6 +65,9 @@ const styles = StyleSheet.create({
 	contactLink: {
 		color: "#111111",
 		textDecoration: "none",
+	},
+	contactSep: {
+		color: ACCENT,
 	},
 	address: {
 		fontSize: 7.5,
@@ -76,8 +82,9 @@ const styles = StyleSheet.create({
 		textTransform: "uppercase",
 		marginBottom: 3,
 		paddingBottom: 2,
+		color: ACCENT,
 		borderBottomWidth: 0.75,
-		borderBottomColor: "#111111",
+		borderBottomColor: ACCENT,
 	},
 	body: {
 		fontSize: 8,
@@ -155,19 +162,19 @@ export function CvDocument({ cv, labels, photoPath }: CvDocumentProps) {
 							<Link src={`mailto:${personal.email}`} style={styles.contactLink}>
 								{personal.email}
 							</Link>
-							<Text>·</Text>
+							<Text style={styles.contactSep}>·</Text>
 							<Link src={phoneHref} style={styles.contactLink}>
 								{personal.phone}
 							</Link>
-							<Text>·</Text>
+							<Text style={styles.contactSep}>·</Text>
 							<Link src={personal.linkedin} style={styles.contactLink}>
 								{displayUrl(personal.linkedin)}
 							</Link>
-							<Text>·</Text>
+							<Text style={styles.contactSep}>·</Text>
 							<Link src={personal.github} style={styles.contactLink}>
 								{displayUrl(personal.github)}
 							</Link>
-							<Text>·</Text>
+							<Text style={styles.contactSep}>·</Text>
 							<Link src={personal.portfolio} style={styles.contactLink}>
 								{displayUrl(personal.portfolio)}
 							</Link>
