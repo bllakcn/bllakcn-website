@@ -1,5 +1,5 @@
 {
-	"bio": "Software developer in training at Hogeschool van Amsterdam (AD Software Development). I moved into tech from architectural engineering, and I use that design background to build clear, usable web applications.\nCurious, collaborative, and quick to adapt — I work best in teams that turn ideas into shipped software.",
+	"bio": "Software developer in training at Hogeschool van Amsterdam (AD Software Development). I moved into tech from architectural engineering, and I use that design background to build clear, usable web applications. Curious, collaborative and quick to adapt, I enjoy turning ideas into working software, from database to user interface.",
 	"personal": {
 		"name": "Ahmet Bilal Akcan",
 		"title": "Software Developer",
@@ -12,17 +12,14 @@
 	},
 	"skills": [
 		"TypeScript",
+		"Node.js",
 		"React",
 		"Vue",
-		"Tanstack Start",
-		"Nextjs",
 		"TailwindCSS",
 		"Python",
 		"FastAPI",
 		"Java",
 		"Spring Boot",
-		"Convex",
-		"Supabase",
 		"PostgreSQL",
 		"MySQL",
 		"MongoDB",

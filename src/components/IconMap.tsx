@@ -13,6 +13,7 @@ import Java from "./TechStack/Java";
 import MongoDB from "./TechStack/Mongo";
 import Mysql from "./TechStack/Mysql";
 import Nextjs from "./TechStack/Next";
+import Node from "./TechStack/Node";
 import Postgresql from "./TechStack/Postgresql";
 import Python from "./TechStack/Python";
 import React from "./TechStack/React";
@@ -36,6 +37,7 @@ export const iconMap = {
 	MongoDB,
 	MySQL: Mysql,
 	Nextjs,
+	"Node.js": Node,
 	PostgreSQL: Postgresql,
 	Python,
 	React,
