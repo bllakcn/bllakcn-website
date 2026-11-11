@@ -66,14 +66,14 @@ const timelineItems: TimelineItem[] = [
 			"Completed the MVP for the side project, Anonimal. A social media where you get to type what you want to talk about and find a match around that topic. ",
 		date: new Date("2024-09-01"),
 		technologies: [
-			"Fast",
+			"FastAPI",
 			"Python",
 			"Nextjs",
 			"TypeScript",
 			"Redis",
 			"Supabase",
 			"TailwindCSS",
-			"Aws",
+			"AWS",
 		],
 	},
 	{
