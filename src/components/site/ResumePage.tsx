@@ -38,7 +38,7 @@ export default function ResumePage() {
 
 	return (
 		<div className="mx-auto grid w-full max-w-5xl grid-cols-1 gap-4 p-4 md:grid-cols-2 md:gap-10">
-			<section className="flex w-full items-center gap-3 md:col-span-2">
+			<section className="flex w-full items-start gap-3 md:col-span-2">
 				<img
 					src="/avatar.jpg"
 					alt={personal.name}
@@ -106,16 +106,29 @@ export default function ResumePage() {
 							type="single"
 							size="sm"
 						>
-							<ToggleGroupItem value="english" aria-label="Toggle English">
+							<ToggleGroupItem
+								value="english"
+								aria-label="Toggle English"
+								className="h-6 min-w-6 px-2 text-xs"
+							>
 								EN
 							</ToggleGroupItem>
-							<ToggleGroupItem value="dutch" aria-label="Toggle Dutch">
+							<ToggleGroupItem
+								value="dutch"
+								aria-label="Toggle Dutch"
+								className="h-6 min-w-6 px-2 text-xs"
+							>
 								NL
 							</ToggleGroupItem>
 						</ToggleGroup>
-						<Button asChild variant="outline" size="sm" className="gap-2">
+						<Button
+							asChild
+							variant="outline"
+							size="sm"
+							className="h-6 gap-1.5 px-2.5 text-xs"
+						>
 							<a href={pdf.href} download={pdf.download}>
-								<Download className="size-4" aria-hidden />
+								<Download className="size-3.5" aria-hidden />
 								Download PDF
 							</a>
 						</Button>
