@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Sass";
+
 const Sass = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Sass"

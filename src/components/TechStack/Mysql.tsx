@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "MySQL";
+
 const Mysql = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="MySQL"

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Tanstack Start";
+
 const TanstackStart = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Tanstack Start"

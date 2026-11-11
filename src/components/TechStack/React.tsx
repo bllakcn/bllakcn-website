@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "React";
+
 const React = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="React"

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Docker";
+
 const Docker = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Docker"

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Python";
+
 const Python = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		fill="#FFF"

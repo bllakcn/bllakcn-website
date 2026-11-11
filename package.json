@@ -9,6 +9,7 @@
     "dev": "dotenv -e .env.local -- vite dev --port 3000",
     "generate-routes": "tsr generate",
     "generate-cv": "tsx scripts/generate-cv.ts",
+    "generate-icons": "tsx scripts/generate-icon-map.ts && biome check --write src/components/IconMap.tsx",
     "content-collections": "content-collections build",
     "build": "vite build",
     "preview": "vite preview",

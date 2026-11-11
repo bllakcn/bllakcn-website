@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Java";
+
 const Java = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Java"

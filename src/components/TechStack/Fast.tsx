@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "FastAPI";
+
 const FastAPI = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

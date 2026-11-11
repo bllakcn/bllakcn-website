@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Convex";
+
 const Convex = (props: SVGProps<SVGSVGElement>) => (
 	<svg aria-label="Convex" viewBox="28 28 128 132" fill="none" {...props}>
 		<path

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Nextjs";
+
 const Nextjs = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		viewBox="0 0 180 180"

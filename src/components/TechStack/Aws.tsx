@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "AWS";
+
 const Aws = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Amazon Web Services"

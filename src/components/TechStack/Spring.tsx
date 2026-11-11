@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Spring Boot";
+
 const Spring = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Spring Boot"

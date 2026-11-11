@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "PostgreSQL";
+
 const Postgresql = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="PostgreSQL"

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Supabase";
+
 const Supabase = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Supabase"

@@ -1,5 +1,7 @@
 import type { SVGProps } from "react";
 
+export const iconKey = "Redis";
+
 const Redis = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		aria-label="Redis"
